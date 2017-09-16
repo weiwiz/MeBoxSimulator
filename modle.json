@@ -1,0 +1,37 @@
+[
+  {
+    "displayName": "Batch No.",
+    "access": "batchNo",
+    "type": "string"
+  },
+  {
+    "displayName": "typeId",
+    "access": "typeId",
+    "type": "string"
+  },
+  {
+    "displayName": "name",
+    "access": "name",
+    "type": "string"
+  },
+  {
+    "displayName": "typeName",
+    "access": "typeName",
+    "type": "string"
+  },
+  {
+    "displayName": "mfg",
+    "access": "mfg",
+    "type": "string"
+  },
+  {
+    "displayName": "mfgDate",
+    "access": "mfgDate",
+    "type": "string"
+  },
+  {
+    "displayName": "serialNum",
+    "access": "serialNum",
+    "type": "string"
+  }
+]

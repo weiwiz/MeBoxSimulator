@@ -1,0 +1,5293 @@
+[
+    {
+        "id": "885a4151.f37e6",
+        "type": "tab",
+        "label": "MeNubsEx"
+    },
+    {
+        "id": "7b3e6f66.affe2",
+        "type": "tab",
+        "label": "MeThermostat"
+    },
+    {
+        "id": "71731180.8e8cf",
+        "type": "tab",
+        "label": "MeRFCT"
+    },
+    {
+        "id": "c118d6ee.2b55d8",
+        "type": "tab",
+        "label": "MeBoost"
+    },
+    {
+        "id": "2b592821.33a798",
+        "type": "tab",
+        "label": "MeLight"
+    },
+    {
+        "id": "5d48653e.a2b79c",
+        "type": "subflow",
+        "name": "mockData",
+        "info": "",
+        "in": [
+            {
+                "x": 58,
+                "y": 73.00001525878906,
+                "wires": [
+                    {
+                        "id": "5e0ea8a0.a1f158"
+                    },
+                    {
+                        "id": "d26f4feb.2d90b"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1060.000015258789,
+                "y": 143,
+                "wires": [
+                    {
+                        "id": "41beb187.be415",
+                        "port": 0
+                    },
+                    {
+                        "id": "67c77b31.13a474",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ff7a6ff2.00859",
+        "type": "subflow",
+        "name": "readRoute",
+        "info": "",
+        "in": [
+            {
+                "x": 70,
+                "y": 137,
+                "wires": [
+                    {
+                        "id": "51d7f64f.ae2808"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1051,
+                "y": 207,
+                "wires": [
+                    {
+                        "id": "3aa26c59.c55d94",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "a41a2f9a.5be5d",
+        "type": "subflow",
+        "name": "checkPackage",
+        "info": "",
+        "in": [
+            {
+                "x": 39,
+                "y": 334,
+                "wires": [
+                    {
+                        "id": "5e0f4da5.a1f0b4"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1146,
+                "y": 288,
+                "wires": [
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 0
+                    },
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 1148,
+                "y": 402,
+                "wires": [
+                    {
+                        "id": "c0e5ca45.3f1a38",
+                        "port": 1
+                    },
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 1146,
+                "y": 476,
+                "wires": [
+                    {
+                        "id": "c0e5ca45.3f1a38",
+                        "port": 2
+                    },
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 1150.0000457763672,
+                "y": 564.0000305175781,
+                "wires": [
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ce416712.31be98",
+        "type": "subflow",
+        "name": "updateDisplay",
+        "info": "",
+        "in": [
+            {
+                "x": 48,
+                "y": 292,
+                "wires": [
+                    {
+                        "id": "bedc9c4f.41236"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1164,
+                "y": 288,
+                "wires": [
+                    {
+                        "id": "844499a7.7bbb68",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "58b44a2.7215bb4",
+        "type": "subflow",
+        "name": "fliterDB",
+        "info": "",
+        "in": [
+            {
+                "x": 148,
+                "y": 219,
+                "wires": [
+                    {
+                        "id": "fb468bc4.8f8d78"
+                    }
+                ]
+            }
+        ],
+        "out": []
+    },
+    {
+        "id": "de2fbaa4.21d048",
+        "type": "serial-port",
+        "z": "71731180.8e8cf",
+        "serialport": "/dev/ttyAMA0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "500",
+        "bin": "bin",
+        "out": "time",
+        "addchar": false
+    },
+    {
+        "id": "7ab44e35.854bb",
+        "type": "ui_tab",
+        "z": "71731180.8e8cf",
+        "name": "能源服务",
+        "icon": "fa-compress fa-2x",
+        "order": 3
+    },
+    {
+        "id": "fd4fd41f.02b028",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "Helvetica Neue",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "Helvetica Neue",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "Helvetica Neue"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#10cfd8",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "88e4c6bf.771b38",
+        "type": "ui_group",
+        "z": "71731180.8e8cf",
+        "name": "MeRFCT",
+        "tab": "7ab44e35.854bb",
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "22ee73e1.b6d2fc",
+        "type": "ui_group",
+        "z": "71731180.8e8cf",
+        "name": "Config",
+        "tab": "7ab44e35.854bb",
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "70ee527e.728c0c",
+        "type": "ui_group",
+        "z": "71731180.8e8cf",
+        "name": "Test",
+        "tab": "7ab44e35.854bb",
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "4175d300.2c08bc",
+        "type": "ui_tab",
+        "z": "885a4151.f37e6",
+        "name": "MeNubsEx",
+        "icon": "fa-home fa-2x",
+        "order": 1
+    },
+    {
+        "id": "4c96f49c.0d8d6c",
+        "type": "mongodb",
+        "z": "885a4151.f37e6",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "exhibition_scu",
+        "name": "devices"
+    },
+    {
+        "id": "eeb0fbf3.766ce8",
+        "type": "ui_tab",
+        "z": "",
+        "name": "温控服务",
+        "icon": "fa-thermometer-empty fa-2x",
+        "order": 2
+    },
+    {
+        "id": "165b6aa9.1b4fb5",
+        "type": "ui_group",
+        "z": "",
+        "name": "地暖",
+        "tab": "eeb0fbf3.766ce8",
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "6bd2655c.49d46c",
+        "type": "ui_tab",
+        "z": "",
+        "name": "热水服务",
+        "icon": "fa-tint fa-2x",
+        "order": 4
+    },
+    {
+        "id": "79f66082.3bfc1",
+        "type": "ui_tab",
+        "z": "",
+        "name": "照明服务",
+        "icon": "fa-lightbulb-o fa-2x",
+        "order": 5
+    },
+    {
+        "id": "c4b03950.ea8908",
+        "type": "ui_group",
+        "z": "",
+        "name": "热水箱控制器",
+        "tab": "6bd2655c.49d46c",
+        "order": 1,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "f971c074.de00f",
+        "type": "ui_group",
+        "z": "",
+        "name": "台灯",
+        "tab": "79f66082.3bfc1",
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "bf534c72.c1fc5",
+        "type": "ui_group",
+        "z": "",
+        "name": "暖气片",
+        "tab": "eeb0fbf3.766ce8",
+        "order": 2,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "47909b46.fc1f74",
+        "type": "ui_group",
+        "z": "",
+        "name": "设备列表",
+        "tab": "4175d300.2c08bc",
+        "order": 1,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "dda5d103.c17fd",
+        "type": "ui_group",
+        "z": "",
+        "name": "射灯",
+        "tab": "79f66082.3bfc1",
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "4d24a72f.e0ece8",
+        "type": "ui_group",
+        "z": "",
+        "name": "场景",
+        "tab": "79f66082.3bfc1",
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "d7fd085a.627ba8",
+        "type": "mongodb",
+        "z": "",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "exhibition_scu",
+        "name": ""
+    },
+    {
+        "id": "a30aff90.4809a",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "57600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "500",
+        "bin": "bin",
+        "out": "time",
+        "addchar": false
+    },
+    {
+        "id": "2e784d06.d187b2",
+        "type": "serial in",
+        "z": "71731180.8e8cf",
+        "name": "MeRFCT",
+        "serial": "de2fbaa4.21d048",
+        "x": 65,
+        "y": 763,
+        "wires": [
+            [
+                "e0d01695.1f2fe8",
+                "301fe15a.2d7b2e"
+            ]
+        ]
+    },
+    {
+        "id": "e9522394.16ade",
+        "type": "serial out",
+        "z": "71731180.8e8cf",
+        "name": "MeBoost",
+        "serial": "de2fbaa4.21d048",
+        "x": 1597,
+        "y": 798,
+        "wires": []
+    },
+    {
+        "id": "ba040327.45fc",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "parsePackage",
+        "func": "/**\n * [CONST_FUNC_CODE_INDEX description]\n * @type {Number}\n */\nvar CONST_FUNC_CODE_PAIR = 0x15;\nvar CONST_FUNC_CODE_HB = 0x16;\nvar CONST_FUNC_CODE_GET_RFCT = 0x51;\nvar CONST_FUNC_CODE_SET_RFCT = 0x52;\n/**\n * [CONST_TERMINAL_CODE_RFCT description]\n * @type {[type]}\n */\nvar CONST_TERMINAL_CODE_RFCT = 0x0080;\nvar CONST_TERMINAL_CODE_MEBOOST = 0x00A0;\n\n/**\n * [checkGetRFCTQueryCode description]\n * @param  {[type]} codes [description]\n * @return {[type]}       [description]\n */\nvar checkGetRFCTQueryCode = function(codes) {\n    return ((codes.length !== 0) && context.global._.without(codes, 0, 1, 3, 10, 11, 12, 13).length === 0);\n};\n\nif(msg.payload.type === 'fail'){\n    return msg;\n}\nvar sendMsg = {\n    topic: \"cmd\",\n    payload: {\n        type: null,\n        seq: msg.payload.seq,\n        src: msg.payload.src,\n        dst: msg.payload.dst,\n        funcCode: msg.payload.funcCode,\n        data: null\n    }\n};\nswitch (msg.payload.funcCode) {\n        // pair\n    case CONST_FUNC_CODE_PAIR:\n        var step = msg.payload.data.readUInt8(0);\n        sendMsg.payload.type = step === 0x00 ? 'setPair' : 'exitPair';\n        sendMsg.payload.data = msg.payload.data;\n        break;\n        // hb\n    case CONST_FUNC_CODE_HB:\n        sendMsg.payload.type = 'hb';\n        break;\n        // get_rfct\n    case CONST_FUNC_CODE_GET_RFCT:\n        var len = msg.payload.dataLen;\n        var i = 0;\n        var codes = [];\n        while (len >= 2) {\n            codes.push(msg.payload.data.readUInt16BE(i));\n            len -= 2;\n            i += 2;\n        }\n        if (checkGetRFCTQueryCode(codes)) {\n            sendMsg.payload.type = 'getRFCT';\n            sendMsg.payload.data = {\n                codes: codes\n            };\n        } else {\n            sendMsg.payload.type = 'fail';\n            sendMsg.payload.data = {\n                code: 2,\n                msg: \"invalid query code!\"\n            };\n        }\n        break;\n        // set_rfct:\n    case CONST_FUNC_CODE_SET_RFCT:\n\n        break;\n    default:\n        sendMsg.payload.type = 'fail';\n        sendMsg.payload.data = {\n            code: 49,\n            msg: \"invalid function code!\"\n        };\n        break;\n}\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 463,
+        "y": 610,
+        "wires": [
+            [
+                "45e84f11.ba17b",
+                "c8311259.37cef"
+            ]
+        ]
+    },
+    {
+        "id": "45e84f11.ba17b",
+        "type": "switch",
+        "z": "71731180.8e8cf",
+        "name": "switchPackage",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "hb",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "getRFCT",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "setRFCT",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "setPair",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "exitPair",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fail",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 7,
+        "x": 590,
+        "y": 766,
+        "wires": [
+            [
+                "cfbf7a80.304088",
+                "b27c5a29.4d83a8"
+            ],
+            [
+                "b27c5a29.4d83a8",
+                "f6cc2a3f.0933d8"
+            ],
+            [
+                "b27c5a29.4d83a8",
+                "acddffc0.5322"
+            ],
+            [
+                "b27c5a29.4d83a8",
+                "9a9c26c6.6563d8",
+                "8543562b.7abca8",
+                "2c66e340.d6760c"
+            ],
+            [
+                "b27c5a29.4d83a8",
+                "4e1b5190.b1e4b",
+                "8543562b.7abca8"
+            ],
+            [
+                "b27c5a29.4d83a8",
+                "7d952f61.826ad"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "acddffc0.5322",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "setRFCTACK",
+        "func": "var crc = context.global.crc;\n\nvar HEAD = context.global.Struct()\n  .word8Ube('protocolType', 1, 'hex')\n  .word8Ube('terminalType', 1, 'hex')\n  .chars('src', 10, 'hex')\n  .chars('dst', 10, 'hex')\n  .word8Ube('seq')\n  .word8Ube('funcCode')\n  .word16Ube('length');\n\nvar EXIT_PAIR_ACK = context.global.Struct()\n  .word8Ube('result')\n  .word16Ube('value');\n\nvar CRC16 = context.global.Struct()\n  .word16Ube('crc16');\n\nvar create = function(name) {\n  var buf = name.allocate().buffer();\n  for (var i = 0; i < buf.length; i++) {\n    buf[i] = 0;\n  }\n  return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0xF0);\nHEAD.set('src', msg.payload.data.dst);\nHEAD.set('dst', msg.payload.data.src);\nHEAD.set('seq', 0x04);\nHEAD.set('funcCode', 0xA0);\nHEAD.set('length', 0x03);\n//\nvar exitPairDataACK = create(EXIT_PAIR_ACK);\nEXIT_PAIR_ACK.set('result', 0x00);\nEXIT_PAIR_ACK.set('value', 0x0000);\n//\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head, exitPairDataACK])));\nvar test = Buffer.concat([head, exitPairDataACK, crcData]);\nvar sendMsg = {\n  payload: test\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 835,
+        "y": 761,
+        "wires": [
+            [
+                "e9522394.16ade",
+                "9bec2dd7.6413d"
+            ]
+        ]
+    },
+    {
+        "id": "c8311259.37cef",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[parsePackage]",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 448,
+        "y": 542,
+        "wires": []
+    },
+    {
+        "id": "9a9c26c6.6563d8",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "setPairACK",
+        "func": "var crc = context.global.crc;\n\nvar HEAD = context.global.Struct()\n    .word8Ube('protocolType', 1, 'hex')\n    .word8Ube('terminalType', 1, 'hex')\n    .word8Ube('seq')\n    .word8Ube('ver')\n    .word16Ube('terminalCode')\n    .chars('src', 10, 'hex')\n    .chars('dst', 10, 'hex')\n    .word8Ube('funcCode')\n    .word16Ube('length');\n\n// var ACK = context.global.Struct()\n//     .word8Ube('step')\n//     .word16Ube('terminalCode')\n//     .word8Ube('fu')\n//     .word8Ube('ch')\n//     .word8Ube('dbm');\n\nvar CRC16 = context.global.Struct()\n    .word16Ube('crc16');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0x46);\nHEAD.set('seq', msg.payload.seq);\nHEAD.set('ver', 0x01);\nHEAD.set('terminalCode', 0x00A0)\nHEAD.set('src', msg.payload.src);\nHEAD.set('dst', msg.payload.dst);\nHEAD.set('funcCode', msg.payload.funcCode);\nHEAD.set('length', msg.payload.data.length);\n//\n// var ACKData = create(ACK);\n// ACK.set('result', 0x30);\nvar ACKData = msg.payload.data;\n//\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head, ACKData])));\nvar data = Buffer.concat([head, ACKData, crcData]);\nvar sendMsg = {\n    payload: data\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 824,
+        "y": 796,
+        "wires": [
+            [
+                "e9522394.16ade",
+                "9bec2dd7.6413d",
+                "8edc2750.e9f908"
+            ]
+        ]
+    },
+    {
+        "id": "4e1b5190.b1e4b",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "exitPairACK",
+        "func": "var crc = context.global.crc;\n\nvar HEAD = context.global.Struct()\n    .word8Ube('protocolType', 1, 'hex')\n    .word8Ube('terminalType', 1, 'hex')\n    .word8Ube('seq')\n    .word8Ube('ver')\n    .word16Ube('terminalCode')\n    .chars('src', 10, 'hex')\n    .chars('dst', 10, 'hex')\n    .word8Ube('funcCode')\n    .word16Ube('length');\n\nvar ACK = context.global.Struct()\n    .word8Ube('result')\n\nvar CRC16 = context.global.Struct()\n    .word16Ube('crc16');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0x46);\nHEAD.set('seq', msg.payload.seq);\nHEAD.set('ver', 0x01);\nHEAD.set('terminalCode', 0x00A0)\nHEAD.set('src', msg.payload.src);\nHEAD.set('dst', msg.payload.dst);\nHEAD.set('funcCode', msg.payload.funcCode);\nHEAD.set('length', 0x01);\n//\nvar ACKData = create(ACK);\nACK.set('result', 0x30);\n//\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head, ACKData])));\nvar data = Buffer.concat([head, ACKData, crcData]);\nvar sendMsg = {\n    payload: data\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 827,
+        "y": 833,
+        "wires": [
+            [
+                "e9522394.16ade",
+                "9bec2dd7.6413d"
+            ]
+        ]
+    },
+    {
+        "id": "1c2389ef.e3dc76",
+        "type": "ui_button",
+        "z": "71731180.8e8cf",
+        "name": "TestRF",
+        "group": "88e4c6bf.771b38",
+        "order": 5,
+        "width": "",
+        "height": "",
+        "label": "testRF",
+        "color": "red",
+        "icon": "fa-terminal",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1240,
+        "y": 1123,
+        "wires": [
+            [
+                "be873109.4178d"
+            ]
+        ]
+    },
+    {
+        "id": "be873109.4178d",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "testRF",
+        "func": "msg={payload:'send>>>>>>>>>>> '};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1323,
+        "y": 1019,
+        "wires": [
+            [
+                "e9522394.16ade"
+            ]
+        ]
+    },
+    {
+        "id": "cfbf7a80.304088",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "setHBACK",
+        "func": "var crc = context.global.crc;\n\nvar HEAD = context.global.Struct()\n    .word8Ube('protocolType', 1, 'hex')\n    .word8Ube('terminalType', 1, 'hex')\n    .word8Ube('seq')\n    .word8Ube('ver')\n    .word16Ube('terminalCode')\n    .chars('src', 10, 'hex')\n    .chars('dst', 10, 'hex')\n    .word8Ube('funcCode')\n    .word16Ube('length');\n\nvar ACK = context.global.Struct()\n    .word8Ube('result')\n\nvar CRC16 = context.global.Struct()\n    .word16Ube('crc16');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0x46);\nHEAD.set('seq', msg.payload.seq);\nHEAD.set('ver', 0x01);\nHEAD.set('terminalCode', 0x00A0)\nHEAD.set('src', msg.payload.src);\nHEAD.set('dst', msg.payload.dst);\nHEAD.set('funcCode', msg.payload.funcCode);\nHEAD.set('length', 0x01);\n//\nvar ACKData = create(ACK);\nACK.set('result', 0x30);\n//\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head, ACKData])));\nvar data = Buffer.concat([head, ACKData, crcData]);\nvar sendMsg = {\n    payload: data\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 825,
+        "y": 679,
+        "wires": [
+            [
+                "e9522394.16ade",
+                "9bec2dd7.6413d",
+                "e44bad30.da43"
+            ]
+        ]
+    },
+    {
+        "id": "b27c5a29.4d83a8",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[switchPackage]",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 772,
+        "y": 1019,
+        "wires": []
+    },
+    {
+        "id": "d26f4feb.2d90b",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db",
+        "filename": "/home/pi/.node-red/db.json",
+        "format": "utf8",
+        "x": 282,
+        "y": 35,
+        "wires": [
+            [
+                "78ce2ed3.8731d"
+            ]
+        ]
+    },
+    {
+        "id": "f6cc2a3f.0933d8",
+        "type": "subflow:5d48653e.a2b79c",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "x": 824.0000152587891,
+        "y": 722,
+        "wires": [
+            [
+                "4d841f7e.b27be",
+                "b2d3aba7.4d2c58",
+                "95051895.cddb68",
+                "21662f7f.24fb5"
+            ]
+        ]
+    },
+    {
+        "id": "5e0ea8a0.a1f158",
+        "type": "join",
+        "z": "5d48653e.a2b79c",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "",
+        "joiner": "",
+        "timeout": "",
+        "count": "2",
+        "x": 668.0001220703125,
+        "y": 138,
+        "wires": [
+            [
+                "41beb187.be415"
+            ]
+        ]
+    },
+    {
+        "id": "41beb187.be415",
+        "type": "function",
+        "z": "5d48653e.a2b79c",
+        "name": "packageGetRFCTData",
+        "func": "var CONST_LEN_QUERY_CODE = 2;\nvar CONST_LEN_QUERY_DATA_LEN = 2;\n\nvar hourOffset = global.get(\"hourOffset\")||0;\nvar minOffset = global.get(\"minOffset\")||0;\nvar count = global.get(\"count\");\nvar mk = global.get(\"mock\");\nvar len = 0;\nvar date = new Date();\nvar mock = (date.getHours() + hourOffset) * 60 + date.getMinutes() + minOffset;\nif(mk){\n    mock = global.get(\"time\") + (global.get(\"collectTick\")%5);\n    /*if(++count === 5){\n        global.set(\"count\",0);\n    }else{\n        global.set(\"count\",count);\n    }*/\n}\n\n// var sendMsg = {\n//     payload: {\n//         seq: msg.payload.seq,\n//         dataLen: null,\n//         status: 0,\n//         datas: []\n//     }\n// };\nvar sendMsg = {\n    payload: {\n        type: \"success\",\n        seq: msg.payload.seq,\n        src: msg.payload.src,\n        dst: msg.payload.dst,\n        funcCode: msg.payload.funcCode,\n        dataLen: null,\n        data: []\n    }\n};\ncontext.global._.forEach(msg.payload.data.codes, function(e) {\n    switch (e) {\n        //all\n        case 0x00:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 26,\n                data: msg.payload.all[mock]\n            });\n            len += 26 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            //SN\n        case 0x01:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 10,\n                data: msg.payload.SN\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // total energy\n        case 0x03:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.en[mock]\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // VtCC\n        case 0x0A:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.VtCC\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC30\n        case 0x0B:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC30\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC60\n        case 0x0C:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC60\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC80\n        case 0x0D:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC80\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;        \n        default:\n            sendMsg.payload.type = \"fail\";\n            sendMsg.payload.data = {\n                code: 2,\n                msg: \"invalid function code!\"\n            };\n            break;\n    }\n});\nsendMsg.payload.dataLen = len + 1;\n\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 942.0001220703125,
+        "y": 54,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d841f7e.b27be",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[mockData]",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1087,
+        "y": 588,
+        "wires": []
+    },
+    {
+        "id": "78ce2ed3.8731d",
+        "type": "json",
+        "z": "5d48653e.a2b79c",
+        "name": "",
+        "x": 476.00006103515625,
+        "y": 74,
+        "wires": [
+            [
+                "5e0ea8a0.a1f158"
+            ]
+        ]
+    },
+    {
+        "id": "51d7f64f.ae2808",
+        "type": "file in",
+        "z": "ff7a6ff2.00859",
+        "name": "db",
+        "filename": "/home/pi/.node-red/route.json",
+        "format": "utf8",
+        "x": 244,
+        "y": 66,
+        "wires": [
+            [
+                "3aa26c59.c55d94"
+            ]
+        ]
+    },
+    {
+        "id": "3aa26c59.c55d94",
+        "type": "json",
+        "z": "ff7a6ff2.00859",
+        "name": "",
+        "x": 406,
+        "y": 71,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ea89bb6.615768",
+        "type": "function",
+        "z": "a41a2f9a.5be5d",
+        "name": "checkRoute",
+        "func": "/**\n * [dataLen description]\n * @type {[type]}\n */\nvar CONST_HEAD_LENGTH = 29;\nvar CONST_CRC_LENGTH = 2;\n/**\n *\n */\nvar CONST_FUNC_CODE_INDEX = 26;\nvar CONST_SRC_INDEX = 6;\nvar CONST_DST_INDEX = 16;\nvar CONST_DATA_LEN_INDEX = 27;\nvar CONST_SEQ_INDEX = 2;\nvar CONST_DATA_INDEX = 29;\n/**\n * [dataLen description]\n * @type {[type]}\n */\nvar sendMsg = {\n    payload: {\n        type: null,\n        seq: null,\n        src: null,\n        dst: null,\n        funcCode: null,\n        dataLen: null,\n        data: null\n    }\n};\n\nvar data = msg.payload.data;\nvar route = {src:global.get(\"src\"),dst:global.get(\"dst\")};\nvar funcCode = data[CONST_FUNC_CODE_INDEX];\nvar seq = data[CONST_SEQ_INDEX];\nvar dataLen = data.readUInt16BE(CONST_DATA_LEN_INDEX);\nvar src = data.slice(CONST_SRC_INDEX, CONST_SRC_INDEX + 10).toString('hex');\nvar dst = data.slice(CONST_DST_INDEX, CONST_DST_INDEX + 10).toString('hex');\nif(funcCode === 0x15 && route.src === null){\n    sendMsg.payload = {\n        type: \"pair\",\n        seq: seq,\n        src: src,\n        dst: route.dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: data.slice(CONST_DATA_INDEX, CONST_DATA_INDEX + dataLen)\n    }\n    return sendMsg;\n}\nelse if (src === route.src && dst === route.dst) {\n    sendMsg.payload = {\n        type: \"success\",\n        seq: seq,\n        src: src,\n        dst: dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: data.slice(CONST_DATA_INDEX, CONST_DATA_INDEX + dataLen)\n    }\n    return sendMsg;\n}else if (src === \"ffffffffffffffffffff\" && dst === \"34453035444546463331\") {\n    sendMsg.payload = {\n        type: \"forward\",\n        seq: seq,\n        src: src,\n        dst: dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: data.slice(CONST_DATA_INDEX, CONST_DATA_INDEX + dataLen)\n    }\n    return sendMsg;\n}else {\n    sendMsg.payload = {\n        type: \"invalid\",\n        seq: seq,\n        src: src,\n        dst: dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: {\n            code: 255,\n            msg: \"invalid package[route],ignore!\"\n        }\n    }\n    return sendMsg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 884,
+        "y": 232,
+        "wires": [
+            [
+                "a2ce2a2f.5d31d8"
+            ]
+        ]
+    },
+    {
+        "id": "5e0f4da5.a1f0b4",
+        "type": "function",
+        "z": "a41a2f9a.5be5d",
+        "name": "checkCRC",
+        "func": "/**\n * [dataLen description]\n * @type {[type]}\n */\nvar CONST_HEAD_LENGTH = 29;\nvar CONST_CRC_LENGTH = 2;\n/**\n * \n */\nvar CONST_FUNC_CODE_INDEX = 26;\nvar CONST_SRC_INDEX = 6;\nvar CONST_DST_INDEX = 16;\nvar CONST_DATA_LEN_INDEX = 27;\nvar CONST_SEQ_INDEX = 2;\n/**\n * [dataLen description]\n * @type {[type]}\n */\n var sendMsg = {\n        payload: {\n            type: null,\n            seq: null,\n            src: null,\n            dst: null,\n            funcCode: null,\n            data: null\n        }\n    };\nif (msg.payload.length <= 29 || msg.payload[0] !== 0x52 || msg.payload[1] !== 0x46){\n    sendMsg.payload.type = 'invalid';\n    sendMsg.payload.data = {code:255,msg:\"invalid package[unknow], ignore!\"};\n    return sendMsg;\n}\n\nvar dataLen = msg.payload.readUInt16BE(CONST_DATA_LEN_INDEX);\nif (dataLen < 0 || msg.payload.length !== dataLen + CONST_HEAD_LENGTH + CONST_CRC_LENGTH) {\n    sendMsg.payload.type = 'invalid';\n    sendMsg.payload.data = {code:255,msg:\"invalid package[length], ignore!\"};\n    return sendMsg;\n}\nif (context.global.crc.crc16modbus(msg.payload.slice(0, CONST_HEAD_LENGTH + dataLen)).toString(16) === msg.payload.readUInt16BE(CONST_HEAD_LENGTH + dataLen).toString(16)) {\n    sendMsg.payload.type = \"success\";\n    sendMsg.payload.data = msg.payload;\n    return sendMsg;\n} else {\n    sendMsg.payload.type = \"fail\";\n    sendMsg.payload.funcCode = msg.payload[CONST_FUNC_CODE_INDEX];\n    sendMsg.payload.seq = msg.payload[CONST_SEQ_INDEX];\n    sendMsg.payload.src = msg.payload.slice(CONST_SRC_INDEX, CONST_SRC_INDEX + 10).toString('hex');\n    sendMsg.payload.dst = msg.payload.slice(CONST_DST_INDEX, CONST_DST_INDEX + 10).toString('hex');\n    sendMsg.payload.data = {\n        code: 50,\n        msg: \"invalid package![crc]\"\n    };\n    return sendMsg;\n}",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 167,
+        "y": 332,
+        "wires": [
+            [
+                "c0e5ca45.3f1a38"
+            ]
+        ]
+    },
+    {
+        "id": "54301188.abcff",
+        "type": "subflow:a41a2f9a.5be5d",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "x": 307,
+        "y": 765,
+        "wires": [
+            [
+                "ba040327.45fc"
+            ],
+            [
+                "45e84f11.ba17b"
+            ],
+            [
+                "7d12b112.82ed5"
+            ],
+            [
+                "8a548a0e.395938"
+            ]
+        ]
+    },
+    {
+        "id": "7d12b112.82ed5",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[ignore message]",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 533,
+        "y": 897,
+        "wires": []
+    },
+    {
+        "id": "c0e5ca45.3f1a38",
+        "type": "switch",
+        "z": "a41a2f9a.5be5d",
+        "name": "crc",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "success",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fail",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "invalid",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 3,
+        "x": 326,
+        "y": 332,
+        "wires": [
+            [
+                "9ea89bb6.615768"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a2ce2a2f.5d31d8",
+        "type": "switch",
+        "z": "a41a2f9a.5be5d",
+        "name": "route",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "success",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fail",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "invalid",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "pair",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "forward",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 5,
+        "x": 953,
+        "y": 330,
+        "wires": [
+            [],
+            [],
+            [],
+            [
+                "a4fc586d.5b03a8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7d952f61.826ad",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "setFailACK",
+        "func": "var crc = context.global.crc;\n\nvar HEAD = context.global.Struct()\n    .word8Ube('protocolType', 1, 'hex')\n    .word8Ube('terminalType', 1, 'hex')\n    .word8Ube('seq')\n    .word8Ube('ver')\n    .word16Ube('terminalCode')\n    .chars('src', 10, 'hex')\n    .chars('dst', 10, 'hex')\n    .word8Ube('funcCode')\n    .word16Ube('length');\n\nvar ACK = context.global.Struct()\n    .word8Ube('result')\n\nvar CRC16 = context.global.Struct()\n    .word16Ube('crc16');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0x46);\nHEAD.set('seq', msg.payload.seq);\nHEAD.set('ver', 0x01);\nHEAD.set('terminalCode', 0x00A0)\nHEAD.set('src', msg.payload.src);\nHEAD.set('dst', msg.payload.dst);\nHEAD.set('funcCode', msg.payload.funcCode);\nHEAD.set('length', 0x01);\n//\nvar ACKData = create(ACK);\nACK.set('result', msg.payload.data.code);\n//\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head, ACKData])));\nvar data = Buffer.concat([head, ACKData, crcData]);\nvar sendMsg = {\n    payload: data\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 823,
+        "y": 888,
+        "wires": [
+            [
+                "9bec2dd7.6413d",
+                "e9522394.16ade"
+            ]
+        ]
+    },
+    {
+        "id": "e0d01695.1f2fe8",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[recevied]",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 169,
+        "y": 871,
+        "wires": []
+    },
+    {
+        "id": "9bec2dd7.6413d",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[sendACK]",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 1076,
+        "y": 991,
+        "wires": []
+    },
+    {
+        "id": "c541c9ec.3abe38",
+        "type": "ui_toast",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "x": 462,
+        "y": 965,
+        "wires": []
+    },
+    {
+        "id": "b2d3aba7.4d2c58",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "getRFCTACK",
+        "func": "var crc = context.global.crc;\n\nvar HEAD = context.global.Struct()\n    .word8Ube('protocolType', 1, 'hex')\n    .word8Ube('terminalType', 1, 'hex')\n    .word8Ube('seq')\n    .word8Ube('ver')\n    .word16Ube('terminalCode')\n    .chars('src', 10, 'hex')\n    .chars('dst', 10, 'hex')\n    .word8Ube('funcCode')\n    .word16Ube('length');\n\nvar allType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('Vt')\n    .word32Ube('Ic')\n    .word32Ube('Ft')\n    .word8Ube('Dirt')\n    .word32Ube('Pt')\n    .word8Ube('LN')\n    .word32Ube('ToGrid')\n    .word32Ube('ToUser');\n\nvar SNType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .chars('SN', 10, 'hex');\n\nvar enType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('en');\n\nvar VtCCType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('VtCC');\n\nvar PtCC30Type = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('PtCC30');\n\nvar PtCC60Type = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('PtCC60');\n\nvar PtCC80Type = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('PtCC80');\n\nvar ACK = context.global.Struct()\n    .word8Ube('result');\n\n\nvar CRC16 = context.global.Struct()\n    .word16Ube('crc16');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0x46);\nHEAD.set('seq', msg.payload.seq);\nHEAD.set('ver', 0x01);\nHEAD.set('terminalCode', 0x00A0)\nHEAD.set('src', msg.payload.src);\nHEAD.set('dst', msg.payload.dst);\nHEAD.set('funcCode', msg.payload.funcCode);\nHEAD.set('length', msg.payload.dataLen);\n//\nvar ACKData = create(ACK);\nACK.set('result', 0x00);\n\nvar allTypeData = null;\nvar SNTypeData = null;\nvar enTypeData = null;\nvar VtCCTypeData = null;\nvar PtCC30TypeData = null;\nvar PtCC60TypeData = null;\nvar PtCC80TypeData = null;\n\ncontext.global._.forEach(msg.payload.data, function(o) {\n    switch (o.code) {\n        // all\n        case 0x00:\n            allTypeData = create(allType);\n            allType.set('code', o.code);\n            allType.set('len', o.len);\n            allType.set('Vt', o.data.Vt);\n            allType.set('Ic', o.data.Ic);\n            allType.set('Ft', o.data.Ft);\n            allType.set('Dirt', o.data.Dirt);\n            allType.set('Pt', o.data.Pt);\n            allType.set('LN', o.data.LN);\n            allType.set('ToGrid', o.data.ToGrid);\n            allType.set('ToUser', o.data.ToUser);\n            break;\n            // SN\n        case 0x01:\n            SNTypeData = create(SNType);\n            SNType.set('code', o.code);\n            SNType.set('len', o.len);\n            SNType.set('SN', o.data);\n            break;\n            //en\n        case 0x03:\n            enTypeData = create(enType);\n            enType.set('code', o.code);\n            enType.set('len', o.len);\n            enType.set('en', o.data.energy);\n            break;\n            //VtCC\n        case 0x0A:\n            VtCCTypeData = create(VtCCType);\n            VtCCType.set('code', o.code);\n            VtCCType.set('len', o.len);\n            VtCCType.set('VtCC', o.data);\n            break;\n            //PtCC30\n        case 0x0B:\n            PtCC30TypeData = create(PtCC30Type);\n            PtCC30Type.set('code', o.code);\n            PtCC30Type.set('len', o.len);\n            PtCC30Type.set('PtCC30', o.data);\n            break;\n            //PtCC60\n        case 0x0C:\n            PtCC60TypeData = create(PtCC60Type);\n            PtCC60Type.set('code', o.code);\n            PtCC60Type.set('len', o.len);\n            PtCC60Type.set('PtCC60', o.data);\n            break;\n            //PtCC80\n        case 0x0D:\n            PtCC80TypeData = create(PtCC80Type);\n            PtCC80Type.set('code', o.code);\n            PtCC80Type.set('len', o.len);\n            PtCC80Type.set('PtCC80', o.data);\n            break;\n        default:\n            break;\n    }\n})\nvar dataType = Buffer(0);\nif (allTypeData !== null) {\n    dataType = Buffer.concat([dataType, allTypeData])\n}\nif (SNTypeData !== null) {\n    dataType = Buffer.concat([dataType, SNTypeData])\n}\nif (enTypeData !== null) {\n    dataType = Buffer.concat([dataType, enTypeData])\n}\nif (VtCCTypeData !== null) {\n    dataType = Buffer.concat([dataType, VtCCTypeData])\n}\nif (PtCC30TypeData !== null) {\n    dataType = Buffer.concat([dataType, PtCC30TypeData])\n}\nif (PtCC60TypeData !== null) {\n    dataType = Buffer.concat([dataType, PtCC60TypeData])\n}\nif (PtCC80TypeData !== null) {\n    dataType = Buffer.concat([dataType, PtCC80TypeData])\n}\n//\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head, ACKData, dataType])));\nvar data = Buffer.concat([head, ACKData, dataType, crcData]);\nvar sendMsg = {\n    payload: data\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1078,
+        "y": 669,
+        "wires": [
+            [
+                "e9522394.16ade",
+                "9bec2dd7.6413d"
+            ]
+        ]
+    },
+    {
+        "id": "c48627b2.3b79d8",
+        "type": "inject",
+        "z": "71731180.8e8cf",
+        "name": "updateDisplay",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "x": 263,
+        "y": 1906,
+        "wires": [
+            [
+                "817bf91d.7e8408"
+            ]
+        ]
+    },
+    {
+        "id": "bedc9c4f.41236",
+        "type": "file in",
+        "z": "ce416712.31be98",
+        "name": "",
+        "filename": "/home/pi/.node-red/db.json",
+        "format": "utf8",
+        "x": 278,
+        "y": 292,
+        "wires": [
+            [
+                "49a7066a.b658f8"
+            ]
+        ]
+    },
+    {
+        "id": "49a7066a.b658f8",
+        "type": "json",
+        "z": "ce416712.31be98",
+        "name": "",
+        "x": 520,
+        "y": 292,
+        "wires": [
+            [
+                "844499a7.7bbb68"
+            ]
+        ]
+    },
+    {
+        "id": "844499a7.7bbb68",
+        "type": "function",
+        "z": "ce416712.31be98",
+        "name": "packData",
+        "func": "var date = new Date();\nvar hourOffset = global.get(\"hourOffset\")||0;\nvar minOffset = global.get(\"minOffset\")||0;\nvar count = global.get(\"count\");\nvar mk = global.get(\"mock\");\nvar mock = (date.getHours() + hourOffset) * 60 + date.getMinutes() + minOffset;\nif(mk){\n    mock = global.get(\"time\") + (global.get(\"collectTick\")%5);\n    /*if(++count === 5){\n        global.set(\"count\",0);\n    }else{\n        global.set(\"count\",count);\n    }*/\n}\n\nvar data = msg.payload.all[mock];\n\nif(data.Dirt == 0x10){\n\treturn {\n\t    payload:{\n\t        display: \"ToUser: \" + ((data.Vt*data.Ic)/100000).toFixed(2)+ \"Kw\",\n\t        chart:{\n\t            topic:\"toUser\",\n\t            payload: (data.Vt*data.Ic)/100\n\t        }\n\t    }\n\t};\n}else{\n\treturn {\n\t    payload:{\n\t        display: \"ToGrid: \" + ((data.Vt*data.Ic)/100000).toFixed(2) + \"Kw\",\n            chart:{\n                topic:\"toGrid\",\n                payload: (data.Vt*data.Ic)/100\n            }\t        \n\t    }\n\t    \n\t};\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 725,
+        "y": 296,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "817bf91d.7e8408",
+        "type": "subflow:ce416712.31be98",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "x": 532,
+        "y": 1903,
+        "wires": [
+            [
+                "53b87bb7.ac4784",
+                "e998cd14.16673"
+            ]
+        ]
+    },
+    {
+        "id": "c0065d96.3ff9a",
+        "type": "ui_text",
+        "z": "71731180.8e8cf",
+        "group": "88e4c6bf.771b38",
+        "order": 1,
+        "width": "",
+        "height": "",
+        "name": "STATUS:",
+        "label": "",
+        "format": "{{msg.payload.status}}",
+        "layout": "row-right",
+        "x": 1258,
+        "y": 1252,
+        "wires": []
+    },
+    {
+        "id": "d14a4fc.f2eb5b",
+        "type": "ui_button",
+        "z": "71731180.8e8cf",
+        "name": "RESET",
+        "group": "88e4c6bf.771b38",
+        "order": 4,
+        "width": "",
+        "height": "",
+        "label": "Reset",
+        "color": "",
+        "icon": "fa-refresh",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 239,
+        "y": 1290,
+        "wires": [
+            [
+                "445e6ca2.bba194",
+                "da5aa7b8.25a558",
+                "3ce7e79.e0eb518"
+            ]
+        ]
+    },
+    {
+        "id": "a4fc586d.5b03a8",
+        "type": "function",
+        "z": "a41a2f9a.5be5d",
+        "name": "updateSRC",
+        "func": "global.set(\"src\",msg.payload.src);\nreturn {payload:{src:msg.payload.src,dst:msg.payload.dst}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 883,
+        "y": 634,
+        "wires": [
+            [
+                "d890a56a.276f58"
+            ]
+        ]
+    },
+    {
+        "id": "d890a56a.276f58",
+        "type": "file",
+        "z": "a41a2f9a.5be5d",
+        "name": "",
+        "filename": "/home/pi/.node-red/route.json",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1131,
+        "y": 636,
+        "wires": []
+    },
+    {
+        "id": "445e6ca2.bba194",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "resetPairInfo",
+        "func": "global.set(\"src\",null);\nreturn {payload:{src:null,dst:global.get(\"dst\")}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 464,
+        "y": 1295,
+        "wires": [
+            [
+                "3f1b0e8b.c0e4f2"
+            ]
+        ]
+    },
+    {
+        "id": "3f1b0e8b.c0e4f2",
+        "type": "file",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "filename": "/home/pi/.node-red/route.json",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 708,
+        "y": 1291,
+        "wires": []
+    },
+    {
+        "id": "5c72d506.a38d2c",
+        "type": "inject",
+        "z": "71731180.8e8cf",
+        "name": "init",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 204,
+        "y": 1504,
+        "wires": [
+            [
+                "fae54543.051ab8",
+                "6b08da25.32f234",
+                "d6e9292e.50ca58",
+                "85a157d5.591ee8",
+                "ec31fc2f.b4117"
+            ]
+        ]
+    },
+    {
+        "id": "fae54543.051ab8",
+        "type": "subflow:ff7a6ff2.00859",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "x": 432,
+        "y": 1496,
+        "wires": [
+            [
+                "85d490a6.7a2b7",
+                "d0dce63f.2f2318"
+            ]
+        ]
+    },
+    {
+        "id": "85d490a6.7a2b7",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "setGlobalEnv",
+        "func": "global.set(\"src\",msg.payload.src);\nglobal.set(\"dst\",msg.payload.dst);\nglobal.set(\"mock\",false);\nglobal.set(\"count\",0);",
+        "outputs": "0",
+        "noerr": 0,
+        "x": 660,
+        "y": 1493,
+        "wires": []
+    },
+    {
+        "id": "20eeb608.df114a",
+        "type": "ui_chart",
+        "z": "71731180.8e8cf",
+        "name": "Energy",
+        "group": "88e4c6bf.771b38",
+        "order": 3,
+        "width": "7",
+        "height": "4",
+        "label": "电量趋势(天)",
+        "chartType": "line",
+        "xformat": "HH:mm:ss",
+        "interpolate": "cardinal",
+        "nodata": "load data...",
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "x": 1065,
+        "y": 1968,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "53b87bb7.ac4784",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "showGauge",
+        "func": "return {topic:msg.payload.chart.topic,payload:msg.payload.chart.topic === \"toUser\" ? msg.payload.chart.payload : -msg.payload.chart.payload};",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 812,
+        "y": 1877,
+        "wires": [
+            [
+                "6e8460a4.917ba"
+            ]
+        ]
+    },
+    {
+        "id": "da5aa7b8.25a558",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "updateStatus-Reset",
+        "func": "return {payload:{status:\"disconnected\"}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 574,
+        "y": 1238,
+        "wires": [
+            [
+                "c0065d96.3ff9a"
+            ]
+        ]
+    },
+    {
+        "id": "8543562b.7abca8",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "updateStatus-Pair",
+        "func": "var sendMsg = {payload:{status:null}};\nif(msg.payload.type === \"setPair\"){\n    sendMsg.payload.status = \"pairing\";\n}else if(msg.payload.type === \"exitPair\"){\n    sendMsg.payload.status = \"connected\";\n}else{\n    sendMsg.payload.status = \"unkwnow\";\n}\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 617,
+        "y": 1144,
+        "wires": [
+            [
+                "c0065d96.3ff9a"
+            ]
+        ]
+    },
+    {
+        "id": "d0dce63f.2f2318",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "updateStatus-init",
+        "func": "if(msg.payload.src === null){\n    return {payload:{status:\"disconnected\"}};\n}else{\n    return {payload:{status:\"connected\"}};\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 666,
+        "y": 1412,
+        "wires": [
+            [
+                "c0065d96.3ff9a"
+            ]
+        ]
+    },
+    {
+        "id": "6e8460a4.917ba",
+        "type": "ui_gauge",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "group": "88e4c6bf.771b38",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "电量(负:发电；正:取电)",
+        "label": "Watt",
+        "format": "{{value}}",
+        "min": "-6000",
+        "max": "6000",
+        "x": 1068,
+        "y": 1838,
+        "wires": []
+    },
+    {
+        "id": "e998cd14.16673",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "showChart",
+        "func": "return {topic:msg.payload.chart.topic,payload:msg.payload.chart.payload};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 821,
+        "y": 1969,
+        "wires": [
+            [
+                "20eeb608.df114a"
+            ]
+        ]
+    },
+    {
+        "id": "2c66e340.d6760c",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 825,
+        "y": 633,
+        "wires": []
+    },
+    {
+        "id": "6b08da25.32f234",
+        "type": "ui_numeric",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "label": "HourOffset",
+        "group": "22ee73e1.b6d2fc",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "topic": "",
+        "format": "{{value}}",
+        "min": "-12",
+        "max": "12",
+        "x": 428,
+        "y": 1544,
+        "wires": [
+            [
+                "3b021ff6.27a32"
+            ]
+        ]
+    },
+    {
+        "id": "d6e9292e.50ca58",
+        "type": "ui_numeric",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "label": "MinuteOffset",
+        "group": "22ee73e1.b6d2fc",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "topic": "",
+        "format": "{{value}}",
+        "min": "-59",
+        "max": "59",
+        "x": 425,
+        "y": 1605,
+        "wires": [
+            [
+                "6354ee94.ca3bd"
+            ]
+        ]
+    },
+    {
+        "id": "85a157d5.591ee8",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 409,
+        "y": 1406,
+        "wires": []
+    },
+    {
+        "id": "6e247036.3b061",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "setHourOffset",
+        "func": "global.set(\"hourOffset\",msg.payload);\nreturn {payload:global.get(\"hourOffset\")};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 879,
+        "y": 1542,
+        "wires": [
+            [
+                "4f98f757.38d778"
+            ]
+        ]
+    },
+    {
+        "id": "a58e6961.e77128",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "setMinOffset",
+        "func": "global.set(\"minOffset\",msg.payload);\nreturn {payload:global.get(\"minOffset\")};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 872,
+        "y": 1604,
+        "wires": [
+            [
+                "4f98f757.38d778"
+            ]
+        ]
+    },
+    {
+        "id": "4f98f757.38d778",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[Offset]",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 1115,
+        "y": 1578,
+        "wires": []
+    },
+    {
+        "id": "3b021ff6.27a32",
+        "type": "delay",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 590,
+        "y": 1544,
+        "wires": [
+            [
+                "6e247036.3b061"
+            ]
+        ]
+    },
+    {
+        "id": "6354ee94.ca3bd",
+        "type": "delay",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 594,
+        "y": 1607,
+        "wires": [
+            [
+                "a58e6961.e77128"
+            ]
+        ]
+    },
+    {
+        "id": "7446dd27.fd9d04",
+        "type": "ui_dropdown",
+        "z": "71731180.8e8cf",
+        "name": "选择模拟场景",
+        "label": "选择模拟场景",
+        "group": "22ee73e1.b6d2fc",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "纯顺流",
+                "value": "0"
+            },
+            {
+                "label": "纯逆流",
+                "value": "1"
+            },
+            {
+                "label": "算法顺流-权值1",
+                "value": "2"
+            },
+            {
+                "label": "算法逆流-权值1",
+                "value": "3"
+            },
+            {
+                "label": "算法顺流-权值1.2",
+                "value": "4"
+            },
+            {
+                "label": "算法逆流-权值0.8",
+                "value": "5"
+            },
+            {
+                "label": "无效",
+                "value": "6"
+            }
+        ],
+        "payload": "",
+        "topic": "option",
+        "x": 138,
+        "y": 2202,
+        "wires": [
+            [
+                "c15e5a04.ed05d8",
+                "24c116e8.b1784a"
+            ]
+        ]
+    },
+    {
+        "id": "fb468bc4.8f8d78",
+        "type": "file in",
+        "z": "58b44a2.7215bb4",
+        "name": "",
+        "filename": "/home/pi/.node-red/db.json",
+        "format": "utf8",
+        "x": 360,
+        "y": 221,
+        "wires": [
+            [
+                "141969a4.4c1666"
+            ]
+        ]
+    },
+    {
+        "id": "141969a4.4c1666",
+        "type": "json",
+        "z": "58b44a2.7215bb4",
+        "name": "",
+        "x": 573,
+        "y": 103,
+        "wires": [
+            [
+                "138e0d53.f13cd3"
+            ]
+        ]
+    },
+    {
+        "id": "138e0d53.f13cd3",
+        "type": "function",
+        "z": "58b44a2.7215bb4",
+        "name": "mockTime",
+        "func": "var all = msg.payload.all;\n\nvar pureFairStartTime = [];\nvar pureUnfairStartTime = [];\nvar fairW1StartTime = [];\nvar unfairW1StartTime = [];\nvar fairW1Dot2StartTime = [];\nvar unFair0Dot8StartTime = [];\nvar invalidStartTime = [];\n\n/**\n*\n**/\nvar whichModeStartTime = function (index) {\n\tvar value = 0;\n\tfor (var i = 2; i < 5; i++) {\n\t\tif (index + i >= all.length) {\n\t\t\treturn null;\n\t\t} else {\n\t\t\tvalue += all[index + i].Dirt;\n\t\t}\n\t}\n\tswitch (value) {\n\tcase 0x30:\n\t\tif (all[index].Dirt === 0x10 && all[index + 1].Dirt === 0x10) {\n\t\t\tpureFairStartTime.push(all[index].time);\n\t\t} else if (all[index + 1].Dirt === 0x10) {\n\t\t\tfairW1StartTime.push(all[index].time);\n\t\t} else {\n\t\t\tfairW1Dot2StartTime.push(all[index].time);\n\t\t}\n\t\tbreak;\n\tcase 0x33:\n\t\tif (all[index].Dirt === 0x11 && all[index + 1].Dirt === 0x11) {\n\t\t\tpureUnfairStartTime.push(all[index].time);\n\t\t} else if (all[index + 1].Dirt === 0x11) {\n\t\t\tunfairW1StartTime.push(all[index].time);\n\t\t} else {\n\t\t\tunFair0Dot8StartTime.push(all[index].time);\n\t\t}\n\t\tbreak;\n\tdefault:\n\t\tinvalidStartTime.push(all[index].time);\n\t\tbreak;\n\t}\n};\n\nfor (var i = 0; i < all.length; i++) {\n\twhichModeStartTime(i);\n}\n\nvar mock = {\n    \"pureFair\": pureFairStartTime,\n    \"pureUnfair\": pureUnfairStartTime,\n    \"fairW1\": fairW1StartTime,\n    \"unFairW1\": unfairW1StartTime,\n    \"fairW12\": fairW1Dot2StartTime,\n    \"unFairW08\": unFair0Dot8StartTime,\n    \"invalid\": invalidStartTime\n};\nreturn {payload:mock};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 678,
+        "y": 222,
+        "wires": [
+            [
+                "ee638e7f.9cdda"
+            ]
+        ]
+    },
+    {
+        "id": "ee638e7f.9cdda",
+        "type": "file",
+        "z": "58b44a2.7215bb4",
+        "name": "",
+        "filename": "/home/pi/.node-red/mock.json",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 938,
+        "y": 224,
+        "wires": []
+    },
+    {
+        "id": "ec31fc2f.b4117",
+        "type": "subflow:58b44a2.7215bb4",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "x": 353,
+        "y": 1664,
+        "wires": []
+    },
+    {
+        "id": "c15e5a04.ed05d8",
+        "type": "file in",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "filename": "/home/pi/.node-red/mock.json",
+        "format": "utf8",
+        "x": 419,
+        "y": 2169,
+        "wires": [
+            [
+                "dfbe6ea.2b4e49"
+            ]
+        ]
+    },
+    {
+        "id": "dfbe6ea.2b4e49",
+        "type": "json",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "x": 621,
+        "y": 2103,
+        "wires": [
+            [
+                "1a9c4ace.08de95"
+            ]
+        ]
+    },
+    {
+        "id": "24c116e8.b1784a",
+        "type": "join",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "timeout": "",
+        "count": "2",
+        "x": 719,
+        "y": 2243,
+        "wires": [
+            [
+                "892cf0a5.38e44"
+            ]
+        ]
+    },
+    {
+        "id": "1a9c4ace.08de95",
+        "type": "change",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "mock",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 774,
+        "y": 2165,
+        "wires": [
+            [
+                "24c116e8.b1784a"
+            ]
+        ]
+    },
+    {
+        "id": "892cf0a5.38e44",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "option",
+        "func": "var _ = context.global._;\n\nvar option = msg.payload.option;\nvar mock = msg.payload.mock;\n\nvar time = null;\nswitch(option){\n    case '0':\n        time = mock.pureFair[_.random(0,mock.pureFair.length)];\n        global.set(\"mock\",true);\n        break;\n    case '1':\n        time = mock.pureUnfair[_.random(0,mock.pureUnfair.length)];\n        global.set(\"mock\",true);\n        break;\n    case '2':\n        time = mock.fairW1[_.random(0,mock.fairW1.length)];\n        global.set(\"mock\",true);\n        break;\n    case '3':\n        time = mock.unFairW1[_.random(0,mock.unFairW1.length)];\n        global.set(\"mock\",true);\n        break;\n    case '4':\n        time = mock.fairW12[_.random(0,mock.fairW12.length)];\n        global.set(\"mock\",true);\n        break;\n    case '5':\n        time = mock.unFairW08[_.random(0,mock.unFairW08.length)];\n        global.set(\"mock\",true);\n        break;        \n    case '6':\n        //time = mock.invalid[_.random(0,mock.invalid)];\n        global.set(\"mock\",false);\n        break;\n    default:\n        global.set(\"mock\",false);\n        break;\n}\nglobal.set(\"time\",time);\nglobal.set(\"count\",0);\n/*//if (time) {\n    var date = new Date();\n    var currentHour = date.getHours();\n    var currentMin = date.getMinutes();\n    var hour = (time/60)|0;\n    var min = time%60;\n    global.set(\"hourOffset\",hour - currentHour);\n    global.set(\"minOffset\",min - currentMin);\n//}*/\nreturn {payload:time};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 910,
+        "y": 2241,
+        "wires": [
+            [
+                "817bf91d.7e8408",
+                "db7ce3b2.cbb06"
+            ]
+        ]
+    },
+    {
+        "id": "db7ce3b2.cbb06",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1007,
+        "y": 2351,
+        "wires": []
+    },
+    {
+        "id": "2f7bb553.0a6e9a",
+        "type": "ui_text",
+        "z": "71731180.8e8cf",
+        "group": "70ee527e.728c0c",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "采集统计",
+        "label": "采集次数：",
+        "format": "{{msg.payload.tick}}",
+        "layout": "row-spread",
+        "x": 1220,
+        "y": 324,
+        "wires": []
+    },
+    {
+        "id": "e5fbd923.fdbda8",
+        "type": "ui_text",
+        "z": "71731180.8e8cf",
+        "group": "70ee527e.728c0c",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "name": "功率目标",
+        "label": "期望功率：",
+        "format": "{{msg.payload.power}}",
+        "layout": "row-spread",
+        "x": 1464,
+        "y": 253,
+        "wires": []
+    },
+    {
+        "id": "29c62ac4.3e2e76",
+        "type": "ui_switch",
+        "z": "71731180.8e8cf",
+        "name": "调功窗口",
+        "label": "是否调功：",
+        "group": "70ee527e.728c0c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "check",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "close",
+        "offcolor": "red",
+        "x": 1478,
+        "y": 519,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6544a2e8.b412bc",
+        "type": "inject",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "topic": "",
+        "payload": "{\"data\":{\"codes\":[0]}}",
+        "payloadType": "json",
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "x": 592,
+        "y": 425,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c27538c1.c40ef8",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "func": "return {payload:{tick:global.get(\"collectTick\"),data:global.get(\"collectData\"),time:global.get(\"time\"),mock:global.get(\"mock\")}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 469,
+        "y": 192,
+        "wires": [
+            [
+                "7fa9325a.5aee2c"
+            ]
+        ]
+    },
+    {
+        "id": "e181e940.e5e638",
+        "type": "inject",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 258,
+        "y": 197,
+        "wires": [
+            [
+                "c27538c1.c40ef8"
+            ]
+        ]
+    },
+    {
+        "id": "7fa9325a.5aee2c",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 686,
+        "y": 188,
+        "wires": []
+    },
+    {
+        "id": "3ce7e79.e0eb518",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "resetTick",
+        "func": "global.set(\"collectTick\",0);\nglobal.set(\"collectData\",[]);\n\nreturn {payload:{isPowerAdjust:false,power:\"currentPower\",tick:0}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 522,
+        "y": 302,
+        "wires": [
+            [
+                "2f7bb553.0a6e9a",
+                "e5fbd923.fdbda8",
+                "a3ea8989.bf16f8",
+                "188004e6.e450cb"
+            ]
+        ]
+    },
+    {
+        "id": "301fe15a.2d7b2e",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "prehandle",
+        "func": "const CNT_HEAD_LEN = 29;\nconst CNT_DATA_LEN_INDEX = 27;\nconst CNT_CRC_LEN = 2;\n\nvar buf = global.get(\"buf\") || [];\n\n/**\n * [packageParser description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar packageParser = function (msg) {\n    var packLen = msg.payload.length;\n    var cursor = 0;\n    while (packLen >= CNT_HEAD_LEN) {\n        var len = msg.payload.slice(cursor, cursor + CNT_HEAD_LEN).readUInt16BE(CNT_DATA_LEN_INDEX) + CNT_CRC_LEN + CNT_HEAD_LEN;\n        if (packLen >= len) {\n            //console.log(msg.payload.slice(cursor, cursor + len));\n            node.send({payload:msg.payload.slice(cursor, cursor + len)});\n            packLen -= len;\n            cursor += len;\n        } else {\n            buf.push(msg.payload.slice(cursor, msg.payload.length));\n            packLen = 0; \n        }\n    }\n    buf.push(msg.payload.slice(cursor, msg.payload.length));\n};\n/**\n * [prehandle description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar prehandle = function (msg) {\n    if (msg.payload) {\n        if (msg.payload[0] === 0x52 && msg.payload[1] === 0x46) {\n            if (msg.payload.length < CNT_HEAD_LEN) {\n                buf.push(msg.payload);\n            } else {\n                packageParser(msg);\n            }\n        } else {\n            if (buf.length !== 0) {\n                msg.payload = Buffer.concat([buf[0], msg.payload]);\n                buf = [];\n                packageParser(msg);\n            } else {\n                node.warn(\"invalid package\");\n                //console.log(\"invalid package!\");\n            }\n        }\n    }\n};\n\nprehandle(msg);\nglobal.set(\"buf\",buf);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 170,
+        "y": 543,
+        "wires": [
+            [
+                "54301188.abcff",
+                "421da9a.34cf358"
+            ]
+        ]
+    },
+    {
+        "id": "d679c013.f8ae5",
+        "type": "ui_text",
+        "z": "71731180.8e8cf",
+        "group": "70ee527e.728c0c",
+        "order": 0,
+        "width": "7",
+        "height": "3",
+        "name": "采集数据",
+        "label": "采集数据：",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1488,
+        "y": 381,
+        "wires": []
+    },
+    {
+        "id": "e44bad30.da43",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "Debug[setHBACK]",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1086,
+        "y": 626,
+        "wires": []
+    },
+    {
+        "id": "421da9a.34cf358",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 315,
+        "y": 413,
+        "wires": []
+    },
+    {
+        "id": "f33c853.6e66678",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_down-flow_success",
+        "filename": "/home/pi/.node-red/db_down-flow_success.json",
+        "format": "utf8",
+        "x": 256.2000427246094,
+        "y": 139.20001220703125,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cac8489f.872aa8",
+        "type": "debug",
+        "z": "5d48653e.a2b79c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1032.6999816894531,
+        "y": 296.4000244140625,
+        "wires": []
+    },
+    {
+        "id": "6bac89dc.acf408",
+        "type": "inject",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 190.20001220703125,
+        "y": 2479.400146484375,
+        "wires": [
+            [
+                "c33964d7.b62148"
+            ]
+        ]
+    },
+    {
+        "id": "c33964d7.b62148",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "reset_collectTick",
+        "func": "global.set(\"collectTick\",0);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 471.2000274658203,
+        "y": 2479.2001953125,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "175f5279.939cae",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_down-flow_case2",
+        "filename": "/home/pi/.node-red/db_down-flow_case2.json",
+        "format": "utf8",
+        "x": 254.2000274658203,
+        "y": 179.19999313354492,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3191115.cdd1f",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case2",
+        "filename": "/home/pi/.node-red/db_contra-flow_case2.json",
+        "format": "utf8",
+        "x": 254.20004272460938,
+        "y": 215.20000839233398,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "95051895.cddb68",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "enpool",
+        "func": "var ad_power = function(sample,factor,cb){\n    var sumDir = sample[2].dirt+sample[3].dirt+sample[4].dirt;\n    var allDir = sumDir + sample[0].dirt + sample[1].dirt;\n    var sumPower = sample[2].power + sample[3].power + sample[4].power;\n    var allPower = sumPower + sample[0].power + sample[1].power;\n    var re = sample[1].dirt^sample[2].dirt;\n    //sumPower = context.global._.floor(sumPower,2);\n    //allPower = context.global._.floor(allPower,2);\n    var adPower = \"currentPower\";\n    switch(sumDir){\n        case 0x33:\n            adPower = allDir ===0x55? (adPower+ \"+\" + context.global._.floor(allPower/5,2)): \n                    (adPower+ \"+\" + context.global._.floor(sumPower/3*(1-re*factor),2));\n            cb(true,adPower);\n            break;\n        case 0x30:\n            adPower = allDir ===0x50? (adPower + \"-\" + context.global._.floor(allPower/5,2)):\n                    (adPower+\"-\"+ context.global._.floor(sumPower/3*(1+re*factor),2));\n            cb(true,adPower);\n            break;\n        default:\n            cb(false,adPower);\n            break;\n    }\n}\nvar sendMsg = {payload:{\n    isPowerAdjust:false,\n    power: \"currentPower\"\n}};\nvar factor = global.get(\"factor\")||0.1;\nvar dirt = msg.payload.data[0].data.Dirt;\nvar Vt = msg.payload.data[0].data.Vt;\nvar Ic = msg.payload.data[0].data.Ic;\nvar power = Vt*Ic/100;\nvar data = {dirt:dirt,power:power};\nvar pool = global.get(\"collectData\")||[];\npool.push(data);\nglobal.set(\"collectData\",pool);\nif(pool.length === 5){\n    ad_power(pool,factor,function(isAdjust,value,re){\n        sendMsg.payload.isPowerAdjust = isAdjust;\n        sendMsg.payload.power = value;\n        if(isAdjust){\n            pool = [];\n            global.set(\"collectData\",[]);\n            global.set(\"isPowerAdjust\",true);\n        }else{\n            pool.shift();\n            global.set(\"collectData\",pool);\n        }\n    })\n}\nreturn sendMsg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1101,
+        "y": 450,
+        "wires": [
+            [
+                "a3ea8989.bf16f8",
+                "863b3f33.38b13",
+                "e5fbd923.fdbda8"
+            ]
+        ]
+    },
+    {
+        "id": "a3ea8989.bf16f8",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "isPowerAdjust",
+        "func": "return {payload:msg.payload.isPowerAdjust};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1260,
+        "y": 512,
+        "wires": [
+            [
+                "29c62ac4.3e2e76"
+            ]
+        ]
+    },
+    {
+        "id": "863b3f33.38b13",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "showDataPool",
+        "func": "var data = global.get(\"collectData\");\nvar pool =[];\ndata.forEach(function(item,index,arr){\n   pool.push(item.dirt===0x10?\"+\"+item.power:\"-\"+item.power); \n});\nreturn {payload:pool};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1311,
+        "y": 441,
+        "wires": [
+            [
+                "d679c013.f8ae5"
+            ]
+        ]
+    },
+    {
+        "id": "21662f7f.24fb5",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "getTick",
+        "func": "var tick =(global.get(\"collectTick\")||0) + 1;\nglobal.set(\"collectTick\",tick);\nreturn {payload:{tick:tick}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1005,
+        "y": 394,
+        "wires": [
+            [
+                "2f7bb553.0a6e9a"
+            ]
+        ]
+    },
+    {
+        "id": "188004e6.e450cb",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "resetPool",
+        "func": "\nreturn {payload:[]};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 893,
+        "y": 352,
+        "wires": [
+            [
+                "d679c013.f8ae5"
+            ]
+        ]
+    },
+    {
+        "id": "5b34869f.671d68",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case3",
+        "filename": "/home/pi/.node-red/db_down-flow_case3.json",
+        "format": "utf8",
+        "x": 254.2000274658203,
+        "y": 250.20000839233398,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d317ae63.3266f",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case4",
+        "filename": "/home/pi/.node-red/db_down-flow_case4.json",
+        "format": "utf8",
+        "x": 254.2000274658203,
+        "y": 286.20002365112305,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7f9a218.a00e4",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case5",
+        "filename": "/home/pi/.node-red/db_down-flow_case5.json",
+        "format": "utf8",
+        "x": 252.2000274658203,
+        "y": 322.20002365112305,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ab3a75df.c11888",
+        "type": "inject",
+        "z": "71731180.8e8cf",
+        "name": "testQueryACK",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 1362,
+        "y": 631,
+        "wires": [
+            [
+                "abc33d5.13551c"
+            ]
+        ]
+    },
+    {
+        "id": "abc33d5.13551c",
+        "type": "function",
+        "z": "71731180.8e8cf",
+        "name": "mockQueryAll",
+        "func": "var buf = new Buffer(\"5246010100b0112233445566778899019988776655443322110260001f000000001a00010000089d0000006a00007584000001fa0000038a0000038a\",'hex')\n\nreturn {payload:buf};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1597,
+        "y": 631,
+        "wires": [
+            [
+                "8edc2750.e9f908",
+                "e9522394.16ade"
+            ]
+        ]
+    },
+    {
+        "id": "8edc2750.e9f908",
+        "type": "debug",
+        "z": "71731180.8e8cf",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1769,
+        "y": 632,
+        "wires": []
+    },
+    {
+        "id": "67c77b31.13a474",
+        "type": "function",
+        "z": "5d48653e.a2b79c",
+        "name": "packageGetRFCTData_test",
+        "func": "var CONST_LEN_QUERY_CODE = 2;\nvar CONST_LEN_QUERY_DATA_LEN = 2;\n\nvar hourOffset = global.get(\"hourOffset\")||0;\nvar minOffset = global.get(\"minOffset\")||0;\nvar count = global.get(\"count\");\nvar mk = global.get(\"mock\");\nvar len = 0;\nvar date = new Date();\nvar mock = global.get(\"collectTick\");\nif(mock === null || mock ===undefined){\n    mock = 0;\n}\nvar sendMsg = {\n    payload: {\n        type: \"success\",\n        seq: msg.payload.seq,\n        src: msg.payload.src,\n        dst: msg.payload.dst,\n        funcCode: msg.payload.funcCode,\n        dataLen: null,\n        data: []\n    }\n};\ncontext.global._.forEach(msg.payload.data.codes, function(e) {\n    switch (e) {\n        //all\n        case 0x00:\n            var tempData = {\n    \t\t\t\"time\" : 0,\n    \t\t\t\"Vt\" : 2300,\n    \t\t\t\"Ic\" : 0,\n    \t\t\t\"Ft\" : 0,\n    \t\t\t\"Dirt\" : 17,\n    \t\t\t\"Pt\" : 0,\n    \t\t\t\"LN\" : 16,\n    \t\t\t\"ToGrid\" : 0,\n    \t\t\t\"ToUser\" : 0\n    \t\t};\n            if(mock < msg.payload.all.length){\n                tempData = msg.payload.all[mock];\n            }\n            if(tempData.Dirt === 17){\n                console.log(\"mock=\"+ mock+ \", power = -\" + (tempData.Vt* tempData.Ic)/100);\n            }\n            else{\n                 console.log(\"mock=\"+ mock+ \", power = +\" + (tempData.Vt* tempData.Ic)/100);\n            }\n            sendMsg.payload.data.push({\n                code: e,\n                len: 26,\n                data: tempData\n            });\n            len += 26 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            //SN\n        case 0x01:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 10,\n                data: msg.payload.SN\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // total energy\n        case 0x03:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.en[mock]\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // VtCC\n        case 0x0A:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.VtCC\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC30\n        case 0x0B:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC30\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC60\n        case 0x0C:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC60\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC80\n        case 0x0D:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC80\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;        \n        default:\n            sendMsg.payload.type = \"fail\";\n            sendMsg.payload.data = {\n                code: 2,\n                msg: \"invalid function code!\"\n            };\n            break;\n    }\n});\nsendMsg.payload.dataLen = len + 1;\n\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 736.2000274658203,
+        "y": 293.2000274658203,
+        "wires": [
+            [
+                "cac8489f.872aa8"
+            ]
+        ]
+    },
+    {
+        "id": "6a400bc0.67b094",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case6",
+        "filename": "/home/pi/.node-red/db_down-flow_case6.json",
+        "format": "utf8",
+        "x": 251.20001220703125,
+        "y": 356.20002365112305,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d8505ca.f1f29a",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case7",
+        "filename": "/home/pi/.node-red/db_down-flow_case7.json",
+        "format": "utf8",
+        "x": 248.20004272460938,
+        "y": 393.2000274658203,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79a976b6.aae678",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case_all",
+        "filename": "/home/pi/.node-red/db_down-flow_case_all.json",
+        "format": "utf8",
+        "x": 254.20001220703125,
+        "y": 430.2000274658203,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "347c1a1c.d92636",
+        "type": "inject",
+        "z": "7b3e6f66.affe2",
+        "name": "轮询",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "x": 55,
+        "y": 1103.3054819107056,
+        "wires": [
+            [
+                "e90f7a3d.1fa608"
+            ]
+        ]
+    },
+    {
+        "id": "89b93650.993c78",
+        "type": "ui_numeric",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "label": "设置温度",
+        "group": "165b6aa9.1b4fb5",
+        "order": 12,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "topic": "",
+        "format": "{{value}}",
+        "min": "5",
+        "max": "35",
+        "step": "0.5",
+        "x": 1911.4998474121094,
+        "y": 945.0554695129395,
+        "wires": [
+            [
+                "7c95339.260e2cc"
+            ]
+        ]
+    },
+    {
+        "id": "ffc378d3.6caf28",
+        "type": "ui_gauge",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "165b6aa9.1b4fb5",
+        "order": 4,
+        "width": "7",
+        "height": "5",
+        "gtype": "donut",
+        "title": "当前温度",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "5",
+        "max": "35",
+        "colors": [
+            "#0080ff",
+            "#00b500",
+            "#ff8040"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1825.4998474121094,
+        "y": 697.0554695129395,
+        "wires": []
+    },
+    {
+        "id": "c1d8af6d.c287f",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "165b6aa9.1b4fb5",
+        "order": 11,
+        "width": "3",
+        "height": "1",
+        "label": "外出",
+        "color": "",
+        "bgcolor": "red",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 465.8958740234375,
+        "y": 191.888916015625,
+        "wires": [
+            [
+                "142ae11.08e6f1f"
+            ]
+        ]
+    },
+    {
+        "id": "d6dfe7cf.fa1c48",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "165b6aa9.1b4fb5",
+        "order": 9,
+        "width": "3",
+        "height": "1",
+        "label": "节能",
+        "color": "",
+        "bgcolor": "green",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "",
+        "x": 460.8958740234375,
+        "y": 240.888916015625,
+        "wires": [
+            [
+                "142ae11.08e6f1f"
+            ]
+        ]
+    },
+    {
+        "id": "d94d5b94.7c5198",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "165b6aa9.1b4fb5",
+        "order": 8,
+        "width": "3",
+        "height": "1",
+        "label": "舒适",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "num",
+        "topic": "",
+        "x": 463.8958740234375,
+        "y": 291.888916015625,
+        "wires": [
+            [
+                "142ae11.08e6f1f"
+            ]
+        ]
+    },
+    {
+        "id": "c851eb71.de8328",
+        "type": "ui_text",
+        "z": "7b3e6f66.affe2",
+        "group": "165b6aa9.1b4fb5",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "当前模式：",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1813.4998474121094,
+        "y": 614.0554695129395,
+        "wires": []
+    },
+    {
+        "id": "96cb596f.4fc3b8",
+        "type": "http request",
+        "z": "7b3e6f66.affe2",
+        "name": "getThermostatInfo",
+        "method": "GET",
+        "ret": "obj",
+        "url": "http://app.hailin.com:8080/hailin/api/device",
+        "tls": "",
+        "x": 443.5,
+        "y": 1103.0556030273438,
+        "wires": [
+            [
+                "7d1fd5c3.a8d97c",
+                "38c245d.a5d9cba"
+            ]
+        ]
+    },
+    {
+        "id": "e90f7a3d.1fa608",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "func": "var sendMsg = \n{\n    headers:{\n        Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"\n        \n\n}    };\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 220.75,
+        "y": 1104.0556030273438,
+        "wires": [
+            [
+                "96cb596f.4fc3b8"
+            ]
+        ]
+    },
+    {
+        "id": "d5308508.715a58",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "mode",
+        "func": "var parseMode = function(){\n  var heat_mode = msg.payload.heat_mode;\n  var mode = \"模式未运行\";\n  switch(heat_mode){\n      case 0:\n           mode =  \"模式未运行\";\n           break;\n      case 1:\n          mode =  \"外出\";\n           break;\n      case 2:\n          mode =  \"节能\";\n           break;\n      case 3:\n          mode =  \"舒适\";\n           break;\n      default:\n        break;\n  }\n  return mode;\n};\n\nreturn {payload:parseMode()};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1660.4998474121094,
+        "y": 608.0554695129395,
+        "wires": [
+            [
+                "c851eb71.de8328"
+            ]
+        ]
+    },
+    {
+        "id": "d787ae12.1df31",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "currentTemp",
+        "func": "\nreturn {payload:parseFloat(msg.payload.dis_temp.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1668.4998474121094,
+        "y": 698.0554695129395,
+        "wires": [
+            [
+                "ffc378d3.6caf28"
+            ]
+        ]
+    },
+    {
+        "id": "496654d1.99807c",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "parseMode",
+        "func": " msg.payload = { heat_mode:msg.payload, mac: \"ACCF23BF754C\" };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1014.3958740234375,
+        "y": 240.888916015625,
+        "wires": [
+            [
+                "10e77d36.8cbed3"
+            ]
+        ]
+    },
+    {
+        "id": "10e77d36.8cbed3",
+        "type": "http request",
+        "z": "7b3e6f66.affe2",
+        "name": "setMode",
+        "method": "POST",
+        "ret": "obj",
+        "url": "http://app.hailin.com:8080/hailin/api/device",
+        "tls": "",
+        "x": 1203.3958740234375,
+        "y": 238.888916015625,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46a5bcf4.38cdd4",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "parseOnoff",
+        "func": " msg.payload = { status_onoff:msg.payload, mac: \"ACCF23BF754C\" };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1718.4998474121094,
+        "y": 431.05546951293945,
+        "wires": [
+            [
+                "8d83e632.407ff8"
+            ]
+        ]
+    },
+    {
+        "id": "8d83e632.407ff8",
+        "type": "http request",
+        "z": "7b3e6f66.affe2",
+        "name": "setOnff",
+        "method": "POST",
+        "ret": "obj",
+        "url": "http://app.hailin.com:8080/hailin/api/device",
+        "tls": "",
+        "x": 1887.4998474121094,
+        "y": 431.05546951293945,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "93dd272c.46a6c8",
+        "type": "ui_switch",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "label": "开关",
+        "group": "165b6aa9.1b4fb5",
+        "order": 5,
+        "width": "7",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 1800.4998474121094,
+        "y": 557.0554695129395,
+        "wires": [
+            [
+                "46a5bcf4.38cdd4"
+            ]
+        ]
+    },
+    {
+        "id": "b339de1f.c2482",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "onoff",
+        "func": "\nreturn {payload:msg.payload.status_onoff};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1628.4998474121094,
+        "y": 557.0554695129395,
+        "wires": [
+            [
+                "93dd272c.46a6c8"
+            ]
+        ]
+    },
+    {
+        "id": "d2a5516b.72f29",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "setGlobal",
+        "func": "global.set(\"water_data\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1140.4998779296875,
+        "y": 795.0554809570312,
+        "wires": [
+            [
+                "d5308508.715a58",
+                "d787ae12.1df31",
+                "b339de1f.c2482",
+                "48f5f254.6197dc",
+                "8c3574a2.2d69c8"
+            ]
+        ]
+    },
+    {
+        "id": "142ae11.08e6f1f",
+        "type": "globalGetSet",
+        "z": "7b3e6f66.affe2",
+        "name": "getData",
+        "topic": "",
+        "context": "global",
+        "variable": "water_data",
+        "outContext": "msg",
+        "outVar": "topic",
+        "x": 661.8958740234375,
+        "y": 79.888916015625,
+        "wires": [
+            [
+                "21c1d7ea.3c13f8"
+            ]
+        ]
+    },
+    {
+        "id": "21c1d7ea.3c13f8",
+        "type": "switch",
+        "z": "7b3e6f66.affe2",
+        "name": "checkOnoff",
+        "property": "topic.status_onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 778.8958740234375,
+        "y": 236.888916015625,
+        "wires": [
+            [
+                "1622d9e6.502aa6"
+            ],
+            [
+                "496654d1.99807c"
+            ]
+        ]
+    },
+    {
+        "id": "ea43373e.b912b8",
+        "type": "ui_toast",
+        "z": "7b3e6f66.affe2",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 1044.3958740234375,
+        "y": 120.888916015625,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1622d9e6.502aa6",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "func": "\nreturn {payload:\"请先打开温控器！\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 888.3958740234375,
+        "y": 152.888916015625,
+        "wires": [
+            [
+                "ea43373e.b912b8"
+            ]
+        ]
+    },
+    {
+        "id": "48f5f254.6197dc",
+        "type": "switch",
+        "z": "7b3e6f66.affe2",
+        "name": "checkMode",
+        "property": "payload.heat_mode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 5,
+        "x": 1507.4998474121094,
+        "y": 780.0554695129395,
+        "wires": [
+            [
+                "48152014.1d6c8"
+            ],
+            [
+                "edcfe1db.9a992"
+            ],
+            [
+                "e1f1717e.cca4b"
+            ],
+            [
+                "677e6ef1.53411"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "48152014.1d6c8",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "leave",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_out.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1698.4998474121094,
+        "y": 736.0554695129395,
+        "wires": [
+            [
+                "89b93650.993c78"
+            ]
+        ]
+    },
+    {
+        "id": "edcfe1db.9a992",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "energy",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_energy.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1707.4998474121094,
+        "y": 772.0554695129395,
+        "wires": [
+            [
+                "89b93650.993c78"
+            ]
+        ]
+    },
+    {
+        "id": "e1f1717e.cca4b",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "confortable",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_comfort.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1708.4998474121094,
+        "y": 809.0554695129395,
+        "wires": [
+            [
+                "89b93650.993c78"
+            ]
+        ]
+    },
+    {
+        "id": "91616b4e.6ea0b8",
+        "type": "switch",
+        "z": "7b3e6f66.affe2",
+        "name": "checkMode",
+        "property": "topic.heat_mode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 5,
+        "x": 1939.9999084472656,
+        "y": 1072.0555000305176,
+        "wires": [
+            [],
+            [
+                "30a1561b.c8e57a"
+            ],
+            [
+                "3490618.bdf6e9e"
+            ],
+            [
+                "40f1f7a.38dd208"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7c95339.260e2cc",
+        "type": "globalGetSet",
+        "z": "7b3e6f66.affe2",
+        "name": "getData",
+        "topic": "",
+        "context": "global",
+        "variable": "water_data",
+        "outContext": "msg",
+        "outVar": "topic",
+        "x": 2041.9998474121094,
+        "y": 865.0554695129395,
+        "wires": [
+            [
+                "91616b4e.6ea0b8"
+            ]
+        ]
+    },
+    {
+        "id": "4b140e6b.2a7d8",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "leave",
+        "func": " msg.payload = { temp_out:('c'+msg.payload.toFixed(1)).toString(), mac: \"ACCF23DF8DB2\",heat_mode:1 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2189.9999084472656,
+        "y": 952.0555000305176,
+        "wires": [
+            [
+                "96629c71.1fcb3"
+            ]
+        ]
+    },
+    {
+        "id": "30a1561b.c8e57a",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "energy",
+        "func": " msg.payload = { temp_energy:('c'+msg.payload.toFixed(1)).toString(), mac: \"ACCF23BF754C\",heat_mode:2 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2141.9999084472656,
+        "y": 1042.0555000305176,
+        "wires": [
+            [
+                "96629c71.1fcb3"
+            ]
+        ]
+    },
+    {
+        "id": "3490618.bdf6e9e",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "confortable",
+        "func": " msg.payload = { temp_comfort:('c'+msg.payload.toFixed(1)).toString(), mac: \"ACCF23BF754C\" ,heat_mode:3 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2142.9999084472656,
+        "y": 1079.0555000305176,
+        "wires": [
+            [
+                "96629c71.1fcb3"
+            ]
+        ]
+    },
+    {
+        "id": "96629c71.1fcb3",
+        "type": "http request",
+        "z": "7b3e6f66.affe2",
+        "name": "setTemp",
+        "method": "POST",
+        "ret": "obj",
+        "url": "http://app.hailin.com:8080/hailin/api/device",
+        "tls": "",
+        "x": 2395.9999084472656,
+        "y": 1019.0555000305176,
+        "wires": [
+            [
+                "21bee91d.e6e336"
+            ]
+        ]
+    },
+    {
+        "id": "21bee91d.e6e336",
+        "type": "debug",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 2500.9999084472656,
+        "y": 891.0555000305176,
+        "wires": []
+    },
+    {
+        "id": "677e6ef1.53411",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "heat",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_heat.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1681.9998474121094,
+        "y": 877.0554695129395,
+        "wires": [
+            [
+                "89b93650.993c78",
+                "ed17ca9b.77fdf8"
+            ]
+        ]
+    },
+    {
+        "id": "40f1f7a.38dd208",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "heat",
+        "func": " msg.payload = { temp_heat:('c'+ msg.payload.toFixed(1)).toString(), mac: \"ACCF23BF754C\" ,heat_mode:0 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2132.9999084472656,
+        "y": 1133.0555000305176,
+        "wires": [
+            [
+                "96629c71.1fcb3",
+                "9a94c48.05f5a38"
+            ]
+        ]
+    },
+    {
+        "id": "e7d07d5d.0a437",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "165b6aa9.1b4fb5",
+        "order": 6,
+        "width": "3",
+        "height": "1",
+        "label": "自动",
+        "color": "",
+        "bgcolor": "grey",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 464.8958740234375,
+        "y": 343.888916015625,
+        "wires": [
+            [
+                "142ae11.08e6f1f"
+            ]
+        ]
+    },
+    {
+        "id": "9a94c48.05f5a38",
+        "type": "debug",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 2302.9999084472656,
+        "y": 1180.0555000305176,
+        "wires": []
+    },
+    {
+        "id": "ed17ca9b.77fdf8",
+        "type": "debug",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 1571.9998474121094,
+        "y": 950.0554695129395,
+        "wires": []
+    },
+    {
+        "id": "6d0d9e42.65697",
+        "type": "ui_text",
+        "z": "7b3e6f66.affe2",
+        "group": "165b6aa9.1b4fb5",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "加热状态：",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1818.9998474121094,
+        "y": 656.0554695129395,
+        "wires": []
+    },
+    {
+        "id": "8c3574a2.2d69c8",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "heat",
+        "func": "var parseMode = function(){\n  var heat_mode = msg.payload.status;\n  var mode = null;\n  switch(heat_mode){\n      case 2:\n           mode =  \"加热\";\n           break;\n      case 4:\n          mode =  \"关闭\";\n           break;\n      default:\n        break;\n  }\n  return mode;\n};\n\nreturn {payload:parseMode()};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1662.9998474121094,
+        "y": 659.0554695129395,
+        "wires": [
+            [
+                "6d0d9e42.65697"
+            ]
+        ]
+    },
+    {
+        "id": "248a940c.ccabac",
+        "type": "mongodb out",
+        "z": "7b3e6f66.affe2",
+        "mongodb": "4c96f49c.0d8d6c",
+        "name": "update",
+        "collection": "devices",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 811.4999694824219,
+        "y": 867.5554809570312,
+        "wires": []
+    },
+    {
+        "id": "7d1fd5c3.a8d97c",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "updateDB",
+        "func": "var sendMsg = {query:null,payload:null};\nmsg.payload.forEach(function(e){\n    node.send({query:{mac:e.mac},payload:e});\n});",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 618.4999694824219,
+        "y": 993.3054809570312,
+        "wires": [
+            [
+                "de9134fd.0e28f8",
+                "248a940c.ccabac"
+            ]
+        ]
+    },
+    {
+        "id": "de9134fd.0e28f8",
+        "type": "debug",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 820.9999694824219,
+        "y": 993.8054809570312,
+        "wires": []
+    },
+    {
+        "id": "a8266063.69c83",
+        "type": "inject",
+        "z": "c118d6ee.2b55d8",
+        "name": "热水服务",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "x": 739.8957977294922,
+        "y": 41.88888168334961,
+        "wires": [
+            [
+                "5bfad8f4.679998"
+            ]
+        ]
+    },
+    {
+        "id": "5ffee521.651ffc",
+        "type": "inject",
+        "z": "2b592821.33a798",
+        "name": "照明服务",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 140.8958282470703,
+        "y": 96.88888549804688,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ae7cdee.e8a764",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "spliter",
+        "group": "165b6aa9.1b4fb5",
+        "order": 7,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 661.0590972900391,
+        "y": 289.4062805175781,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a3a68b4.64dd68",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "spliter",
+        "group": "165b6aa9.1b4fb5",
+        "order": 10,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 817.8958587646484,
+        "y": 295.8889465332031,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f468e96c.758228",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "温控服务",
+        "group": "47909b46.fc1f74",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-thermometer-empty fa-4x",
+        "payload": "温控服务",
+        "payloadType": "str",
+        "topic": "",
+        "x": 453,
+        "y": 214,
+        "wires": [
+            [
+                "8c86eda.aec301"
+            ]
+        ]
+    },
+    {
+        "id": "28960d5b.113232",
+        "type": "ui_text",
+        "z": "c118d6ee.2b55d8",
+        "group": "c4b03950.ea8908",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "name": "工作模式",
+        "label": "工作模式：",
+        "format": "{{msg.payload.status}}",
+        "layout": "row-left",
+        "x": 1298.0000534057617,
+        "y": 229.00000762939453,
+        "wires": []
+    },
+    {
+        "id": "e171e445.a5df68",
+        "type": "ui_text",
+        "z": "c118d6ee.2b55d8",
+        "group": "c4b03950.ea8908",
+        "order": 3,
+        "width": "4",
+        "height": "1",
+        "name": "设备温度",
+        "label": "设备温度：",
+        "format": "{{msg.payload.Tp}}",
+        "layout": "row-right",
+        "x": 1296.0000534057617,
+        "y": 335.00000762939453,
+        "wires": []
+    },
+    {
+        "id": "1facac7f.21f664",
+        "type": "ui_gauge",
+        "z": "c118d6ee.2b55d8",
+        "name": "工作功率",
+        "group": "c4b03950.ea8908",
+        "order": 10,
+        "width": "7",
+        "height": "5",
+        "gtype": "donut",
+        "title": "工作功率：",
+        "label": "W",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "1000",
+        "seg2": "2000",
+        "x": 1294.9999694824219,
+        "y": 523.9999923706055,
+        "wires": []
+    },
+    {
+        "id": "e8ac669.37e9898",
+        "type": "ui_button",
+        "z": "c118d6ee.2b55d8",
+        "name": "手动",
+        "group": "c4b03950.ea8908",
+        "order": 14,
+        "width": "3",
+        "height": "1",
+        "label": "手动",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "MAN",
+        "payloadType": "str",
+        "topic": "",
+        "x": 721.0000305175781,
+        "y": 147.99998664855957,
+        "wires": [
+            [
+                "9b9c10a8.05264"
+            ]
+        ]
+    },
+    {
+        "id": "aff6a48.e0c9958",
+        "type": "ui_button",
+        "z": "c118d6ee.2b55d8",
+        "name": "节能",
+        "group": "c4b03950.ea8908",
+        "order": 12,
+        "width": "3",
+        "height": "1",
+        "label": "节能",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "ECO",
+        "payloadType": "str",
+        "topic": "",
+        "x": 723.0000152587891,
+        "y": 231.99999618530273,
+        "wires": [
+            [
+                "9b9c10a8.05264"
+            ]
+        ]
+    },
+    {
+        "id": "c3661643.a60d38",
+        "type": "ui_button",
+        "z": "c118d6ee.2b55d8",
+        "name": "spliter",
+        "group": "c4b03950.ea8908",
+        "order": 13,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1293.0000534057617,
+        "y": 433.00000762939453,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a9b8f563.869e88",
+        "type": "ui_switch",
+        "z": "c118d6ee.2b55d8",
+        "name": "开关",
+        "label": "开关",
+        "group": "c4b03950.ea8908",
+        "order": 11,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "ECO",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "OFF",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "x": 720.000114440918,
+        "y": 111,
+        "wires": [
+            [
+                "9b9c10a8.05264"
+            ]
+        ]
+    },
+    {
+        "id": "8c86eda.aec301",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "ui control",
+        "x": 672,
+        "y": 221,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b92328c2.8abcf8",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "热水服务",
+        "group": "47909b46.fc1f74",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-tint fa-4x",
+        "payload": "热水服务",
+        "payloadType": "str",
+        "topic": "",
+        "x": 449,
+        "y": 308,
+        "wires": [
+            [
+                "8ccfa8d.b468358"
+            ]
+        ]
+    },
+    {
+        "id": "8ccfa8d.b468358",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "ui control",
+        "x": 668,
+        "y": 315,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ed33edfe.6c769",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "能源服务",
+        "group": "47909b46.fc1f74",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-sun-o fa-4x",
+        "payload": "能源服务",
+        "payloadType": "str",
+        "topic": "",
+        "x": 446,
+        "y": 386,
+        "wires": [
+            [
+                "6f923389.fe35bc"
+            ]
+        ]
+    },
+    {
+        "id": "6f923389.fe35bc",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "ui control",
+        "x": 665,
+        "y": 393,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5efcbcc6.a6e2e4",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "照明服务",
+        "group": "47909b46.fc1f74",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-lightbulb-o fa-4x",
+        "payload": "照明服务",
+        "payloadType": "str",
+        "topic": "",
+        "x": 447,
+        "y": 486,
+        "wires": [
+            [
+                "5c1bcca6.825064"
+            ]
+        ]
+    },
+    {
+        "id": "5c1bcca6.825064",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "ui control",
+        "x": 666,
+        "y": 493,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5e3eb3bb.0e583c",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "开关服务",
+        "group": "47909b46.fc1f74",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-power-off fa-4x",
+        "payload": "开关服务",
+        "payloadType": "str",
+        "topic": "",
+        "x": 445,
+        "y": 587,
+        "wires": [
+            [
+                "bd5704f0.edbea8"
+            ]
+        ]
+    },
+    {
+        "id": "bd5704f0.edbea8",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "ui control",
+        "x": 664,
+        "y": 594,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3d83087.44743f8",
+        "type": "ui_text",
+        "z": "c118d6ee.2b55d8",
+        "group": "c4b03950.ea8908",
+        "order": 4,
+        "width": "3",
+        "height": "1",
+        "name": "有效电流",
+        "label": "有效电流：",
+        "format": "{{msg.payload.Ic}}",
+        "layout": "row-left",
+        "x": 1296.0000534057617,
+        "y": 387.00000762939453,
+        "wires": []
+    },
+    {
+        "id": "5b0b7938.7bb318",
+        "type": "ui_text",
+        "z": "c118d6ee.2b55d8",
+        "group": "c4b03950.ea8908",
+        "order": 6,
+        "width": "3",
+        "height": "1",
+        "name": "有效电压",
+        "label": "有效电压：",
+        "format": "{{msg.payload.Vt}}",
+        "layout": "row-left",
+        "x": 1297.0000534057617,
+        "y": 482.00000762939453,
+        "wires": []
+    },
+    {
+        "id": "6ea3cfc8.0f33f",
+        "type": "ui_button",
+        "z": "c118d6ee.2b55d8",
+        "name": "spliter",
+        "group": "c4b03950.ea8908",
+        "order": 5,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 720.0000305175781,
+        "y": 188.99998664855957,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "164a6366.331a6d",
+        "type": "ui_switch",
+        "z": "2b592821.33a798",
+        "name": "台灯",
+        "label": "开关",
+        "group": "f971c074.de00f",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "800049c8",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-4x",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-4x",
+        "offcolor": "grey",
+        "x": 682.0003356933594,
+        "y": 264.99999237060547,
+        "wires": [
+            [
+                "b26e0110.8826e"
+            ]
+        ]
+    },
+    {
+        "id": "a66d80f1.8f607",
+        "type": "ui_switch",
+        "z": "2b592821.33a798",
+        "name": "射灯",
+        "label": "开关",
+        "group": "dda5d103.c17fd",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "msg.topic",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-4x",
+        "oncolor": "green",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-4x",
+        "offcolor": "grey",
+        "x": 702.0002136230469,
+        "y": 429.99999237060547,
+        "wires": [
+            [
+                "312dc32e.88e6cc"
+            ]
+        ]
+    },
+    {
+        "id": "242c728f.bfb6fe",
+        "type": "ui_button",
+        "z": "2b592821.33a798",
+        "name": "全开",
+        "group": "4d24a72f.e0ece8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "全开",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 844.0000457763672,
+        "y": 385.00006103515625,
+        "wires": [
+            [
+                "38b8786e.e86f88",
+                "cf20a830.2119f8"
+            ]
+        ]
+    },
+    {
+        "id": "9acb81f2.bc142",
+        "type": "ui_button",
+        "z": "2b592821.33a798",
+        "name": "全关",
+        "group": "4d24a72f.e0ece8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "全关",
+        "color": "",
+        "bgcolor": "grey",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 843.0000457763672,
+        "y": 431.00006103515625,
+        "wires": [
+            [
+                "f0f5318b.0f5b8",
+                "a7ecc87d.a135c8"
+            ]
+        ]
+    },
+    {
+        "id": "7f0eb2b1.70ecdc",
+        "type": "ui_button",
+        "z": "2b592821.33a798",
+        "name": "spliter",
+        "group": "4d24a72f.e0ece8",
+        "order": 1,
+        "width": "7",
+        "height": "3",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 374,
+        "y": 581.0000839233398,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "769831f1.5e8a9",
+        "type": "ui_numeric",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "label": "设置温度",
+        "group": "bf534c72.c1fc5",
+        "order": 12,
+        "width": "0",
+        "height": "0",
+        "passthru": true,
+        "topic": "",
+        "format": "{{value}}",
+        "min": "5",
+        "max": "35",
+        "step": "0.5",
+        "x": 1750.75,
+        "y": 1843.1666469573975,
+        "wires": [
+            [
+                "9c33abbc.6263e8"
+            ]
+        ]
+    },
+    {
+        "id": "85c11730.c96dd8",
+        "type": "ui_gauge",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "bf534c72.c1fc5",
+        "order": 4,
+        "width": "7",
+        "height": "5",
+        "gtype": "donut",
+        "title": "当前温度",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": "5",
+        "max": "35",
+        "colors": [
+            "#0080ff",
+            "#00b500",
+            "#ff8040"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1749.7500648498535,
+        "y": 1596.4166259765625,
+        "wires": []
+    },
+    {
+        "id": "68a1cf6f.33028",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "bf534c72.c1fc5",
+        "order": 11,
+        "width": "3",
+        "height": "1",
+        "label": "外出",
+        "color": "",
+        "bgcolor": "red",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 468.7500114440918,
+        "y": 421.750036239624,
+        "wires": [
+            [
+                "2d8342b6.57aa1e"
+            ]
+        ]
+    },
+    {
+        "id": "3804fb6c.8d1054",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "bf534c72.c1fc5",
+        "order": 9,
+        "width": "3",
+        "height": "1",
+        "label": "节能",
+        "color": "",
+        "bgcolor": "green",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "",
+        "x": 463.7500114440918,
+        "y": 470.750036239624,
+        "wires": [
+            [
+                "2d8342b6.57aa1e"
+            ]
+        ]
+    },
+    {
+        "id": "2320658f.0f9b8a",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "bf534c72.c1fc5",
+        "order": 8,
+        "width": "3",
+        "height": "1",
+        "label": "舒适",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "num",
+        "topic": "",
+        "x": 466.7500114440918,
+        "y": 521.750036239624,
+        "wires": [
+            [
+                "2d8342b6.57aa1e"
+            ]
+        ]
+    },
+    {
+        "id": "9bb70e97.7e30a",
+        "type": "ui_text",
+        "z": "7b3e6f66.affe2",
+        "group": "bf534c72.c1fc5",
+        "order": 2,
+        "width": "4",
+        "height": "1",
+        "name": "",
+        "label": "当前模式：",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1706.5000610351562,
+        "y": 1504.6666250228882,
+        "wires": []
+    },
+    {
+        "id": "10aae211.acd6fe",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "mode",
+        "func": "var parseMode = function(){\n  var heat_mode = msg.payload.heat_mode;\n  var mode = \"模式未运行\";\n  switch(heat_mode){\n      case 0:\n           mode =  \"模式未运行\";\n           break;\n      case 1:\n          mode =  \"外出\";\n           break;\n      case 2:\n          mode =  \"节能\";\n           break;\n      case 3:\n          mode =  \"舒适\";\n           break;\n      default:\n        break;\n  }\n  return mode;\n};\n\nreturn {payload:parseMode()};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1512.2500610351562,
+        "y": 1504.9166250228882,
+        "wires": [
+            [
+                "9bb70e97.7e30a"
+            ]
+        ]
+    },
+    {
+        "id": "337d0b93.904a84",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "currentTemp",
+        "func": "\nreturn {payload:parseFloat(msg.payload.dis_temp.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1516.5000610351562,
+        "y": 1593.6666259765625,
+        "wires": [
+            [
+                "85c11730.c96dd8"
+            ]
+        ]
+    },
+    {
+        "id": "40a817c3.c81d58",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "parseMode",
+        "func": " msg.payload = { heat_mode:msg.payload, mac: \"ACCF23DF8DB2\" };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 697.2500152587891,
+        "y": 673.2500686645508,
+        "wires": [
+            [
+                "3b27deaf.514242"
+            ]
+        ]
+    },
+    {
+        "id": "3b27deaf.514242",
+        "type": "http request",
+        "z": "7b3e6f66.affe2",
+        "name": "setMode",
+        "method": "POST",
+        "ret": "obj",
+        "url": "http://app.hailin.com:8080/hailin/api/device",
+        "tls": "",
+        "x": 876.2500190734863,
+        "y": 671.2500686645508,
+        "wires": [
+            [
+                "e90f7a3d.1fa608"
+            ]
+        ]
+    },
+    {
+        "id": "5238e573.78a85c",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "parseOnoff",
+        "func": " msg.payload = { status_onoff:msg.payload, mac: \"ACCF23DF8DB2\" };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1624.0000610351562,
+        "y": 1329.1666221618652,
+        "wires": [
+            [
+                "91c8d317.12794"
+            ]
+        ]
+    },
+    {
+        "id": "91c8d317.12794",
+        "type": "http request",
+        "z": "7b3e6f66.affe2",
+        "name": "setOnff",
+        "method": "POST",
+        "ret": "obj",
+        "url": "http://app.hailin.com:8080/hailin/api/device",
+        "tls": "",
+        "x": 1816.7500686645508,
+        "y": 1330.4166221618652,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a97830f6.3b826",
+        "type": "ui_switch",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "label": "开关",
+        "group": "bf534c72.c1fc5",
+        "order": 5,
+        "width": "7",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "x": 1684.7500648498535,
+        "y": 1445.1666240692139,
+        "wires": [
+            [
+                "5238e573.78a85c"
+            ]
+        ]
+    },
+    {
+        "id": "d133e16e.49a6f",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "onoff",
+        "func": "\nreturn {payload:msg.payload.status_onoff};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1531.5000610351562,
+        "y": 1443.9166240692139,
+        "wires": [
+            [
+                "a97830f6.3b826"
+            ]
+        ]
+    },
+    {
+        "id": "75a1c8ac.23eae8",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "setGlobal",
+        "func": "global.set(\"warm_data\",msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1151.000015258789,
+        "y": 1411.6666469573975,
+        "wires": [
+            [
+                "10aae211.acd6fe",
+                "337d0b93.904a84",
+                "d133e16e.49a6f",
+                "2f2ae0c7.00749",
+                "569304b2.16258c"
+            ]
+        ]
+    },
+    {
+        "id": "2d8342b6.57aa1e",
+        "type": "globalGetSet",
+        "z": "7b3e6f66.affe2",
+        "name": "getData",
+        "topic": "",
+        "context": "global",
+        "variable": "warm_data",
+        "outContext": "msg",
+        "outVar": "topic",
+        "x": 654.7500152587891,
+        "y": 394.7500352859497,
+        "wires": [
+            [
+                "554148b5.9f9138"
+            ]
+        ]
+    },
+    {
+        "id": "554148b5.9f9138",
+        "type": "switch",
+        "z": "7b3e6f66.affe2",
+        "name": "checkOnoff",
+        "property": "topic.status_onoff",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 713.0000343322754,
+        "y": 586.750036239624,
+        "wires": [
+            [
+                "2691d475.6f425c"
+            ],
+            [
+                "40a817c3.c81d58"
+            ]
+        ]
+    },
+    {
+        "id": "5155e474.802bec",
+        "type": "ui_toast",
+        "z": "7b3e6f66.affe2",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 959.7500190734863,
+        "y": 449.5000333786011,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2691d475.6f425c",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "func": "\nreturn {payload:\"请先打开温控器！\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 807.5000190734863,
+        "y": 489.00003719329834,
+        "wires": [
+            [
+                "5155e474.802bec"
+            ]
+        ]
+    },
+    {
+        "id": "2f2ae0c7.00749",
+        "type": "switch",
+        "z": "7b3e6f66.affe2",
+        "name": "checkMode",
+        "property": "payload.heat_mode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 5,
+        "x": 1346.75,
+        "y": 1678.1666469573975,
+        "wires": [
+            [
+                "254dbd94.d7b222"
+            ],
+            [
+                "4ac38e46.6068"
+            ],
+            [
+                "51758e8e.1cb16"
+            ],
+            [
+                "3dd4ec0e.1acfc4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "254dbd94.d7b222",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "leave",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_out.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1537.75,
+        "y": 1634.1666469573975,
+        "wires": [
+            [
+                "769831f1.5e8a9"
+            ]
+        ]
+    },
+    {
+        "id": "4ac38e46.6068",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "energy",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_energy.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1546.75,
+        "y": 1670.1666469573975,
+        "wires": [
+            [
+                "769831f1.5e8a9"
+            ]
+        ]
+    },
+    {
+        "id": "51758e8e.1cb16",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "confortable",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_comfort.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1547.75,
+        "y": 1707.1666469573975,
+        "wires": [
+            [
+                "769831f1.5e8a9"
+            ]
+        ]
+    },
+    {
+        "id": "c2ee6755.462978",
+        "type": "switch",
+        "z": "7b3e6f66.affe2",
+        "name": "checkMode",
+        "property": "topic.heat_mode",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 5,
+        "x": 2014.25,
+        "y": 1870.1666469573975,
+        "wires": [
+            [],
+            [
+                "58052593.142fac"
+            ],
+            [
+                "4302e0a3.a26af"
+            ],
+            [
+                "45053ed0.ea8b3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9c33abbc.6263e8",
+        "type": "globalGetSet",
+        "z": "7b3e6f66.affe2",
+        "name": "getData",
+        "topic": "",
+        "context": "global",
+        "variable": "warm_data",
+        "outContext": "msg",
+        "outVar": "topic",
+        "x": 1881.25,
+        "y": 1763.1666469573975,
+        "wires": [
+            [
+                "c2ee6755.462978"
+            ]
+        ]
+    },
+    {
+        "id": "a87e70af.8768",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "leave",
+        "func": " msg.payload = { temp_out:('c'+msg.payload.toFixed(1)).toString(), mac: \"ACCF23DF8DB2\",heat_mode:1 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2289.25,
+        "y": 1768.1666469573975,
+        "wires": [
+            [
+                "4aca6644.30fca8"
+            ]
+        ]
+    },
+    {
+        "id": "58052593.142fac",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "energy",
+        "func": " msg.payload = { temp_energy:('c'+msg.payload.toFixed(1)).toString(), mac: \"ACCF23DF8DB2\",heat_mode:2 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2241.25,
+        "y": 1858.1666469573975,
+        "wires": [
+            [
+                "4aca6644.30fca8"
+            ]
+        ]
+    },
+    {
+        "id": "4302e0a3.a26af",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "confortable",
+        "func": " msg.payload = { temp_comfort:('c'+msg.payload.toFixed(1)).toString(), mac: \"ACCF23DF8DB2\" ,heat_mode:3 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2242.25,
+        "y": 1895.1666469573975,
+        "wires": [
+            [
+                "4aca6644.30fca8"
+            ]
+        ]
+    },
+    {
+        "id": "4aca6644.30fca8",
+        "type": "http request",
+        "z": "7b3e6f66.affe2",
+        "name": "setTemp",
+        "method": "POST",
+        "ret": "obj",
+        "url": "http://app.hailin.com:8080/hailin/api/device",
+        "tls": "",
+        "x": 2495.25,
+        "y": 1835.1666469573975,
+        "wires": [
+            [
+                "9363050f.5f0428"
+            ]
+        ]
+    },
+    {
+        "id": "9363050f.5f0428",
+        "type": "debug",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 2600.25,
+        "y": 1707.1666469573975,
+        "wires": []
+    },
+    {
+        "id": "3dd4ec0e.1acfc4",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "heat",
+        "func": "\nreturn {payload:parseFloat(msg.payload.temp_heat.replace('c',''))};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1521.25,
+        "y": 1775.1666469573975,
+        "wires": [
+            [
+                "769831f1.5e8a9",
+                "a8bb94f5.5153b8"
+            ]
+        ]
+    },
+    {
+        "id": "45053ed0.ea8b3",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "heat",
+        "func": " msg.payload = { temp_heat:('c'+ msg.payload.toFixed(1)).toString(), mac: \"ACCF23DF8DB2\" ,heat_mode:0 };\n msg.headers = {'content-type':'application/x-www-form-urlencoded',Authorization: \"bearer 2aa15c0a-2a71-4d27-8cc0-747b122de703\"};\n return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 2232.25,
+        "y": 1949.1666469573975,
+        "wires": [
+            [
+                "4aca6644.30fca8",
+                "532bcead.6352c"
+            ]
+        ]
+    },
+    {
+        "id": "530a0292.df83fc",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "group": "bf534c72.c1fc5",
+        "order": 6,
+        "width": "3",
+        "height": "1",
+        "label": "自动",
+        "color": "",
+        "bgcolor": "grey",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 467.7500114440918,
+        "y": 573.750036239624,
+        "wires": [
+            [
+                "2d8342b6.57aa1e"
+            ]
+        ]
+    },
+    {
+        "id": "532bcead.6352c",
+        "type": "debug",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 2402.25,
+        "y": 1996.1666469573975,
+        "wires": []
+    },
+    {
+        "id": "a8bb94f5.5153b8",
+        "type": "debug",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "payload",
+        "x": 1411.25,
+        "y": 1848.1666469573975,
+        "wires": []
+    },
+    {
+        "id": "37142642.4761ba",
+        "type": "ui_text",
+        "z": "7b3e6f66.affe2",
+        "group": "bf534c72.c1fc5",
+        "order": 3,
+        "width": "3",
+        "height": "1",
+        "name": "",
+        "label": "加热状态：",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "x": 1735.7500686645508,
+        "y": 1552.9166259765625,
+        "wires": []
+    },
+    {
+        "id": "569304b2.16258c",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "heat",
+        "func": "var parseMode = function(){\n  var heat_mode = msg.payload.status;\n  var mode = null;\n  switch(heat_mode){\n      case 2:\n           mode =  \"加热\";\n           break;\n      case 4:\n          mode =  \"关闭\";\n           break;\n      default:\n        break;\n  }\n  return mode;\n};\n\nreturn {payload:parseMode()};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1512.2500610351562,
+        "y": 1554.6666259765625,
+        "wires": [
+            [
+                "37142642.4761ba"
+            ]
+        ]
+    },
+    {
+        "id": "2185d67f.2bed3a",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "spliter",
+        "group": "bf534c72.c1fc5",
+        "order": 7,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1338.1632080078125,
+        "y": 77.51740264892578,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2000740.baf218",
+        "type": "ui_button",
+        "z": "7b3e6f66.affe2",
+        "name": "spliter",
+        "group": "bf534c72.c1fc5",
+        "order": 10,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1345.75,
+        "y": 155.5000762939453,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bfad8f4.679998",
+        "type": "function",
+        "z": "c118d6ee.2b55d8",
+        "name": "getConf",
+        "func": "var CONST_FUNC_CODE_HB = 0x16;\nvar CONST_FUNC_CODE_GET_RFCT = 0x51;\nvar CONST_FUNC_CODE_QUERY = 0x60;\n\nvar crc = context.global.crc;\n\nvar HEAD = context.global.Struct()\n    .word8Ube('protocolType', 1, 'hex')\n    .word8Ube('terminalType', 1, 'hex')\n    .word8Ube('seq')\n    .word8Ube('ver')\n    .word16Ube('terminalCode')\n    .chars('src', 10, 'hex')\n    .chars('dst', 10, 'hex')\n    .word8Ube('funcCode')\n    .word16Ube('length');\n\nvar GET_CONF = context.global.Struct()\n    .word16Ube('code');\n\nvar CRC16 = context.global.Struct()\n    .word16Ube('crc16');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0x46);\nHEAD.set('seq', global.get(\"seq\"));\nHEAD.set('ver', 0x01);\nHEAD.set('terminalCode', 0x00B0);\nHEAD.set('dst',\"34453035444546463331\");\nHEAD.set('src',\"FFFFFFFFFFFFFFFFFFFF\");\n//HEAD.set('src', global.get(\"src\"));\n//HEAD.set('dst', global.get(\"dst\"));\nHEAD.set('funcCode', CONST_FUNC_CODE_QUERY);\nHEAD.set('length', 0x02);\n//\nvar getConfData = create(GET_CONF);\nGET_CONF.set('code', 0x0000);\n\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head,getConfData])));\nvar data = Buffer.concat([head, getConfData,crcData]);\nvar sendMsg = {\n    payload: data\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 990.0486297607422,
+        "y": 32.04514694213867,
+        "wires": [
+            [
+                "9ef0e31d.4fa48"
+            ]
+        ]
+    },
+    {
+        "id": "9ef0e31d.4fa48",
+        "type": "link out",
+        "z": "c118d6ee.2b55d8",
+        "name": "toSerialPort",
+        "links": [
+            "c34eeb38.89d648"
+        ],
+        "x": 1171.270866394043,
+        "y": 35.68055534362793,
+        "wires": []
+    },
+    {
+        "id": "c34eeb38.89d648",
+        "type": "link in",
+        "z": "71731180.8e8cf",
+        "name": "fromMeBoost",
+        "links": [
+            "9ef0e31d.4fa48"
+        ],
+        "x": 1668.2742614746094,
+        "y": 1068.2916107177734,
+        "wires": [
+            [
+                "e9522394.16ade"
+            ]
+        ]
+    },
+    {
+        "id": "8a548a0e.395938",
+        "type": "link out",
+        "z": "71731180.8e8cf",
+        "name": "toMeBoost",
+        "links": [
+            "849c8252.72551"
+        ],
+        "x": 245.27430725097656,
+        "y": 1006.0070495605469,
+        "wires": []
+    },
+    {
+        "id": "849c8252.72551",
+        "type": "link in",
+        "z": "c118d6ee.2b55d8",
+        "name": "fromMeRFCT",
+        "links": [
+            "8a548a0e.395938"
+        ],
+        "x": 177.27078247070312,
+        "y": 380.28125,
+        "wires": [
+            [
+                "4ab5de08.62ff"
+            ]
+        ]
+    },
+    {
+        "id": "1668f170.d4f64f",
+        "type": "ui_button",
+        "z": "c118d6ee.2b55d8",
+        "name": "spliter",
+        "group": "c4b03950.ea8908",
+        "order": 8,
+        "width": "1",
+        "height": "1",
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 1286.8958053588867,
+        "y": 638.3332901000977,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4a66ff7f.334ac",
+        "type": "ui_text",
+        "z": "c118d6ee.2b55d8",
+        "group": "c4b03950.ea8908",
+        "order": 9,
+        "width": "3",
+        "height": "1",
+        "name": "总计节能",
+        "label": "总计节能：",
+        "format": "{{msg.payload.Saved}}",
+        "layout": "row-left",
+        "x": 1288.8958053588867,
+        "y": 599.3332901000977,
+        "wires": []
+    },
+    {
+        "id": "75d22c86.d90b14",
+        "type": "ui_text",
+        "z": "c118d6ee.2b55d8",
+        "group": "c4b03950.ea8908",
+        "order": 7,
+        "width": "3",
+        "height": "1",
+        "name": "总计耗能",
+        "label": "总计耗能：",
+        "format": "{{msg.payload.Used}}",
+        "layout": "row-left",
+        "x": 1281.8958053588867,
+        "y": 683.3332901000977,
+        "wires": []
+    },
+    {
+        "id": "4ab5de08.62ff",
+        "type": "function",
+        "z": "c118d6ee.2b55d8",
+        "name": "parsePackage",
+        "func": "/**\n * [CONST_FUNC_CODE_INDEX description]\n * @type {Number}\n */\nvar CONST_FUNC_CODE_PAIR = 0x15;\nvar CONST_FUNC_CODE_HB = 0x16;\nvar CONST_FUNC_CODE_GET_RFCT = 0x51;\nvar CONST_FUNC_CODE_SET_RFCT = 0x52;\nvar CONST_FUNC_CODE_QUERY = 0x60;\nvar CONST_FUNC_CODE_SET = 0x61;\nvar CONST_FUNC_CODE_TEST = 0xF0;\nvar CONST_FUNC_CODE_SEARCH = 0xFF;\n/**\n * [CONST_TERMINAL_CODE_RFCT description]\n * @type {[type]}\n */\nvar CONST_TERMINAL_CODE_RFCT = 0x0080;\nvar CONST_TERMINAL_CODE_MEBOOST = 0x00B0;\n\n/**\n * [if description]\n * @param  {[type]} msg.payload.type [description]\n * @return {[type]}                  [description]\n */\n var allTypeMeBoost = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word16Ube('status')\n    .word32Ube('Vt')\n    .word32Ube('Ic')\n    .word32Ube('Pt')\n    .word32Ube('Tp')    \n    .word32Ube('Saved')\n    .word32Ube('Used');\nvar dateTimeTypeMeBoost = context.global.Struct()\n    .word8Ube;\n\nvar allType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('Vt')\n    .word32Ube('Ic')\n    .word32Ube('Ft')\n    .word8Ube('Dirt')\n    .word32Ube('Pt')\n    .word8Ube('LN')\n    .word32Ube('ToGrid')\n    .word32Ube('ToUser');\n\nvar SNType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .chars('SN', 10, 'hex');\n\nvar enType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('en');\n\nvar VtCCType = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('VtCC');\n\nvar PtCC30Type = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('PtCC30');\n\nvar PtCC60Type = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('PtCC60');\n\nvar PtCC80Type = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word32Ube('PtCC80');\n\nif (msg.payload.type === 'fail') {\n    return msg;\n}\n\nvar parseRFCTData = function(sendMsg, rawData) {\n    sendMsg.payload.data = [];\n    var codeIndex = 1;\n    var lenIndex = 3;\n    // node.warn(\"length=\"+rawData.length);\n    while (codeIndex < rawData.length) {\n        var code = rawData.readUInt16BE(codeIndex);\n        var len = 0;\n        switch (code) {\n            //all\n            case 0x00:\n                len = rawData.readUInt16BE(lenIndex);\n                allType._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"all\",\n                    \"data\": {\n                        \"Vt\": allType.get(\"Vt\"),\n                        \"Ic\": allType.get(\"Ic\"),\n                        \"Ft\": allType.get(\"Ft\"),\n                        \"Dirt\": allType.get(\"Dirt\"),\n                        \"Pt\": allType.get(\"Pt\"),\n                        \"LN\": allType.get(\"LN\"),\n                        \"ToGrid\": allType.get(\"ToGrid\"),\n                        \"ToUser\": allType.get(\"ToUser\")\n                    }\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //SN\n            case 0x01:\n                len = rawData.readUInt16BE(lenIndex);\n                SNType._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"SN\",\n                    \"data\": SNType.get('SN')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //energy\n            case 0x03:\n                len = rawData.readUInt16BE(lenIndex);\n                enType._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"en\",\n                    \"data\": SNType.get('en')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //VtCC\n            case 0x0A:\n                len = rawData.readUInt16BE(lenIndex);\n                VtCCType._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"VtCC\",\n                    \"data\": VtCCType.get('VtCC')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //PTCC30\n            case 0x0B:\n                len = rawData.readUInt16BE(lenIndex);\n                PtCC30Type._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"PtCC30\",\n                    \"data\": PtCC30Type.get('PtCC30')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //PtCC60\n            case 0x0C:\n                len = rawData.readUInt16BE(lenIndex);\n                PtCC60Type._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"PtCC60\",\n                    \"data\": PtCC60Type.get('PtCC60')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                // PtCC80\n            case 0x0D:\n                len = rawData.readUInt16BE(lenIndex);\n                PtCC80Type._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"PtCC80\",\n                    \"data\": PtCC80Type.get('PtCC80')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n            default:\n                sendMsg.payload.data = {\n                    code: code,\n                    message: \"unknow query code\"\n                };\n                break;\n        }\n    }\n};\n\nvar parseMeBoostData = function(sendMsg, rawData) {\n    sendMsg.payload.data = [];\n    var codeIndex = 1;\n    var lenIndex = 3;\n    // node.warn(\"length=\"+rawData.length);\n    while (codeIndex < rawData.length) {\n        var code = rawData.readUInt16BE(codeIndex);\n        var len = 0;\n        switch (code) {\n            //all\n            case 0x0000:\n                len = rawData.readUInt16BE(lenIndex);\n                allTypeMeBoost._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"all\",\n                    \"data\": {\n                        \"status\": allTypeMeBoost.get(\"status\"),\n                        \"Vt\": allTypeMeBoost.get(\"Vt\"),\n                        \"Ic\": allTypeMeBoost.get(\"Ic\"),\n                        \"Pt\": allTypeMeBoost.get(\"Pt\"),\n                        \"Tp\": allTypeMeBoost.get(\"Tp\"),\n                        \"Saved\": allTypeMeBoost.get(\"Saved\"),\n                        \"Used\": allTypeMeBoost.get(\"Used\")\n                    }\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //SN\n            case 0x0011:\n                len = rawData.readUInt16BE(lenIndex);\n                SNType._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"SN\",\n                    \"data\": SNType.get('SN')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //date-time\n            case 0x0012:\n                len = rawData.readUInt16BE(lenIndex);\n                enType._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"en\",\n                    \"data\": SNType.get('en')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //alarm\n            case 0x0013:\n                len = rawData.readUInt16BE(lenIndex);\n                VtCCType._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"VtCC\",\n                    \"data\": VtCCType.get('VtCC')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //match-algo\n            case 0x0021:\n                len = rawData.readUInt16BE(lenIndex);\n                PtCC30Type._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"PtCC30\",\n                    \"data\": PtCC30Type.get('PtCC30')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                //match-factor\n            case 0x0022:\n                len = rawData.readUInt16BE(lenIndex);\n                PtCC60Type._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"PtCC60\",\n                    \"data\": PtCC60Type.get('PtCC60')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                // match-error\n            case 0x0023:\n                len = rawData.readUInt16BE(lenIndex);\n                PtCC80Type._setBuff(rawData.slice(codeIndex, codeIndex + len + 4));\n                sendMsg.payload.data.push({\n                    \"code\": \"PtCC80\",\n                    \"data\": PtCC80Type.get('PtCC80')\n                });\n                codeIndex += len + 4;\n                lenIndex += len + 4 + 2;\n                break;\n                // match-timeout\n            case 0x0024:\n                break;\n                // match-thould\n            case 0x0025:\n                break;\n                // disp-window\n            case 0x0031:\n                break;\n                // disp-freq\n            case 0x0032:\n                break;\n                // disp-pre-algo\n            case 0x0033:\n                break;\n                // disp-verify0algo\n            case 0x0034:\n                break;\n                // disp-pre-wight\n            case 0x0035:\n                break;\n            default:\n                sendMsg.payload.data = {\n                    code: code,\n                    message: \"unknow query code\"\n                };\n                break;\n        }\n    }\n};\nvar checkGetConfQueryCode = function(codes) {\n    return ((codes.length !== 0) && context.global._.without(codes, 0x00, 0x11, 0x12, 0x13, 0x21, 0x22, 0x23,0x24,0x25,0x31,0x32,0x33,0x34,0x35).length === 0);\n};\n\nvar checkSetConfQueryCode = function(codes) {\n    return ((codes.length !== 0) && context.global._.without(codes, 0x01, 0x02,0x03, 0x11, 0x12, 0x13, 0x21, 0x22, 0x23,0x24,0x25,0x31,0x32,0x33,0x34,0x35).length === 0);\n};\nvar checkQueryTestCode = function(codes){\n    return ((codes.length !== 0) && context.global._.without(codes, 0xF101, 0xF102,0xF201, 0xF202, 0xF203).length === 0);    \n};\nvar sendMsg = {\n    topic: \"cmd\",\n    payload: {\n        type: null,\n        seq: msg.payload.seq,\n        src: msg.payload.src,\n        dst: msg.payload.dst,\n        funcCode: msg.payload.funcCode,\n        data: null\n    }\n};\nswitch (msg.payload.funcCode) {\n    // pair\n    case CONST_FUNC_CODE_PAIR:\n        var stepOrResult = msg.payload.data.readUInt8(0);\n        if (stepOrResult === 0x00) {\n            sendMsg.payload.type = 'setPairACK';\n            sendMsg.payload.data = msg.payload.data;\n        } else if (stepOrResult === 0x30) {\n            sendMsg.payload.type = 'exitPairACK';\n            sendMsg.payload.data = msg.payload.data;\n        } else {\n            sendMsg.payload.type = 'fail';\n            sendMsg.payload.data = {\n                code: stepOrResult,\n                msg: \"pair fail!\"\n            };\n        }\n        break;\n        // hb\n    case CONST_FUNC_CODE_HB:\n        sendMsg.payload.type = 'hbACK';\n        break;\n        // get_rfct\n    case CONST_FUNC_CODE_GET_RFCT:\n        sendMsg.payload.type = 'getRFCTACK';\n        var result = msg.payload.data.readUInt8(0);\n        if (result === 0x00) {\n            parseRFCTData(sendMsg, msg.payload.data);\n        } else {\n            sendMsg.payload.data = {\n                code: result,\n                message: result === 0x01 ? \"get fail.\" : \"query code error.\"\n            };\n        }\n        break;\n        // set_rfct:\n    case CONST_FUNC_CODE_SET_RFCT:\n\n        break;\n        // get conf ack\n    case CONST_FUNC_CODE_QUERY:\n        sendMsg.payload.type = 'getConfACK';\n        var getRet = msg.payload.data.readUInt8(0);\n        if (getRet === 0x00) {\n            parseMeBoostData(sendMsg, msg.payload.data);\n        } else {\n            sendMsg.payload.data = {\n                code: getRet,\n                message: getRet === 0x01 ? \"get fail.\" : \"query code error.\"\n            };\n        }\n        break;\n        // set conf ack\n    case CONST_FUNC_CODE_SET:\n        sendMsg.payload.type = 'setConfACK';\n        var code = msg.payload.data.readUInt16BE(0);\n        var setRet = msg.payload.data.readUInt8(2);\n        sendMsg.payload.data = {\n                    type: null,\n                    msg:null\n                };\n        switch(code){\n            case 0x0001:\n                if(setRet === 0x00){\n                    sendMsg.payload.data.type = \"mode\";\n                    sendMsg.payload.data.msg = \"set mode success!\";\n                }else{\n                    sendMsg.payload.data.type = \"fail\";\n                    sendMsg.payload.data.msg = \"set mode fail![code:\"+setRet+\"]\";\n                }\n                break;\n            case 0x0025:\n                if(setRet === 0x00){\n                    sendMsg.payload.data.type = \"power\";\n                    sendMsg.payload.data.msg = \"set power success!\";\n                }else{\n                    sendMsg.payload.data.type = \"fail\";\n                    sendMsg.payload.data.msg = \"set power fail![code:\"+setRet+\"]\";\n                }\n                break;\n            default:\n                break;\n        }\n        break;\n    case CONST_FUNC_CODE_TEST:\n        var len = msg.payload.dataLen;\n        var i = 0;\n        var codes = [];\n        while (len >= 2) {\n            codes.push(msg.payload.data.readUInt16BE(i));\n            len -= 2;\n            i += 2;\n        }\n        if (checkQueryTestCode(codes)) {\n            sendMsg.payload.type = 'test';\n            sendMsg.payload.data = {\n                codes: codes,\n                raw : msg.payload.data\n            };\n        } else {\n            sendMsg.payload.type = 'fail';\n            sendMsg.payload.data = {\n                code: 2,\n                msg: \"invalid query code!\"\n            };\n        }\n        break;\n    case CONST_FUNC_CODE_SEARCH:\n        sendMsg.payload.type = 'search';\n        break;\n    default:\n        sendMsg.payload.type = 'fail';\n        sendMsg.payload.data = {\n            code: 49,\n            msg: \"invalid function code!\"\n        };\n        break;\n}\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 317.0519714355469,
+        "y": 516.270881652832,
+        "wires": [
+            [
+                "fac29253.f1852"
+            ]
+        ]
+    },
+    {
+        "id": "fac29253.f1852",
+        "type": "switch",
+        "z": "c118d6ee.2b55d8",
+        "name": "switchPackage",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "getConfACK",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "setConfACK",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 526.2776794433594,
+        "y": 519.1424026489258,
+        "wires": [
+            [
+                "ed8b7581.e86788"
+            ],
+            [
+                "8bebecfa.e8e9f"
+            ]
+        ]
+    },
+    {
+        "id": "ed8b7581.e86788",
+        "type": "function",
+        "z": "c118d6ee.2b55d8",
+        "name": "showAll",
+        "func": "\n\nvar getStatusValue = function(){\n    var statusValue = null;\n    var statusCode = msg.payload.data[0].data.status;\n    //node.log(statusCode);\n    switch(statusCode){\n        case 0x0001:\n            statusValue = \"ECO\";\n            break;\n        case 0x0002:\n            statusValue = \"MAN\";\n            break;\n        case 0x0003:\n            statusValue = \"FIN\";\n            break;\n        case 0x0004:\n            statusValue = \"OFF\";\n            break;\n        case 0x0005:\n            statusValue = \"ADJ\";\n            break;\n        case 0xFFF1:\n            statusValue = \"ERR-VT\";\n            break;\n        case 0xFFF2:\n            statusValue = \"ERR-IC\";\n            break;\n        case 0xFFF3:\n            statusValue = \"ERR-PT\";\n            break;\n        case 0xFFF4:\n            statusValue = \"ERR-TP\";\n            break;\n        case 0xFFFF:\n            statusValue = \"ERR-UNKNOW\";\n            break;\n        default:\n            statusValue = \"UNKNOW\";\n            break;\n    }\n    return statusValue;\n};\n\nvar showMsg = {\n    payload:{\n        status: getStatusValue(),\n        \"Vt\": msg.payload.data[0].data.Vt/10 + \" V\",\n        \"Ic\":msg.payload.data[0].data.Ic/10 + \" A\",\n        \"Pt\":msg.payload.data[0].data.Pt/10 + \" W\",\n        \"Tp\":msg.payload.data[0].data.Tp/10 + \" °C\",\n        \"Saved\":msg.payload.data[0].data.Saved/10 + \" Kwh\",\n        \"Used\":msg.payload.data[0].data.Used/10 + \" Kwh\"\n    }\n};\n\nreturn showMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 737.0624694824219,
+        "y": 356.7083206176758,
+        "wires": [
+            [
+                "3751b59b.044b3a",
+                "28960d5b.113232",
+                "e171e445.a5df68",
+                "3d83087.44743f8",
+                "4a66ff7f.334ac",
+                "75d22c86.d90b14",
+                "686c3001.f9a11",
+                "5b0b7938.7bb318",
+                "a4360ffe.b2265",
+                "eb57e45b.c09f68"
+            ]
+        ]
+    },
+    {
+        "id": "3751b59b.044b3a",
+        "type": "debug",
+        "z": "c118d6ee.2b55d8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 792.0625915527344,
+        "y": 471.76392364501953,
+        "wires": []
+    },
+    {
+        "id": "8bebecfa.e8e9f",
+        "type": "switch",
+        "z": "c118d6ee.2b55d8",
+        "name": "switchSetConf",
+        "property": "payload.typ",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "mode",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "power",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fail",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 3,
+        "x": 705.0589904785156,
+        "y": 620.7256851196289,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "686c3001.f9a11",
+        "type": "function",
+        "z": "c118d6ee.2b55d8",
+        "name": "",
+        "func": "\nreturn {payload:msg.payload.Pt};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1084.5001754760742,
+        "y": 471.1597671508789,
+        "wires": [
+            [
+                "1facac7f.21f664"
+            ]
+        ]
+    },
+    {
+        "id": "a4360ffe.b2265",
+        "type": "function",
+        "z": "c118d6ee.2b55d8",
+        "name": "package",
+        "func": "var sendMsg = \n{\n    query:{\n        serialNum:\"34453035444546463331\"\n        \n    },payload:msg.payload\n    \n};\n\nsendMsg.payload[\"serialNum\"] = \"34453035444546463331\";\n\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1093.3403244018555,
+        "y": 217.88888549804688,
+        "wires": [
+            [
+                "2caa803e.ac64d"
+            ]
+        ]
+    },
+    {
+        "id": "2caa803e.ac64d",
+        "type": "mongodb out",
+        "z": "c118d6ee.2b55d8",
+        "mongodb": "d7fd085a.627ba8",
+        "name": "update",
+        "collection": "devices",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 1310.8403854370117,
+        "y": 152.88888549804688,
+        "wires": []
+    },
+    {
+        "id": "9b9c10a8.05264",
+        "type": "function",
+        "z": "c118d6ee.2b55d8",
+        "name": "setMode",
+        "func": "var CONST_FUNC_CODE_HB = 0x16;\nvar CONST_FUNC_CODE_GET_RFCT = 0x51;\nvar CONST_FUNC_CODE_QUERY = 0x60;\nvar CONST_FUNC_CODE_SET = 0x61;\n\nvar crc = context.global.crc;\n\nvar getStatusCode = function(){\n    var statusValue = msg.payload;\n    var statusCode = null;\n    switch(statusValue){\n        case \"ECO\":\n            statusCode = 0x0001;\n            break;\n        case \"MAN\":\n            statusCode = 0x0002;\n            break;\n        case \"OFF\":\n            statusCode = 0x0004;\n            break;\n        default:\n            break;\n    }\n    return statusCode;\n}\n\nvar HEAD = context.global.Struct()\n    .word8Ube('protocolType', 1, 'hex')\n    .word8Ube('terminalType', 1, 'hex')\n    .word8Ube('seq')\n    .word8Ube('ver')\n    .word16Ube('terminalCode')\n    .chars('src', 10, 'hex')\n    .chars('dst', 10, 'hex')\n    .word8Ube('funcCode')\n    .word16Ube('length');\n\nvar SET_MODE = context.global.Struct()\n    .word16Ube('code')\n    .word16Ube('len')\n    .word16Ube('status');\n\nvar CRC16 = context.global.Struct()\n    .word16Ube('crc16');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar head = create(HEAD);\nHEAD.set('protocolType', 0x52);\nHEAD.set('terminalType', 0x46);\nHEAD.set('seq', global.get(\"seq\"));\nHEAD.set('ver', 0x01);\nHEAD.set('terminalCode', 0x00B0);\nHEAD.set('src', \"ffffffffffffffffffff\");\nHEAD.set('dst', \"34453035444546463331\");\nHEAD.set('funcCode', CONST_FUNC_CODE_SET);\nHEAD.set('length', 0x06);\n//\nvar setModeData = create(SET_MODE);\nSET_MODE.set('code', 0x0001);\nSET_MODE.set('len', 0x0002);\nSET_MODE.set('status', getStatusCode());\n\nvar crcData = create(CRC16);\nCRC16.set('crc16', crc.crc16modbus(Buffer.concat([head,setModeData])));\nvar data = Buffer.concat([head, setModeData,crcData]);\nvar sendMsg = {\n    payload: data\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 983.4932174682617,
+        "y": 155.8333740234375,
+        "wires": [
+            [
+                "9ef0e31d.4fa48"
+            ]
+        ]
+    },
+    {
+        "id": "eb57e45b.c09f68",
+        "type": "function",
+        "z": "c118d6ee.2b55d8",
+        "name": "",
+        "func": "return {payload:msg.payload.status !== \"OFF\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 441.5034713745117,
+        "y": 221.8194580078125,
+        "wires": [
+            [
+                "a9b8f563.869e88"
+            ]
+        ]
+    },
+    {
+        "id": "3bcc4e70.fa2142",
+        "type": "serial in",
+        "z": "2b592821.33a798",
+        "name": "WRM200-IN",
+        "serial": "a30aff90.4809a",
+        "x": 108.05902099609375,
+        "y": 426.38195037841797,
+        "wires": [
+            [
+                "84f2e599.7d7688",
+                "c4525dea.78dcc"
+            ]
+        ]
+    },
+    {
+        "id": "335c9edf.1d6232",
+        "type": "serial out",
+        "z": "2b592821.33a798",
+        "name": "WRM200-OUT",
+        "serial": "a30aff90.4809a",
+        "x": 1368.062728881836,
+        "y": 385.44097900390625,
+        "wires": []
+    },
+    {
+        "id": "b26e0110.8826e",
+        "type": "switch",
+        "z": "2b592821.33a798",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 894.0556945800781,
+        "y": 201.0555648803711,
+        "wires": [
+            [
+                "ff81912e.a7f5d"
+            ],
+            [
+                "f0f5318b.0f5b8"
+            ]
+        ]
+    },
+    {
+        "id": "312dc32e.88e6cc",
+        "type": "switch",
+        "z": "2b592821.33a798",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 831.8958587646484,
+        "y": 494.8888854980469,
+        "wires": [
+            [
+                "38b8786e.e86f88"
+            ],
+            [
+                "a7ecc87d.a135c8"
+            ]
+        ]
+    },
+    {
+        "id": "ff81912e.a7f5d",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "onLamp",
+        "func": "var crc = context.global.crc;\n\nvar head = new Buffer(\"550009070156\",'hex');\nvar optionData = new Buffer(\"00000000000000\",'hex');\n\nvar DATA = context.global.Struct()\n    .word8Ube('status')\n    .word32Ube('addr')\n    .word8Ube('devType')\n    .word8Ube('cmdType')\n    .word16Ube('cmdData');\n\nvar CRC8 = context.global.Struct()\n    .word8Ube('crc8');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\nvar data = create(DATA);\nDATA.set('status', 0x1F);\nDATA.set('addr', 0x800049C8);\nDATA.set('devType',0x81);\nDATA.set('cmdType',0x02);\nDATA.set('cmdData',0x0101);\n\nvar crcData = create(CRC8);\nCRC8.set('crc8', crc.crc8(Buffer.concat([data,optionData])));\n//CRC8.set('crc8',0xB2);\nvar sendMsg = {\n    payload: Buffer.concat([head, data,optionData,crcData])\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1081.0487976074219,
+        "y": 150.60070037841797,
+        "wires": [
+            [
+                "335c9edf.1d6232",
+                "b9d1cad3.5ca7b8"
+            ]
+        ]
+    },
+    {
+        "id": "f0f5318b.0f5b8",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "offLamp",
+        "func": "var crc = context.global.crc;\n\nvar head = new Buffer(\"550009070156\",'hex');\nvar optionData = new Buffer(\"00000000000000\",'hex');\n\nvar DATA = context.global.Struct()\n    .word8Ube('status')\n    .word32Ube('addr')\n    .word8Ube('devType')\n    .word8Ube('cmdType')\n    .word16Ube('cmdData');\n\nvar CRC8 = context.global.Struct()\n    .word8Ube('crc8');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\nvar data = create(DATA);\nDATA.set('status', 0x1F);\nDATA.set('addr', 0x800049C8);\nDATA.set('devType',0x81);\nDATA.set('cmdType',0x02);\nDATA.set('cmdData',0x0100);\n\nvar crcData = create(CRC8);\nCRC8.set('crc8', crc.crc8(Buffer.concat([data,optionData])));\n//CRC8.set('crc8',0xB2);\nvar sendMsg = {\n    payload: Buffer.concat([head, data,optionData,crcData])\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1140.8959045410156,
+        "y": 267.88887786865234,
+        "wires": [
+            [
+                "335c9edf.1d6232"
+            ]
+        ]
+    },
+    {
+        "id": "38b8786e.e86f88",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "onSpotlight",
+        "func": "var crc = context.global.crc;\n\nvar head = new Buffer(\"550009070156\",'hex');\nvar optionData = new Buffer(\"00000000000000\",'hex');\n\nvar DATA = context.global.Struct()\n    .word8Ube('status')\n    .word32Ube('addr')\n    .word8Ube('devType')\n    .word8Ube('cmdType')\n    .word16Ube('cmdData');\n\nvar CRC8 = context.global.Struct()\n    .word8Ube('crc8');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\nvar data = create(DATA);\nDATA.set('status', 0x1F);\nDATA.set('addr', 0x80004948);\nDATA.set('devType',0x81);\nDATA.set('cmdType',0x02);\nDATA.set('cmdData',0x0101);\n\nvar crcData = create(CRC8);\nCRC8.set('crc8', crc.crc8(Buffer.concat([data,optionData])));\n//CRC8.set('crc8',0xB2);\nvar sendMsg = {\n    payload: Buffer.concat([head, data,optionData,crcData])\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1078.8958587646484,
+        "y": 436.8888854980469,
+        "wires": [
+            [
+                "335c9edf.1d6232"
+            ]
+        ]
+    },
+    {
+        "id": "a7ecc87d.a135c8",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "offSpotlight",
+        "func": "var crc = context.global.crc;\n\nvar head = new Buffer(\"550009070156\",'hex');\nvar optionData = new Buffer(\"00000000000000\",'hex');\n\nvar DATA = context.global.Struct()\n    .word8Ube('status')\n    .word32Ube('addr')\n    .word8Ube('devType')\n    .word8Ube('cmdType')\n    .word16Ube('cmdData');\n\nvar CRC8 = context.global.Struct()\n    .word8Ube('crc8');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\nvar data = create(DATA);\nDATA.set('status', 0x1F);\nDATA.set('addr', 0x80004948);\nDATA.set('devType',0x81);\nDATA.set('cmdType',0x02);\nDATA.set('cmdData',0x0100);\n\nvar crcData = create(CRC8);\nCRC8.set('crc8', crc.crc8(Buffer.concat([data,optionData])));\n//CRC8.set('crc8',0xB2);\nvar sendMsg = {\n    payload: Buffer.concat([head, data,optionData,crcData])\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1089.7430267333984,
+        "y": 539.1770935058594,
+        "wires": [
+            [
+                "335c9edf.1d6232"
+            ]
+        ]
+    },
+    {
+        "id": "ef2e1433.89af98",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "parsePackage",
+        "func": "\nif(msg.payload.length > 21){\n  return {\n    payload:{\n        serialNum: msg.payload.readUInt32BE(7).toString(16),\n        onoff: msg.payload.readUInt8(14),\n        type: msg.payload.readUInt8(11)\n    }\n};  \n}else{\n    \n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 313.05555725097656,
+        "y": 213.60417938232422,
+        "wires": [
+            [
+                "a88cc460.9ccc18",
+                "3c4382d9.89232e",
+                "b9d2f91b.d51ae8"
+            ]
+        ]
+    },
+    {
+        "id": "a88cc460.9ccc18",
+        "type": "switch",
+        "z": "2b592821.33a798",
+        "name": "",
+        "property": "payload.serialNum",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "800049c8",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "80004948",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 380.0625,
+        "y": 379.38890838623047,
+        "wires": [
+            [
+                "e1111fec.b4907"
+            ],
+            [
+                "971a61f7.0791"
+            ]
+        ]
+    },
+    {
+        "id": "3c4382d9.89232e",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "toDB",
+        "func": "\nreturn {query:{serialNum:msg.payload.serialNum},payload:msg.payload};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 517.0521850585938,
+        "y": 185.93750762939453,
+        "wires": [
+            [
+                "2422f963.5a9486"
+            ]
+        ]
+    },
+    {
+        "id": "2422f963.5a9486",
+        "type": "mongodb out",
+        "z": "2b592821.33a798",
+        "mongodb": "d7fd085a.627ba8",
+        "name": "update",
+        "collection": "devices",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 743.8958129882812,
+        "y": 117.88888549804688,
+        "wires": []
+    },
+    {
+        "id": "84f2e599.7d7688",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "prehandle",
+        "func": "const CNT_HEAD_LEN = 6;\nconst CNT_LESS_LEN = 21;\nconst CNT_DATA_LEN_INDEX = 1;\nconst CNT_OPTION_DATA_LEN = 7;\nconst CNT_CRC_LEN = 1;\n\nvar buf = global.get(\"wrm_buf\") || [];\n\n/**\n * [packageParser description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar packageParser = function (msg) {\n    var packLen = msg.payload.length;\n    var cursor = 0;\n    while (packLen >= CNT_HEAD_LEN) {\n        var len = msg.payload.slice(cursor, cursor + CNT_HEAD_LEN).readUInt16BE(CNT_DATA_LEN_INDEX) + CNT_OPTION_DATA_LEN +　CNT_CRC_LEN + CNT_HEAD_LEN;\n        if (packLen >= len) {\n            //console.log(msg.payload.slice(cursor, cursor + len));\n            node.send({payload:msg.payload.slice(cursor, cursor + len)});\n            packLen -= len;\n            cursor += len;\n        } else {\n            buf.push(msg.payload.slice(cursor, msg.payload.length));\n            packLen = 0; \n        }\n    }\n    buf.push(msg.payload.slice(cursor, msg.payload.length));\n};\n/**\n * [prehandle description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar prehandle = function (msg) {\n    if (msg.payload) {\n        if (msg.payload[0] === 0x55) {\n            if (msg.payload.length < CNT_LESS_LEN) {\n                buf.push(msg.payload);\n            } else {\n                packageParser(msg);\n            }\n        } else {\n            if (buf.length !== 0) {\n                msg.payload = Buffer.concat([buf[0], msg.payload]);\n                buf = [];\n                packageParser(msg);\n            } else {\n                node.warn(\"invalid package\");\n                //console.log(\"invalid package!\");\n            }\n        }\n    }\n};\n\nprehandle(msg);\nglobal.set(\"wrm_buf\",buf);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 194.95065307617188,
+        "y": 314.94738006591797,
+        "wires": [
+            [
+                "ef2e1433.89af98"
+            ]
+        ]
+    },
+    {
+        "id": "e1111fec.b4907",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "",
+        "func": "\nreturn {payload:msg.payload.onoff === 1};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 585.0165100097656,
+        "y": 315.44078826904297,
+        "wires": [
+            [
+                "164a6366.331a6d"
+            ]
+        ]
+    },
+    {
+        "id": "971a61f7.0791",
+        "type": "function",
+        "z": "2b592821.33a798",
+        "name": "",
+        "func": "\nreturn {payload:msg.payload.onoff===1};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 582.0296630859375,
+        "y": 403.44738006591797,
+        "wires": [
+            [
+                "a66d80f1.8f607"
+            ]
+        ]
+    },
+    {
+        "id": "e3c25bbb.2cb258",
+        "type": "inject",
+        "z": "2b592821.33a798",
+        "name": "",
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 769.0231018066406,
+        "y": 199.60526275634766,
+        "wires": [
+            [
+                "b26e0110.8826e"
+            ]
+        ]
+    },
+    {
+        "id": "b9d1cad3.5ca7b8",
+        "type": "debug",
+        "z": "2b592821.33a798",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 1240.0165100097656,
+        "y": 168.7894515991211,
+        "wires": []
+    },
+    {
+        "id": "b9d2f91b.d51ae8",
+        "type": "debug",
+        "z": "2b592821.33a798",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 480.0296325683594,
+        "y": 102.77631378173828,
+        "wires": []
+    },
+    {
+        "id": "c4525dea.78dcc",
+        "type": "debug",
+        "z": "2b592821.33a798",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 293.0230407714844,
+        "y": 500.5230484008789,
+        "wires": []
+    },
+    {
+        "id": "cf20a830.2119f8",
+        "type": "delay",
+        "z": "2b592821.33a798",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "100",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 922.3980407714844,
+        "y": 302.33223724365234,
+        "wires": [
+            [
+                "ff81912e.a7f5d"
+            ]
+        ]
+    },
+    {
+        "id": "38c245d.a5d9cba",
+        "type": "function",
+        "z": "7b3e6f66.affe2",
+        "name": "forEach",
+        "func": "msg.payload.forEach(function(e){\n    node.send({topic:e.mac,payload:e});\n});",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 691.1042175292969,
+        "y": 1103.6666870117188,
+        "wires": [
+            [
+                "1d7caef.7666051"
+            ]
+        ]
+    },
+    {
+        "id": "1d7caef.7666051",
+        "type": "switch",
+        "z": "7b3e6f66.affe2",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ACCF23BF754C",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ACCF23DF8DB2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 858.8541564941406,
+        "y": 1102.6666870117188,
+        "wires": [
+            [
+                "d2a5516b.72f29"
+            ],
+            [
+                "75a1c8ac.23eae8"
+            ]
+        ]
+    },
+    {
+        "id": "41a87264.d9f49c",
+        "type": "inject",
+        "z": "7b3e6f66.affe2",
+        "name": "地暖-ACCF23BF754C",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 143.75,
+        "y": 272.5,
+        "wires": [
+            [
+                "c1d8af6d.c287f",
+                "d6dfe7cf.fa1c48",
+                "d94d5b94.7c5198",
+                "e7d07d5d.0a437"
+            ]
+        ]
+    },
+    {
+        "id": "2dd868e9.664b58",
+        "type": "inject",
+        "z": "7b3e6f66.affe2",
+        "name": "暖气片-ACCF23DF8DB2",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 125.00000762939453,
+        "y": 502.5000686645508,
+        "wires": [
+            [
+                "68a1cf6f.33028",
+                "3804fb6c.8d1054",
+                "2320658f.0f9b8a",
+                "530a0292.df83fc"
+            ]
+        ]
+    }
+]

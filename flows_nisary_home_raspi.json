@@ -1,0 +1,3011 @@
+[
+    {
+        "id": "885a4151.f37e6",
+        "type": "tab",
+        "label": "NisaryHome"
+    },
+    {
+        "id": "52edf81e.8c23d8",
+        "type": "tab",
+        "label": "通信",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b05e3447.420d08",
+        "type": "tab",
+        "label": "场景",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "6ee9fe15.1608c",
+        "type": "tab",
+        "label": "自动化",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5d48653e.a2b79c",
+        "type": "subflow",
+        "name": "mockData",
+        "info": "",
+        "in": [
+            {
+                "x": 58,
+                "y": 73.00001525878906,
+                "wires": [
+                    {
+                        "id": "5e0ea8a0.a1f158"
+                    },
+                    {
+                        "id": "d26f4feb.2d90b"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1060.000015258789,
+                "y": 143,
+                "wires": [
+                    {
+                        "id": "41beb187.be415",
+                        "port": 0
+                    },
+                    {
+                        "id": "67c77b31.13a474",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ff7a6ff2.00859",
+        "type": "subflow",
+        "name": "readRoute",
+        "info": "",
+        "in": [
+            {
+                "x": 70,
+                "y": 137,
+                "wires": [
+                    {
+                        "id": "51d7f64f.ae2808"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1051,
+                "y": 207,
+                "wires": [
+                    {
+                        "id": "3aa26c59.c55d94",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "a41a2f9a.5be5d",
+        "type": "subflow",
+        "name": "checkPackage",
+        "info": "",
+        "in": [
+            {
+                "x": 39,
+                "y": 334,
+                "wires": [
+                    {
+                        "id": "5e0f4da5.a1f0b4"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1146,
+                "y": 288,
+                "wires": [
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 0
+                    },
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 3
+                    }
+                ]
+            },
+            {
+                "x": 1148,
+                "y": 402,
+                "wires": [
+                    {
+                        "id": "c0e5ca45.3f1a38",
+                        "port": 1
+                    },
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 1
+                    }
+                ]
+            },
+            {
+                "x": 1146,
+                "y": 476,
+                "wires": [
+                    {
+                        "id": "c0e5ca45.3f1a38",
+                        "port": 2
+                    },
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 2
+                    }
+                ]
+            },
+            {
+                "x": 1150.0000457763672,
+                "y": 564.0000305175781,
+                "wires": [
+                    {
+                        "id": "a2ce2a2f.5d31d8",
+                        "port": 4
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "ce416712.31be98",
+        "type": "subflow",
+        "name": "updateDisplay",
+        "info": "",
+        "in": [
+            {
+                "x": 48,
+                "y": 292,
+                "wires": [
+                    {
+                        "id": "bedc9c4f.41236"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1164,
+                "y": 288,
+                "wires": [
+                    {
+                        "id": "844499a7.7bbb68",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "58b44a2.7215bb4",
+        "type": "subflow",
+        "name": "fliterDB",
+        "info": "",
+        "in": [
+            {
+                "x": 148,
+                "y": 219,
+                "wires": [
+                    {
+                        "id": "fb468bc4.8f8d78"
+                    }
+                ]
+            }
+        ],
+        "out": []
+    },
+    {
+        "id": "8a796ba1.9de658",
+        "type": "subflow",
+        "name": "客厅2路",
+        "info": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 280,
+                "wires": [
+                    {
+                        "id": "3f1ed279.0f5c1e"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1280,
+                "y": 340,
+                "wires": [
+                    {
+                        "id": "1352949f.3e50eb",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "c91c13c5.e7567",
+        "type": "subflow",
+        "name": "设备",
+        "info": "",
+        "in": [
+            {
+                "x": 80,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "da9ab166.d6208"
+                    },
+                    {
+                        "id": "d292778d.617518"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1400,
+                "y": 420,
+                "wires": [
+                    {
+                        "id": "457cb0c1.40436",
+                        "port": 0
+                    },
+                    {
+                        "id": "f7e1e264.66f6b",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fd4fd41f.02b028",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-custom",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "Helvetica Neue",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#74b139",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "NisaryHome",
+                "default": "#4B7930",
+                "baseColor": "#74b139",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#74b139",
+                    "value": "#74b139",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#74b139",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": true
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "group-textColor": {
+                    "value": "#9ace68",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "widget-textColor": {
+                    "value": "#808080",
+                    "edited": true
+                },
+                "widget-backgroundColor": {
+                    "value": "#74b139",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": true
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "NisaryHome",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 7,
+                "gy": 7,
+                "cx": 7,
+                "cy": 7,
+                "px": 1,
+                "py": 1
+            }
+        }
+    },
+    {
+        "id": "4175d300.2c08bc",
+        "type": "ui_tab",
+        "z": "885a4151.f37e6",
+        "name": "设备",
+        "icon": "fa-th-large fa-2x",
+        "order": 2
+    },
+    {
+        "id": "f971c074.de00f",
+        "type": "ui_group",
+        "z": "",
+        "name": "客厅",
+        "tab": "4175d300.2c08bc",
+        "order": 5,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "d7fd085a.627ba8",
+        "type": "mongodb",
+        "z": "",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "exhibition_scu",
+        "name": ""
+    },
+    {
+        "id": "a30aff90.4809a",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "57600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "500",
+        "bin": "bin",
+        "out": "time",
+        "addchar": false
+    },
+    {
+        "id": "a8dbe237.173a8",
+        "type": "ui_group",
+        "z": "",
+        "name": "入户花园",
+        "tab": "4175d300.2c08bc",
+        "order": 2,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "54b792a0.2d560c",
+        "type": "ui_group",
+        "z": "",
+        "name": "厨房",
+        "tab": "4175d300.2c08bc",
+        "order": 3,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "cc43904c.e9fd7",
+        "type": "ui_group",
+        "z": "",
+        "name": "餐厅",
+        "tab": "4175d300.2c08bc",
+        "order": 4,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "9b481531.9ebf28",
+        "type": "ui_group",
+        "z": "",
+        "name": "过道",
+        "tab": "4175d300.2c08bc",
+        "order": 6,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "c65f8030.5ae83",
+        "type": "ui_group",
+        "z": "",
+        "name": "主卧",
+        "tab": "4175d300.2c08bc",
+        "order": 7,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "6964f6c0.66a368",
+        "type": "ui_tab",
+        "z": "",
+        "name": "场景",
+        "icon": "fa-sign-language fa-2x",
+        "order": 3
+    },
+    {
+        "id": "622bc3ea.28cc9c",
+        "type": "ui_group",
+        "z": "",
+        "name": "离家",
+        "tab": "6964f6c0.66a368",
+        "order": 2,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "2a2da223.26beee",
+        "type": "ui_group",
+        "z": "",
+        "name": "睡觉",
+        "tab": "6964f6c0.66a368",
+        "order": 3,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "43a2cc38.8bbc04",
+        "type": "ui_group",
+        "z": "",
+        "name": "用膳",
+        "tab": "6964f6c0.66a368",
+        "order": 4,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "ad6016cc.692de8",
+        "type": "ui_group",
+        "z": "",
+        "name": "娱乐",
+        "tab": "6964f6c0.66a368",
+        "order": 5,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "7a972965.596d18",
+        "type": "ui_group",
+        "z": "",
+        "name": "会客",
+        "tab": "6964f6c0.66a368",
+        "order": 6,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "f5dfd0c.2f1403",
+        "type": "ui_group",
+        "z": "",
+        "name": "节能",
+        "tab": "6964f6c0.66a368",
+        "order": 7,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "83bcb71a.8ee278",
+        "type": "ui_group",
+        "z": "",
+        "name": "工作",
+        "tab": "6964f6c0.66a368",
+        "order": 8,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "73effa60.fde474",
+        "type": "ui_group",
+        "z": "",
+        "name": "私密",
+        "tab": "6964f6c0.66a368",
+        "order": 9,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "26fd6851.69b538",
+        "type": "ui_tab",
+        "z": "",
+        "name": "自动化",
+        "icon": "fa-cog fa-2x",
+        "order": 4
+    },
+    {
+        "id": "f06ab9a7.e42cd8",
+        "type": "ui_group",
+        "z": "",
+        "name": "主页",
+        "tab": "26fd6851.69b538",
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "6f231e3b.00d61",
+        "type": "ui_tab",
+        "z": "",
+        "name": "主页",
+        "icon": "fa-home fa-2x",
+        "order": 1
+    },
+    {
+        "id": "e32a072.02208f8",
+        "type": "ui_group",
+        "z": "",
+        "name": "设备",
+        "tab": "6f231e3b.00d61",
+        "order": 2,
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "2d5d9185.f6841e",
+        "type": "ui_group",
+        "z": "",
+        "name": "自动化",
+        "tab": "6f231e3b.00d61",
+        "order": 4,
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "44d15d12.3d4d94",
+        "type": "ui_group",
+        "z": "",
+        "name": "场景",
+        "tab": "6f231e3b.00d61",
+        "order": 3,
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "9c5aa03b.0faf6",
+        "type": "ui_group",
+        "z": "c91c13c5.e7567",
+        "name": "主页",
+        "tab": "",
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "a90728cf.5c6ae8",
+        "type": "ui_group",
+        "z": "",
+        "name": "主页",
+        "tab": "4175d300.2c08bc",
+        "order": 1,
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "1ccc705c.f3732",
+        "type": "ui_group",
+        "z": "",
+        "name": "主页",
+        "tab": "6964f6c0.66a368",
+        "order": 1,
+        "disp": false,
+        "width": "7"
+    },
+    {
+        "id": "d26f4feb.2d90b",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db",
+        "filename": "/home/pi/.node-red/db.json",
+        "format": "utf8",
+        "x": 282,
+        "y": 35,
+        "wires": [
+            [
+                "78ce2ed3.8731d"
+            ]
+        ]
+    },
+    {
+        "id": "5e0ea8a0.a1f158",
+        "type": "join",
+        "z": "5d48653e.a2b79c",
+        "name": "",
+        "mode": "custom",
+        "build": "merged",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "",
+        "joiner": "",
+        "timeout": "",
+        "count": "2",
+        "x": 668.0001220703125,
+        "y": 138,
+        "wires": [
+            [
+                "41beb187.be415"
+            ]
+        ]
+    },
+    {
+        "id": "41beb187.be415",
+        "type": "function",
+        "z": "5d48653e.a2b79c",
+        "name": "packageGetRFCTData",
+        "func": "var CONST_LEN_QUERY_CODE = 2;\nvar CONST_LEN_QUERY_DATA_LEN = 2;\n\nvar hourOffset = global.get(\"hourOffset\")||0;\nvar minOffset = global.get(\"minOffset\")||0;\nvar count = global.get(\"count\");\nvar mk = global.get(\"mock\");\nvar len = 0;\nvar date = new Date();\nvar mock = (date.getHours() + hourOffset) * 60 + date.getMinutes() + minOffset;\nif(mk){\n    mock = global.get(\"time\") + (global.get(\"collectTick\")%5);\n    /*if(++count === 5){\n        global.set(\"count\",0);\n    }else{\n        global.set(\"count\",count);\n    }*/\n}\n\n// var sendMsg = {\n//     payload: {\n//         seq: msg.payload.seq,\n//         dataLen: null,\n//         status: 0,\n//         datas: []\n//     }\n// };\nvar sendMsg = {\n    payload: {\n        type: \"success\",\n        seq: msg.payload.seq,\n        src: msg.payload.src,\n        dst: msg.payload.dst,\n        funcCode: msg.payload.funcCode,\n        dataLen: null,\n        data: []\n    }\n};\ncontext.global._.forEach(msg.payload.data.codes, function(e) {\n    switch (e) {\n        //all\n        case 0x00:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 26,\n                data: msg.payload.all[mock]\n            });\n            len += 26 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            //SN\n        case 0x01:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 10,\n                data: msg.payload.SN\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // total energy\n        case 0x03:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.en[mock]\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // VtCC\n        case 0x0A:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.VtCC\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC30\n        case 0x0B:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC30\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC60\n        case 0x0C:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC60\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC80\n        case 0x0D:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC80\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;        \n        default:\n            sendMsg.payload.type = \"fail\";\n            sendMsg.payload.data = {\n                code: 2,\n                msg: \"invalid function code!\"\n            };\n            break;\n    }\n});\nsendMsg.payload.dataLen = len + 1;\n\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 942.0001220703125,
+        "y": 54,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78ce2ed3.8731d",
+        "type": "json",
+        "z": "5d48653e.a2b79c",
+        "name": "",
+        "x": 476.00006103515625,
+        "y": 74,
+        "wires": [
+            [
+                "5e0ea8a0.a1f158"
+            ]
+        ]
+    },
+    {
+        "id": "51d7f64f.ae2808",
+        "type": "file in",
+        "z": "ff7a6ff2.00859",
+        "name": "db",
+        "filename": "/home/pi/.node-red/route.json",
+        "format": "utf8",
+        "x": 244,
+        "y": 66,
+        "wires": [
+            [
+                "3aa26c59.c55d94"
+            ]
+        ]
+    },
+    {
+        "id": "3aa26c59.c55d94",
+        "type": "json",
+        "z": "ff7a6ff2.00859",
+        "name": "",
+        "x": 406,
+        "y": 71,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ea89bb6.615768",
+        "type": "function",
+        "z": "a41a2f9a.5be5d",
+        "name": "checkRoute",
+        "func": "/**\n * [dataLen description]\n * @type {[type]}\n */\nvar CONST_HEAD_LENGTH = 29;\nvar CONST_CRC_LENGTH = 2;\n/**\n *\n */\nvar CONST_FUNC_CODE_INDEX = 26;\nvar CONST_SRC_INDEX = 6;\nvar CONST_DST_INDEX = 16;\nvar CONST_DATA_LEN_INDEX = 27;\nvar CONST_SEQ_INDEX = 2;\nvar CONST_DATA_INDEX = 29;\n/**\n * [dataLen description]\n * @type {[type]}\n */\nvar sendMsg = {\n    payload: {\n        type: null,\n        seq: null,\n        src: null,\n        dst: null,\n        funcCode: null,\n        dataLen: null,\n        data: null\n    }\n};\n\nvar data = msg.payload.data;\nvar route = {src:global.get(\"src\"),dst:global.get(\"dst\")};\nvar funcCode = data[CONST_FUNC_CODE_INDEX];\nvar seq = data[CONST_SEQ_INDEX];\nvar dataLen = data.readUInt16BE(CONST_DATA_LEN_INDEX);\nvar src = data.slice(CONST_SRC_INDEX, CONST_SRC_INDEX + 10).toString('hex');\nvar dst = data.slice(CONST_DST_INDEX, CONST_DST_INDEX + 10).toString('hex');\nif(funcCode === 0x15 && route.src === null){\n    sendMsg.payload = {\n        type: \"pair\",\n        seq: seq,\n        src: src,\n        dst: route.dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: data.slice(CONST_DATA_INDEX, CONST_DATA_INDEX + dataLen)\n    }\n    return sendMsg;\n}\nelse if (src === route.src && dst === route.dst) {\n    sendMsg.payload = {\n        type: \"success\",\n        seq: seq,\n        src: src,\n        dst: dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: data.slice(CONST_DATA_INDEX, CONST_DATA_INDEX + dataLen)\n    }\n    return sendMsg;\n}else if (src === \"ffffffffffffffffffff\" && dst === \"34453035444546463331\") {\n    sendMsg.payload = {\n        type: \"forward\",\n        seq: seq,\n        src: src,\n        dst: dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: data.slice(CONST_DATA_INDEX, CONST_DATA_INDEX + dataLen)\n    }\n    return sendMsg;\n}else {\n    sendMsg.payload = {\n        type: \"invalid\",\n        seq: seq,\n        src: src,\n        dst: dst,\n        funcCode: funcCode,\n        dataLen: dataLen,\n        data: {\n            code: 255,\n            msg: \"invalid package[route],ignore!\"\n        }\n    }\n    return sendMsg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 884,
+        "y": 232,
+        "wires": [
+            [
+                "a2ce2a2f.5d31d8"
+            ]
+        ]
+    },
+    {
+        "id": "5e0f4da5.a1f0b4",
+        "type": "function",
+        "z": "a41a2f9a.5be5d",
+        "name": "checkCRC",
+        "func": "/**\n * [dataLen description]\n * @type {[type]}\n */\nvar CONST_HEAD_LENGTH = 29;\nvar CONST_CRC_LENGTH = 2;\n/**\n * \n */\nvar CONST_FUNC_CODE_INDEX = 26;\nvar CONST_SRC_INDEX = 6;\nvar CONST_DST_INDEX = 16;\nvar CONST_DATA_LEN_INDEX = 27;\nvar CONST_SEQ_INDEX = 2;\n/**\n * [dataLen description]\n * @type {[type]}\n */\n var sendMsg = {\n        payload: {\n            type: null,\n            seq: null,\n            src: null,\n            dst: null,\n            funcCode: null,\n            data: null\n        }\n    };\nif (msg.payload.length <= 29 || msg.payload[0] !== 0x52 || msg.payload[1] !== 0x46){\n    sendMsg.payload.type = 'invalid';\n    sendMsg.payload.data = {code:255,msg:\"invalid package[unknow], ignore!\"};\n    return sendMsg;\n}\n\nvar dataLen = msg.payload.readUInt16BE(CONST_DATA_LEN_INDEX);\nif (dataLen < 0 || msg.payload.length !== dataLen + CONST_HEAD_LENGTH + CONST_CRC_LENGTH) {\n    sendMsg.payload.type = 'invalid';\n    sendMsg.payload.data = {code:255,msg:\"invalid package[length], ignore!\"};\n    return sendMsg;\n}\nif (context.global.crc.crc16modbus(msg.payload.slice(0, CONST_HEAD_LENGTH + dataLen)).toString(16) === msg.payload.readUInt16BE(CONST_HEAD_LENGTH + dataLen).toString(16)) {\n    sendMsg.payload.type = \"success\";\n    sendMsg.payload.data = msg.payload;\n    return sendMsg;\n} else {\n    sendMsg.payload.type = \"fail\";\n    sendMsg.payload.funcCode = msg.payload[CONST_FUNC_CODE_INDEX];\n    sendMsg.payload.seq = msg.payload[CONST_SEQ_INDEX];\n    sendMsg.payload.src = msg.payload.slice(CONST_SRC_INDEX, CONST_SRC_INDEX + 10).toString('hex');\n    sendMsg.payload.dst = msg.payload.slice(CONST_DST_INDEX, CONST_DST_INDEX + 10).toString('hex');\n    sendMsg.payload.data = {\n        code: 50,\n        msg: \"invalid package![crc]\"\n    };\n    return sendMsg;\n}",
+        "outputs": "1",
+        "noerr": 0,
+        "x": 167,
+        "y": 332,
+        "wires": [
+            [
+                "c0e5ca45.3f1a38"
+            ]
+        ]
+    },
+    {
+        "id": "c0e5ca45.3f1a38",
+        "type": "switch",
+        "z": "a41a2f9a.5be5d",
+        "name": "crc",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "success",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fail",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "invalid",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 3,
+        "x": 326,
+        "y": 332,
+        "wires": [
+            [
+                "9ea89bb6.615768"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "a2ce2a2f.5d31d8",
+        "type": "switch",
+        "z": "a41a2f9a.5be5d",
+        "name": "route",
+        "property": "payload.type",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "success",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "fail",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "invalid",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "pair",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "forward",
+                "vt": "str"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 5,
+        "x": 953,
+        "y": 330,
+        "wires": [
+            [],
+            [],
+            [],
+            [
+                "a4fc586d.5b03a8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bedc9c4f.41236",
+        "type": "file in",
+        "z": "ce416712.31be98",
+        "name": "",
+        "filename": "/home/pi/.node-red/db.json",
+        "format": "utf8",
+        "x": 278,
+        "y": 292,
+        "wires": [
+            [
+                "49a7066a.b658f8"
+            ]
+        ]
+    },
+    {
+        "id": "49a7066a.b658f8",
+        "type": "json",
+        "z": "ce416712.31be98",
+        "name": "",
+        "x": 520,
+        "y": 292,
+        "wires": [
+            [
+                "844499a7.7bbb68"
+            ]
+        ]
+    },
+    {
+        "id": "844499a7.7bbb68",
+        "type": "function",
+        "z": "ce416712.31be98",
+        "name": "packData",
+        "func": "var date = new Date();\nvar hourOffset = global.get(\"hourOffset\")||0;\nvar minOffset = global.get(\"minOffset\")||0;\nvar count = global.get(\"count\");\nvar mk = global.get(\"mock\");\nvar mock = (date.getHours() + hourOffset) * 60 + date.getMinutes() + minOffset;\nif(mk){\n    mock = global.get(\"time\") + (global.get(\"collectTick\")%5);\n    /*if(++count === 5){\n        global.set(\"count\",0);\n    }else{\n        global.set(\"count\",count);\n    }*/\n}\n\nvar data = msg.payload.all[mock];\n\nif(data.Dirt == 0x10){\n\treturn {\n\t    payload:{\n\t        display: \"ToUser: \" + ((data.Vt*data.Ic)/100000).toFixed(2)+ \"Kw\",\n\t        chart:{\n\t            topic:\"toUser\",\n\t            payload: (data.Vt*data.Ic)/100\n\t        }\n\t    }\n\t};\n}else{\n\treturn {\n\t    payload:{\n\t        display: \"ToGrid: \" + ((data.Vt*data.Ic)/100000).toFixed(2) + \"Kw\",\n            chart:{\n                topic:\"toGrid\",\n                payload: (data.Vt*data.Ic)/100\n            }\t        \n\t    }\n\t    \n\t};\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 725,
+        "y": 296,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4fc586d.5b03a8",
+        "type": "function",
+        "z": "a41a2f9a.5be5d",
+        "name": "updateSRC",
+        "func": "global.set(\"src\",msg.payload.src);\nreturn {payload:{src:msg.payload.src,dst:msg.payload.dst}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 883,
+        "y": 634,
+        "wires": [
+            [
+                "d890a56a.276f58"
+            ]
+        ]
+    },
+    {
+        "id": "d890a56a.276f58",
+        "type": "file",
+        "z": "a41a2f9a.5be5d",
+        "name": "",
+        "filename": "/home/pi/.node-red/route.json",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 1131,
+        "y": 636,
+        "wires": []
+    },
+    {
+        "id": "fb468bc4.8f8d78",
+        "type": "file in",
+        "z": "58b44a2.7215bb4",
+        "name": "",
+        "filename": "/home/pi/.node-red/db.json",
+        "format": "utf8",
+        "x": 360,
+        "y": 221,
+        "wires": [
+            [
+                "141969a4.4c1666"
+            ]
+        ]
+    },
+    {
+        "id": "141969a4.4c1666",
+        "type": "json",
+        "z": "58b44a2.7215bb4",
+        "name": "",
+        "x": 573,
+        "y": 103,
+        "wires": [
+            [
+                "138e0d53.f13cd3"
+            ]
+        ]
+    },
+    {
+        "id": "138e0d53.f13cd3",
+        "type": "function",
+        "z": "58b44a2.7215bb4",
+        "name": "mockTime",
+        "func": "var all = msg.payload.all;\n\nvar pureFairStartTime = [];\nvar pureUnfairStartTime = [];\nvar fairW1StartTime = [];\nvar unfairW1StartTime = [];\nvar fairW1Dot2StartTime = [];\nvar unFair0Dot8StartTime = [];\nvar invalidStartTime = [];\n\n/**\n*\n**/\nvar whichModeStartTime = function (index) {\n\tvar value = 0;\n\tfor (var i = 2; i < 5; i++) {\n\t\tif (index + i >= all.length) {\n\t\t\treturn null;\n\t\t} else {\n\t\t\tvalue += all[index + i].Dirt;\n\t\t}\n\t}\n\tswitch (value) {\n\tcase 0x30:\n\t\tif (all[index].Dirt === 0x10 && all[index + 1].Dirt === 0x10) {\n\t\t\tpureFairStartTime.push(all[index].time);\n\t\t} else if (all[index + 1].Dirt === 0x10) {\n\t\t\tfairW1StartTime.push(all[index].time);\n\t\t} else {\n\t\t\tfairW1Dot2StartTime.push(all[index].time);\n\t\t}\n\t\tbreak;\n\tcase 0x33:\n\t\tif (all[index].Dirt === 0x11 && all[index + 1].Dirt === 0x11) {\n\t\t\tpureUnfairStartTime.push(all[index].time);\n\t\t} else if (all[index + 1].Dirt === 0x11) {\n\t\t\tunfairW1StartTime.push(all[index].time);\n\t\t} else {\n\t\t\tunFair0Dot8StartTime.push(all[index].time);\n\t\t}\n\t\tbreak;\n\tdefault:\n\t\tinvalidStartTime.push(all[index].time);\n\t\tbreak;\n\t}\n};\n\nfor (var i = 0; i < all.length; i++) {\n\twhichModeStartTime(i);\n}\n\nvar mock = {\n    \"pureFair\": pureFairStartTime,\n    \"pureUnfair\": pureUnfairStartTime,\n    \"fairW1\": fairW1StartTime,\n    \"unFairW1\": unfairW1StartTime,\n    \"fairW12\": fairW1Dot2StartTime,\n    \"unFairW08\": unFair0Dot8StartTime,\n    \"invalid\": invalidStartTime\n};\nreturn {payload:mock};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 678,
+        "y": 222,
+        "wires": [
+            [
+                "ee638e7f.9cdda"
+            ]
+        ]
+    },
+    {
+        "id": "ee638e7f.9cdda",
+        "type": "file",
+        "z": "58b44a2.7215bb4",
+        "name": "",
+        "filename": "/home/pi/.node-red/mock.json",
+        "appendNewline": false,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 938,
+        "y": 224,
+        "wires": []
+    },
+    {
+        "id": "f33c853.6e66678",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_down-flow_success",
+        "filename": "/home/pi/.node-red/db_down-flow_success.json",
+        "format": "utf8",
+        "x": 256.2000427246094,
+        "y": 139.20001220703125,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cac8489f.872aa8",
+        "type": "debug",
+        "z": "5d48653e.a2b79c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1032.6999816894531,
+        "y": 296.4000244140625,
+        "wires": []
+    },
+    {
+        "id": "175f5279.939cae",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_down-flow_case2",
+        "filename": "/home/pi/.node-red/db_down-flow_case2.json",
+        "format": "utf8",
+        "x": 254.2000274658203,
+        "y": 179.19999313354492,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3191115.cdd1f",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case2",
+        "filename": "/home/pi/.node-red/db_contra-flow_case2.json",
+        "format": "utf8",
+        "x": 254.20004272460938,
+        "y": 215.20000839233398,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b34869f.671d68",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case3",
+        "filename": "/home/pi/.node-red/db_down-flow_case3.json",
+        "format": "utf8",
+        "x": 254.2000274658203,
+        "y": 250.20000839233398,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d317ae63.3266f",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case4",
+        "filename": "/home/pi/.node-red/db_down-flow_case4.json",
+        "format": "utf8",
+        "x": 254.2000274658203,
+        "y": 286.20002365112305,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b7f9a218.a00e4",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case5",
+        "filename": "/home/pi/.node-red/db_down-flow_case5.json",
+        "format": "utf8",
+        "x": 252.2000274658203,
+        "y": 322.20002365112305,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67c77b31.13a474",
+        "type": "function",
+        "z": "5d48653e.a2b79c",
+        "name": "packageGetRFCTData_test",
+        "func": "var CONST_LEN_QUERY_CODE = 2;\nvar CONST_LEN_QUERY_DATA_LEN = 2;\n\nvar hourOffset = global.get(\"hourOffset\")||0;\nvar minOffset = global.get(\"minOffset\")||0;\nvar count = global.get(\"count\");\nvar mk = global.get(\"mock\");\nvar len = 0;\nvar date = new Date();\nvar mock = global.get(\"collectTick\");\nif(mock === null || mock ===undefined){\n    mock = 0;\n}\nvar sendMsg = {\n    payload: {\n        type: \"success\",\n        seq: msg.payload.seq,\n        src: msg.payload.src,\n        dst: msg.payload.dst,\n        funcCode: msg.payload.funcCode,\n        dataLen: null,\n        data: []\n    }\n};\ncontext.global._.forEach(msg.payload.data.codes, function(e) {\n    switch (e) {\n        //all\n        case 0x00:\n            var tempData = {\n    \t\t\t\"time\" : 0,\n    \t\t\t\"Vt\" : 2300,\n    \t\t\t\"Ic\" : 0,\n    \t\t\t\"Ft\" : 0,\n    \t\t\t\"Dirt\" : 17,\n    \t\t\t\"Pt\" : 0,\n    \t\t\t\"LN\" : 16,\n    \t\t\t\"ToGrid\" : 0,\n    \t\t\t\"ToUser\" : 0\n    \t\t};\n            if(mock < msg.payload.all.length){\n                tempData = msg.payload.all[mock];\n            }\n            if(tempData.Dirt === 17){\n                console.log(\"mock=\"+ mock+ \", power = -\" + (tempData.Vt* tempData.Ic)/100);\n            }\n            else{\n                 console.log(\"mock=\"+ mock+ \", power = +\" + (tempData.Vt* tempData.Ic)/100);\n            }\n            sendMsg.payload.data.push({\n                code: e,\n                len: 26,\n                data: tempData\n            });\n            len += 26 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            //SN\n        case 0x01:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 10,\n                data: msg.payload.SN\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // total energy\n        case 0x03:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.en[mock]\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // VtCC\n        case 0x0A:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.VtCC\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC30\n        case 0x0B:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC30\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC60\n        case 0x0C:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC60\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;\n            // PtCC80\n        case 0x0D:\n            sendMsg.payload.data.push({\n                code: e,\n                len: 4,\n                data: msg.payload.PtCC80\n            });\n            len += 4 + CONST_LEN_QUERY_CODE + CONST_LEN_QUERY_DATA_LEN;\n            break;        \n        default:\n            sendMsg.payload.type = \"fail\";\n            sendMsg.payload.data = {\n                code: 2,\n                msg: \"invalid function code!\"\n            };\n            break;\n    }\n});\nsendMsg.payload.dataLen = len + 1;\n\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 736.2000274658203,
+        "y": 293.2000274658203,
+        "wires": [
+            [
+                "cac8489f.872aa8"
+            ]
+        ]
+    },
+    {
+        "id": "6a400bc0.67b094",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case6",
+        "filename": "/home/pi/.node-red/db_down-flow_case6.json",
+        "format": "utf8",
+        "x": 251.20001220703125,
+        "y": 356.20002365112305,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d8505ca.f1f29a",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case7",
+        "filename": "/home/pi/.node-red/db_down-flow_case7.json",
+        "format": "utf8",
+        "x": 248.20004272460938,
+        "y": 393.2000274658203,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79a976b6.aae678",
+        "type": "file in",
+        "z": "5d48653e.a2b79c",
+        "name": "db_contra-flow_case_all",
+        "filename": "/home/pi/.node-red/db_down-flow_case_all.json",
+        "format": "utf8",
+        "x": 254.20001220703125,
+        "y": 430.2000274658203,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "207ca8e6.673608",
+        "type": "function",
+        "z": "885a4151.f37e6",
+        "name": "parsePackage",
+        "func": "\nif(msg.payload.length > 21){\n  return {\n    payload:{\n        serialNum: msg.payload.readUInt32BE(7).toString(16),\n        onoff: msg.payload.readUInt8(14),\n        type: msg.payload.readUInt8(11)\n    }\n};  \n}else{\n    \n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 260,
+        "wires": [
+            [
+                "50b02bc8.72ba34",
+                "90c5086a.5f66a8"
+            ]
+        ]
+    },
+    {
+        "id": "50b02bc8.72ba34",
+        "type": "function",
+        "z": "885a4151.f37e6",
+        "name": "toDB",
+        "func": "\nreturn {query:{serialNum:msg.payload.serialNum},payload:msg.payload};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 240,
+        "wires": [
+            [
+                "afeadde0.c6ee6"
+            ]
+        ]
+    },
+    {
+        "id": "afeadde0.c6ee6",
+        "type": "mongodb out",
+        "z": "885a4151.f37e6",
+        "mongodb": "d7fd085a.627ba8",
+        "name": "update",
+        "collection": "devices",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 780.8958129882812,
+        "y": 180.88883018493652,
+        "wires": []
+    },
+    {
+        "id": "a0fc7c79.a7819",
+        "type": "function",
+        "z": "885a4151.f37e6",
+        "name": "prehandle",
+        "func": "const CNT_HEAD_LEN = 6;\nconst CNT_LESS_LEN = 21;\nconst CNT_DATA_LEN_INDEX = 1;\nconst CNT_OPTION_DATA_LEN = 7;\nconst CNT_CRC_LEN = 1;\n\nvar buf = global.get(\"wrm_buf\") || [];\n\n/**\n * [packageParser description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar packageParser = function (msg) {\n    var packLen = msg.payload.length;\n    var cursor = 0;\n    while (packLen >= CNT_HEAD_LEN) {\n        var len = msg.payload.slice(cursor, cursor + CNT_HEAD_LEN).readUInt16BE(CNT_DATA_LEN_INDEX) + CNT_OPTION_DATA_LEN +　CNT_CRC_LEN + CNT_HEAD_LEN;\n        if (packLen >= len) {\n            //console.log(msg.payload.slice(cursor, cursor + len));\n            node.send({payload:msg.payload.slice(cursor, cursor + len)});\n            packLen -= len;\n            cursor += len;\n        } else {\n            buf.push(msg.payload.slice(cursor, msg.payload.length));\n            packLen = 0; \n        }\n    }\n    buf.push(msg.payload.slice(cursor, msg.payload.length));\n};\n/**\n * [prehandle description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar prehandle = function (msg) {\n    if (msg.payload) {\n        if (msg.payload[0] === 0x55) {\n            if (msg.payload.length < CNT_LESS_LEN) {\n                buf.push(msg.payload);\n            } else {\n                packageParser(msg);\n            }\n        } else {\n            if (buf.length !== 0) {\n                msg.payload = Buffer.concat([buf[0], msg.payload]);\n                buf = [];\n                packageParser(msg);\n            } else {\n                node.warn(\"invalid package\");\n                //console.log(\"invalid package!\");\n            }\n        }\n    }\n};\n\nprehandle(msg);\nglobal.set(\"wrm_buf\",buf);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 150,
+        "y": 200,
+        "wires": [
+            [
+                "207ca8e6.673608"
+            ]
+        ]
+    },
+    {
+        "id": "90c5086a.5f66a8",
+        "type": "debug",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 570,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "7ebf4bd.3a2a6b4",
+        "type": "inject",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 187,
+        "y": 944,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9a8e8d3f.18df5",
+        "type": "ui_switch",
+        "z": "8a796ba1.9de658",
+        "name": "6",
+        "label": "",
+        "group": "f971c074.de00f",
+        "order": 2,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "droplight6",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 870,
+        "y": 100,
+        "wires": [
+            [
+                "1352949f.3e50eb"
+            ]
+        ]
+    },
+    {
+        "id": "a75a3e08.6a9f2",
+        "type": "ui_switch",
+        "z": "8a796ba1.9de658",
+        "name": "4",
+        "label": "",
+        "group": "f971c074.de00f",
+        "order": 3,
+        "width": "2",
+        "height": "2",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 1110,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e38c5688.7a02b8",
+        "type": "ui_switch",
+        "z": "8a796ba1.9de658",
+        "name": "2",
+        "label": "",
+        "group": "f971c074.de00f",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "droplight2",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 870,
+        "y": 160,
+        "wires": [
+            [
+                "1352949f.3e50eb"
+            ]
+        ]
+    },
+    {
+        "id": "7ff97043.f0b2d",
+        "type": "ui_text",
+        "z": "8a796ba1.9de658",
+        "group": "f971c074.de00f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "—————————吊灯—————————",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 789,
+        "y": 47,
+        "wires": []
+    },
+    {
+        "id": "5a9a4bbf.3a1b94",
+        "type": "ui_text",
+        "z": "8a796ba1.9de658",
+        "group": "f971c074.de00f",
+        "order": 5,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "—————————射灯—————————",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 769,
+        "y": 345,
+        "wires": []
+    },
+    {
+        "id": "1f67d05d.d2391",
+        "type": "ui_text",
+        "z": "8a796ba1.9de658",
+        "group": "f971c074.de00f",
+        "order": 7,
+        "width": "0",
+        "height": "0",
+        "name": "",
+        "label": "—————————壁灯—————————",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 770,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "3081ed3a.58b8e2",
+        "type": "ui_switch",
+        "z": "8a796ba1.9de658",
+        "name": "射灯",
+        "label": "",
+        "group": "f971c074.de00f",
+        "order": 6,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "spot",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 830,
+        "y": 440,
+        "wires": [
+            [
+                "1352949f.3e50eb"
+            ]
+        ]
+    },
+    {
+        "id": "dc8c3b0d.f88fd8",
+        "type": "ui_switch",
+        "z": "8a796ba1.9de658",
+        "name": "壁灯",
+        "label": "",
+        "group": "f971c074.de00f",
+        "order": 8,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "lamp",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 830,
+        "y": 260,
+        "wires": [
+            [
+                "1352949f.3e50eb"
+            ]
+        ]
+    },
+    {
+        "id": "575db068.f0c7b",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "设备",
+        "group": "e32a072.02208f8",
+        "order": 1,
+        "width": "7",
+        "height": "4",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "fa-tablet fa-5x",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "",
+        "x": 290,
+        "y": 1480,
+        "wires": [
+            [
+                "b5d5148b.2be898"
+            ]
+        ]
+    },
+    {
+        "id": "f811d378.a4637",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "自动化",
+        "group": "2d5d9185.f6841e",
+        "order": 3,
+        "width": "7",
+        "height": "3",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "fa-magic fa-5x",
+        "payload": "3",
+        "payloadType": "num",
+        "topic": "",
+        "x": 290,
+        "y": 1600,
+        "wires": [
+            [
+                "bd8370e7.dec0b"
+            ]
+        ]
+    },
+    {
+        "id": "992b6470.30a098",
+        "type": "ui_switch",
+        "z": "c91c13c5.e7567",
+        "name": "过道",
+        "label": "",
+        "group": "9b481531.9ebf28",
+        "order": 5,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "2147483968",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 911,
+        "y": 520,
+        "wires": [
+            [
+                "457cb0c1.40436"
+            ]
+        ]
+    },
+    {
+        "id": "1f2a271.bf890d9",
+        "type": "ui_switch",
+        "z": "c91c13c5.e7567",
+        "name": "主卧",
+        "label": "",
+        "group": "c65f8030.5ae83",
+        "order": 5,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "22788",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 911,
+        "y": 573,
+        "wires": [
+            [
+                "f7e1e264.66f6b"
+            ]
+        ]
+    },
+    {
+        "id": "18d58a95.cba4a5",
+        "type": "ui_switch",
+        "z": "c91c13c5.e7567",
+        "name": "入户花园",
+        "label": "",
+        "group": "a8dbe237.173a8",
+        "order": 5,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "2147483965",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 921,
+        "y": 293,
+        "wires": [
+            [
+                "457cb0c1.40436"
+            ]
+        ]
+    },
+    {
+        "id": "4eac256f.c6182c",
+        "type": "ui_switch",
+        "z": "c91c13c5.e7567",
+        "name": "厨房",
+        "label": "",
+        "group": "54b792a0.2d560c",
+        "order": 5,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "2147492299",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 911,
+        "y": 353,
+        "wires": [
+            [
+                "457cb0c1.40436"
+            ]
+        ]
+    },
+    {
+        "id": "e68d796.ee97488",
+        "type": "ui_switch",
+        "z": "c91c13c5.e7567",
+        "name": "餐厅",
+        "label": "",
+        "group": "cc43904c.e9fd7",
+        "order": 5,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "decouple": "false",
+        "topic": "2147483969",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "fa-lightbulb-o fa-5x",
+        "oncolor": "#74B139",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "fa-lightbulb-o fa-5x",
+        "offcolor": "#808080",
+        "x": 911,
+        "y": 405,
+        "wires": [
+            [
+                "457cb0c1.40436"
+            ]
+        ]
+    },
+    {
+        "id": "8aa5a89f.18b0c8",
+        "type": "subflow:8a796ba1.9de658",
+        "z": "c91c13c5.e7567",
+        "name": "",
+        "x": 921,
+        "y": 458,
+        "wires": [
+            [
+                "f7e1e264.66f6b"
+            ]
+        ]
+    },
+    {
+        "id": "d392fe0.b7e19",
+        "type": "VoiceRSStts",
+        "z": "885a4151.f37e6",
+        "name": "TTS",
+        "apiKey": "8e773d95f6a54b349118179245e2d0a6",
+        "language": "zh-cn",
+        "rate": "0",
+        "codec": "MP3",
+        "format": "8khz_8bit_mono",
+        "cacheLocation": "/tmp",
+        "x": 850,
+        "y": 900,
+        "wires": [
+            [
+                "f98a0b2f.644268"
+            ]
+        ]
+    },
+    {
+        "id": "a55cf7ba.038858",
+        "type": "inject",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "topic": "",
+        "payload": "烧录成功",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 440,
+        "y": 940,
+        "wires": [
+            [
+                "d392fe0.b7e19"
+            ]
+        ]
+    },
+    {
+        "id": "f98a0b2f.644268",
+        "type": "exec",
+        "z": "885a4151.f37e6",
+        "command": "mplayer",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "name": "",
+        "x": 1048,
+        "y": 921.5,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "88faf88f.1e0ee8",
+        "type": "exec",
+        "z": "885a4151.f37e6",
+        "command": "/home/pi/.nvm/versions/node/v6.11.1/bin/node-weather",
+        "addpay": false,
+        "append": "chengdu",
+        "useSpawn": "true",
+        "timer": "10",
+        "oldrc": false,
+        "name": "getWeather",
+        "x": 430,
+        "y": 1140,
+        "wires": [
+            [
+                "5d54a34a.d9332c"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9b66ac3f.a3549",
+        "type": "debug",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 930,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "ed1c3619.ab0868",
+        "type": "inject",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "topic": "",
+        "payload": "主人",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 130,
+        "y": 1080,
+        "wires": [
+            [
+                "88faf88f.1e0ee8"
+            ]
+        ]
+    },
+    {
+        "id": "47f81e8b.9ff6a",
+        "type": "schedex",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "suspended": false,
+        "lat": "30.6",
+        "lon": "104.1",
+        "ontime": "sunriseEnd",
+        "ontopic": "主人早上好！",
+        "onpayload": "",
+        "onoffset": 0,
+        "onrandomoffset": 0,
+        "offtime": "sunset",
+        "offtopic": "主人晚上好！",
+        "offpayload": "",
+        "offoffset": 0,
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": false,
+        "sun": false,
+        "x": 140,
+        "y": 1280,
+        "wires": [
+            [
+                "a4885723.6cec98"
+            ]
+        ]
+    },
+    {
+        "id": "cdc23d29.5068a",
+        "type": "serial in",
+        "z": "52edf81e.8c23d8",
+        "name": "WRM200-IN",
+        "serial": "a30aff90.4809a",
+        "x": 90,
+        "y": 520,
+        "wires": [
+            [
+                "f425b512.04ddd8"
+            ]
+        ]
+    },
+    {
+        "id": "40361949.567138",
+        "type": "binary",
+        "z": "52edf81e.8c23d8",
+        "name": "unserialAction",
+        "pattern": "b8=>syn,b16=>dataLen,x24,b8=>rc,b32=>serialNum,b8=>sensorType,b8{x2,b1=>pr,b1=>io,b4 => channel}",
+        "x": 669,
+        "y": 440,
+        "wires": [
+            [
+                "ee8ed1e3.691dd",
+                "f19f7043.d8cab"
+            ]
+        ]
+    },
+    {
+        "id": "8b32ffd1.3c149",
+        "type": "debug",
+        "z": "52edf81e.8c23d8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1179,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b4103524.56ceb8",
+        "type": "serial out",
+        "z": "52edf81e.8c23d8",
+        "name": "WRM200-OUT",
+        "serial": "a30aff90.4809a",
+        "x": 620,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "ee8ed1e3.691dd",
+        "type": "function",
+        "z": "52edf81e.8c23d8",
+        "name": "action",
+        "func": "if(msg.payload.pr === 1){\n    /*\n    msg = {payload:{\n        syn:msg.payload.syn,\n        dataLen:msg.payload.dataLen,\n        rc:msg.payload.rc,\n        serialNum:msg.payload.serialNum,\n        sensor:msg.payload.sensor,\n        switch:msg.payload.pr & msg.payload.io,\n        channel:msg.payload.channel\n        }\n    };\n    */\n    msg.payload.switch = msg.payload.pr & msg.payload.io;\n    return msg;\n}//else if(msg.payload.serialNum === 34966){\n   // return msg;\n//}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 440,
+        "wires": [
+            [
+                "8b32ffd1.3c149",
+                "2cf0f81d.41aa48",
+                "296ce9bd.0f4836"
+            ]
+        ]
+    },
+    {
+        "id": "d942a248.2971a",
+        "type": "function",
+        "z": "52edf81e.8c23d8",
+        "name": "report",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 870,
+        "y": 520,
+        "wires": [
+            [
+                "8b32ffd1.3c149",
+                "2cf0f81d.41aa48"
+            ]
+        ]
+    },
+    {
+        "id": "54b2d2bd.df00dc",
+        "type": "function",
+        "z": "52edf81e.8c23d8",
+        "name": "invalid",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 639,
+        "y": 580,
+        "wires": [
+            [
+                "e28a72f5.40aa4"
+            ]
+        ]
+    },
+    {
+        "id": "462014c3.2193fc",
+        "type": "switch",
+        "z": "52edf81e.8c23d8",
+        "name": "",
+        "property": "dataLen",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "9",
+                "vt": "num"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 3,
+        "x": 490,
+        "y": 520,
+        "wires": [
+            [
+                "40361949.567138"
+            ],
+            [
+                "9e01a1d9.43afe"
+            ],
+            [
+                "54b2d2bd.df00dc"
+            ]
+        ]
+    },
+    {
+        "id": "9e01a1d9.43afe",
+        "type": "binary",
+        "z": "52edf81e.8c23d8",
+        "name": "unserialReport",
+        "pattern": "b8=>syn,b16=>dataLen,x24,b8=>rc,b32=>serialNum,b8=>devType,b8=>cmdType,b8=>channel,b8=>switch",
+        "x": 669,
+        "y": 520,
+        "wires": [
+            [
+                "d942a248.2971a"
+            ]
+        ]
+    },
+    {
+        "id": "89057b98.21ddb8",
+        "type": "function",
+        "z": "52edf81e.8c23d8",
+        "name": "parseDataLen",
+        "func": "return {dataLen:msg.payload.readUInt16BE(1),payload:msg.payload};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 320,
+        "y": 520,
+        "wires": [
+            [
+                "462014c3.2193fc",
+                "78a1d7c7.dcd788"
+            ]
+        ]
+    },
+    {
+        "id": "e28a72f5.40aa4",
+        "type": "debug",
+        "z": "52edf81e.8c23d8",
+        "name": "[DEBUG]invalid",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 800,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "da9ab166.d6208",
+        "type": "switch",
+        "z": "c91c13c5.e7567",
+        "name": "接收器上报",
+        "property": "payload.serialNum",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "2147483965",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2147492299",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2147483969",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2147483968",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 4,
+        "x": 270,
+        "y": 280,
+        "wires": [
+            [
+                "4c93cc57.bed654"
+            ],
+            [
+                "68483f57.efee9"
+            ],
+            [
+                "b7f75368.56cee"
+            ],
+            [
+                "f9b16628.cd6328"
+            ]
+        ]
+    },
+    {
+        "id": "b7f75368.56cee",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "餐厅接收器",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 249,
+        "wires": [
+            [
+                "e68d796.ee97488"
+            ]
+        ]
+    },
+    {
+        "id": "f425b512.04ddd8",
+        "type": "function",
+        "z": "52edf81e.8c23d8",
+        "name": "prehandle",
+        "func": "const CNT_HEAD_LEN = 6;\nconst CNT_LESS_LEN = 21;\nconst CNT_DATA_LEN_INDEX = 1;\nconst CNT_OPTION_DATA_LEN = 7;\nconst CNT_CRC_LEN = 1;\n\nvar buf = global.get(\"wrm_buf\") || [];\n\n/**\n * [packageParser description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar packageParser = function (msg) {\n    var packLen = msg.payload.length;\n    var cursor = 0;\n    while (packLen >= CNT_HEAD_LEN) {\n        var len = msg.payload.slice(cursor, cursor + CNT_HEAD_LEN).readUInt16BE(CNT_DATA_LEN_INDEX) + CNT_OPTION_DATA_LEN +　CNT_CRC_LEN + CNT_HEAD_LEN;\n        if (packLen >= len) {\n            //console.log(msg.payload.slice(cursor, cursor + len));\n            node.send({payload:msg.payload.slice(cursor, cursor + len)});\n            packLen -= len;\n            cursor += len;\n        } else {\n            buf.push(msg.payload.slice(cursor, msg.payload.length));\n            packLen = 0; \n        }\n    }\n    buf.push(msg.payload.slice(cursor, msg.payload.length));\n};\n/**\n * [prehandle description]\n * @param  {[type]} msg [description]\n * @return {[type]}     [description]\n */\nvar prehandle = function (msg) {\n    if (msg.payload) {\n        if (msg.payload[0] === 0x55) {\n            if (msg.payload.length < CNT_LESS_LEN) {\n                buf.push(msg.payload);\n            } else {\n                packageParser(msg);\n            }\n        } else {\n            if (buf.length !== 0) {\n                msg.payload = Buffer.concat([buf[0], msg.payload]);\n                buf = [];\n                packageParser(msg);\n            } else {\n                node.warn(\"invalid package\");\n                //console.log(\"invalid package!\");\n            }\n        }\n    }\n};\n\nprehandle(msg);\nglobal.set(\"wrm_buf\",buf);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 270,
+        "y": 660,
+        "wires": [
+            [
+                "89057b98.21ddb8"
+            ]
+        ]
+    },
+    {
+        "id": "4c93cc57.bed654",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "入户花园接收器",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500,
+        "y": 136,
+        "wires": [
+            [
+                "18d58a95.cba4a5"
+            ]
+        ]
+    },
+    {
+        "id": "68483f57.efee9",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "厨房接收器",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 196,
+        "wires": [
+            [
+                "4eac256f.c6182c"
+            ]
+        ]
+    },
+    {
+        "id": "f9b16628.cd6328",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "过道接收器",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 490,
+        "y": 300,
+        "wires": [
+            [
+                "992b6470.30a098"
+            ]
+        ]
+    },
+    {
+        "id": "f19f7043.d8cab",
+        "type": "debug",
+        "z": "52edf81e.8c23d8",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 857,
+        "y": 326,
+        "wires": []
+    },
+    {
+        "id": "2cf0f81d.41aa48",
+        "type": "link out",
+        "z": "52edf81e.8c23d8",
+        "name": "发往设备",
+        "links": [
+            "cde72f89.e4cf4"
+        ],
+        "x": 1055,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "b3629e43.63fbe",
+        "type": "subflow:c91c13c5.e7567",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "x": 550,
+        "y": 400,
+        "wires": [
+            [
+                "a0335d50.cb15a"
+            ]
+        ]
+    },
+    {
+        "id": "cde72f89.e4cf4",
+        "type": "link in",
+        "z": "885a4151.f37e6",
+        "name": "来自通信",
+        "links": [
+            "2cf0f81d.41aa48"
+        ],
+        "x": 375,
+        "y": 400,
+        "wires": [
+            [
+                "b3629e43.63fbe"
+            ]
+        ]
+    },
+    {
+        "id": "d292778d.617518",
+        "type": "switch",
+        "z": "c91c13c5.e7567",
+        "name": "自电开关触发",
+        "property": "payload.serialNum",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "16516",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "241380",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "29188",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "34966",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "21153",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "22788",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 6,
+        "x": 260,
+        "y": 580,
+        "wires": [
+            [
+                "a0c8f63.79e7a08"
+            ],
+            [
+                "a330faeb.5cbee8"
+            ],
+            [
+                "acf1ce34.4c0f2"
+            ],
+            [
+                "c479466d.846db8"
+            ],
+            [
+                "f479803c.6748a"
+            ],
+            [
+                "5619d5c6.6f777c"
+            ]
+        ]
+    },
+    {
+        "id": "a0004b3b.b17d48",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "入户花园按钮",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 400,
+        "wires": [
+            [
+                "18d58a95.cba4a5"
+            ]
+        ]
+    },
+    {
+        "id": "2c055d0b.f36ae2",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "厨房按钮",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 700,
+        "y": 460,
+        "wires": [
+            [
+                "4eac256f.c6182c"
+            ]
+        ]
+    },
+    {
+        "id": "acf1ce34.4c0f2",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "餐厅单开面板",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 520,
+        "wires": [
+            [
+                "e68d796.ee97488"
+            ]
+        ]
+    },
+    {
+        "id": "c479466d.846db8",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "客厅四开面板",
+        "func": "\nreturn {payload:{\n        switch:msg.payload.switch,\n        channel:msg.payload.channel\n    }\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 580,
+        "wires": [
+            [
+                "8aa5a89f.18b0c8"
+            ]
+        ]
+    },
+    {
+        "id": "f479803c.6748a",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "过道单开面板",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 640,
+        "wires": [
+            [
+                "992b6470.30a098"
+            ]
+        ]
+    },
+    {
+        "id": "5619d5c6.6f777c",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "主卧单开面板",
+        "func": "\nreturn {payload: msg.payload.switch === 0x01};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 680,
+        "y": 700,
+        "wires": [
+            [
+                "1f2a271.bf890d9"
+            ]
+        ]
+    },
+    {
+        "id": "a0c8f63.79e7a08",
+        "type": "switch",
+        "z": "c91c13c5.e7567",
+        "name": "channel2",
+        "property": "payload.channel",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 400,
+        "y": 440,
+        "wires": [
+            [
+                "a0004b3b.b17d48"
+            ],
+            [
+                "2c055d0b.f36ae2"
+            ]
+        ]
+    },
+    {
+        "id": "a330faeb.5cbee8",
+        "type": "switch",
+        "z": "c91c13c5.e7567",
+        "name": "channel3",
+        "property": "payload.channel",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 3,
+        "x": 460,
+        "y": 500,
+        "wires": [
+            [
+                "a0004b3b.b17d48"
+            ],
+            [
+                "2c055d0b.f36ae2"
+            ],
+            [
+                "acf1ce34.4c0f2"
+            ]
+        ]
+    },
+    {
+        "id": "457cb0c1.40436",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "serialReceiver",
+        "func": "var crc = context.global.crc;\n\nvar head = new Buffer(\"550009070156\",'hex');\nvar optionData = new Buffer(\"00000000000000\",'hex');\n\nvar DATA = context.global.Struct()\n    .word8Ube('status')\n    .word32Ube('addr')\n    .word8Ube('devType')\n    .word8Ube('cmdType')\n    .word16Ube('cmdData');\n\nvar CRC8 = context.global.Struct()\n    .word8Ube('crc8');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\nvar data = create(DATA);\nDATA.set('status', 0x1F);\nDATA.set('addr', msg.topic.toString(16));\nDATA.set('devType',0x81);\nDATA.set('cmdType',0x02);\nif(msg.payload){\n    DATA.set('cmdData',0x0101);\n}else{\n    DATA.set('cmdData',0x0100);\n}\n\nvar crcData = create(CRC8);\nCRC8.set('crc8', crc.crc8(Buffer.concat([data,optionData])));\nvar sendMsg = {\n    payload: Buffer.concat([head, data,optionData,crcData])\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1160,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7e1e264.66f6b",
+        "type": "function",
+        "z": "c91c13c5.e7567",
+        "name": "serialPannel",
+        "func": "var crc = context.global.crc;\n\nvar head = new Buffer(\"55000707017a\",'hex');\nvar optionData = new Buffer(\"00000000000000\",'hex');\n\nvar DATA = context.global.Struct()\n    .word8Ube('status')\n    .word32Ube('addr')\n    .word8Ube('sensorType')\n    .word8Ube('sensorData');\n\nvar CRC8 = context.global.Struct()\n    .word8Ube('crc8');\n\nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\nvar data = create(DATA);\nDATA.set('status', 0x00);\nDATA.set('addr', msg.topic);\nif(msg.topic === 22788){\n    DATA.set('sensorType',0x01);\n    if(msg.payload){\n        DATA.set('sensorData',0x32);\n    }else{\n        DATA.set('sensorData',0x22);\n    }\n}else{\n    DATA.set('sensorType',msg.payload.sensorType);\n    DATA.set('sensorData',msg.payload.sensorData);\n}\nvar crcData = create(CRC8);\nCRC8.set('crc8', crc.crc8(Buffer.concat([data,optionData])));\nvar sendMsg = {\n    payload: Buffer.concat([head, data,optionData,crcData])\n};\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1150,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "709d8e1d.6c624",
+        "type": "link in",
+        "z": "52edf81e.8c23d8",
+        "name": "来自设备",
+        "links": [
+            "a0335d50.cb15a"
+        ],
+        "x": 315,
+        "y": 860,
+        "wires": [
+            [
+                "b4103524.56ceb8"
+            ]
+        ]
+    },
+    {
+        "id": "a0335d50.cb15a",
+        "type": "link out",
+        "z": "885a4151.f37e6",
+        "name": "发往通信",
+        "links": [
+            "709d8e1d.6c624"
+        ],
+        "x": 759,
+        "y": 402,
+        "wires": []
+    },
+    {
+        "id": "296ce9bd.0f4836",
+        "type": "debug",
+        "z": "52edf81e.8c23d8",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 1088,
+        "y": 390,
+        "wires": []
+    },
+    {
+        "id": "3f1ed279.0f5c1e",
+        "type": "switch",
+        "z": "8a796ba1.9de658",
+        "name": "switchChannel",
+        "property": "payload.channel",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "c63c06c8.d3bd28"
+            ],
+            [
+                "426e1009.5a63f"
+            ]
+        ]
+    },
+    {
+        "id": "78a1d7c7.dcd788",
+        "type": "debug",
+        "z": "52edf81e.8c23d8",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 557,
+        "y": 692,
+        "wires": []
+    },
+    {
+        "id": "426e1009.5a63f",
+        "type": "switch",
+        "z": "8a796ba1.9de658",
+        "name": "",
+        "property": "payload.switch",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 2,
+        "x": 410,
+        "y": 340,
+        "wires": [
+            [
+                "1b829f38.d17051"
+            ],
+            [
+                "c5ea6ce7.aa942"
+            ]
+        ]
+    },
+    {
+        "id": "c63c06c8.d3bd28",
+        "type": "switch",
+        "z": "8a796ba1.9de658",
+        "name": "",
+        "property": "payload.switch",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "9a8e8d3f.18df5"
+            ],
+            [
+                "e38c5688.7a02b8"
+            ]
+        ]
+    },
+    {
+        "id": "c5ea6ce7.aa942",
+        "type": "function",
+        "z": "8a796ba1.9de658",
+        "name": "",
+        "func": "var current = context.global.get(\"spot\");\ncontext.global.set(\"spot\",!current);\nreturn {payload:!current};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 440,
+        "wires": [
+            [
+                "3081ed3a.58b8e2"
+            ]
+        ]
+    },
+    {
+        "id": "44cd769a.d01688",
+        "type": "inject",
+        "z": "8a796ba1.9de658",
+        "name": "Init",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "8e28353e.8411d8"
+            ]
+        ]
+    },
+    {
+        "id": "8e28353e.8411d8",
+        "type": "function",
+        "z": "8a796ba1.9de658",
+        "name": "",
+        "func": "context.global.set(\"lamp\",false);\ncontext.global.set(\"spot\",false);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 310,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b829f38.d17051",
+        "type": "function",
+        "z": "8a796ba1.9de658",
+        "name": "",
+        "func": "var current = context.global.get(\"lamp\");\ncontext.global.set(\"lamp\",!current);\nreturn {payload:!current};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 260,
+        "wires": [
+            [
+                "dc8c3b0d.f88fd8"
+            ]
+        ]
+    },
+    {
+        "id": "1352949f.3e50eb",
+        "type": "function",
+        "z": "8a796ba1.9de658",
+        "name": "",
+        "func": "var sendMsg = {\n    topic : 0x8896,\n    payload:{\n        sensorType: 0x02,\n        sensorData: 0x00\n    }\n};\nswitch(msg.topic){\n    case 'droplight6':\n        sendMsg.payload.sensorData = 0x32;\n        break;\n    case 'droplight2':\n        sendMsg.payload.sensorData = 0x22;\n        break;\n    case 'lamp':\n        sendMsg.payload.sensorData = 0x21;\n        break;\n    case 'spot':\n        sendMsg.payload.sensorData = 0x31;\n        break;\n    default:\n        break;\n}\n\nreturn sendMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1110,
+        "y": 260,
+        "wires": [
+            [
+                "9c3bfd00.57009"
+            ]
+        ]
+    },
+    {
+        "id": "9c3bfd00.57009",
+        "type": "debug",
+        "z": "8a796ba1.9de658",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1180,
+        "y": 518,
+        "wires": []
+    },
+    {
+        "id": "290d604.56583a",
+        "type": "ui_button",
+        "z": "885a4151.f37e6",
+        "name": "场景",
+        "group": "44d15d12.3d4d94",
+        "order": 3,
+        "width": "7",
+        "height": "4",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "fa-connectdevelop fa-5x",
+        "payload": "2",
+        "payloadType": "num",
+        "topic": "",
+        "x": 290,
+        "y": 1540,
+        "wires": [
+            [
+                "c55162b9.7a8b3"
+            ]
+        ]
+    },
+    {
+        "id": "b5d5148b.2be898",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "设备",
+        "x": 590,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "87c1debe.6d842",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "离家",
+        "group": "622bc3ea.28cc9c",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-sign-out fa-4x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 690,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "40ac0749.48c918",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "睡觉",
+        "group": "2a2da223.26beee",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-bed fa-4x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 688.8436279296875,
+        "y": 218.0380859375,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a951471b.910ba8",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "用膳",
+        "group": "43a2cc38.8bbc04",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-cutlery fa-5x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 689.9478759765625,
+        "y": 264.0380859375,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d569809d.17551",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "娱乐",
+        "group": "ad6016cc.692de8",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-film fa-5x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 688.79150390625,
+        "y": 302.076171875,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fb79ee3.5a8c1",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "会客",
+        "group": "7a972965.596d18",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-users fa-5x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 686.9478759765625,
+        "y": 350.0380859375,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1f6b1253.9b636e",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "节能",
+        "group": "f5dfd0c.2f1403",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-ravelry fa-5x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 685.79150390625,
+        "y": 388.076171875,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb5b9c7c.9bed6",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "离家",
+        "group": "83bcb71a.8ee278",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-laptop fa-5x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 688.9478759765625,
+        "y": 431.0380859375,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "758c024b.d679ac",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "私密",
+        "group": "73effa60.fde474",
+        "order": 0,
+        "width": "7",
+        "height": "2",
+        "passthru": false,
+        "label": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "fa-user-secret fa-5x",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 687.79150390625,
+        "y": 469.076171875,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c55162b9.7a8b3",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "场景",
+        "x": 590,
+        "y": 1540,
+        "wires": [
+            [
+                "c6745766.070ca8"
+            ]
+        ]
+    },
+    {
+        "id": "bd8370e7.dec0b",
+        "type": "ui_ui_control",
+        "z": "885a4151.f37e6",
+        "name": "自动化",
+        "x": 590,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6745766.070ca8",
+        "type": "debug",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 932,
+        "y": 1550,
+        "wires": []
+    },
+    {
+        "id": "98b1a8a5.ff4248",
+        "type": "ui_button",
+        "z": "c91c13c5.e7567",
+        "name": "主页",
+        "group": "a90728cf.5c6ae8",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "passthru": false,
+        "label": "主页",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "fa-home fa-2x",
+        "payload": "主页",
+        "payloadType": "str",
+        "topic": "",
+        "x": 330,
+        "y": 60,
+        "wires": [
+            [
+                "df71642c.b56678"
+            ]
+        ]
+    },
+    {
+        "id": "df71642c.b56678",
+        "type": "ui_ui_control",
+        "z": "c91c13c5.e7567",
+        "name": "主页",
+        "x": 630,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eefe2312.b11b8",
+        "type": "ui_button",
+        "z": "b05e3447.420d08",
+        "name": "主页",
+        "group": "1ccc705c.f3732",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "passthru": false,
+        "label": "主页",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "fa-home fa-2x",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 250,
+        "y": 120,
+        "wires": [
+            [
+                "d16998c8.07a588"
+            ]
+        ]
+    },
+    {
+        "id": "d16998c8.07a588",
+        "type": "ui_ui_control",
+        "z": "b05e3447.420d08",
+        "name": "主页",
+        "x": 550,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6034d52.2b",
+        "type": "ui_button",
+        "z": "6ee9fe15.1608c",
+        "name": "主页",
+        "group": "f06ab9a7.e42cd8",
+        "order": 1,
+        "width": "7",
+        "height": "1",
+        "passthru": false,
+        "label": "主页",
+        "color": "",
+        "bgcolor": "#333333",
+        "icon": "fa-home fa-2x",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "",
+        "x": 410,
+        "y": 140,
+        "wires": [
+            [
+                "570b66a7.45f2b8"
+            ]
+        ]
+    },
+    {
+        "id": "570b66a7.45f2b8",
+        "type": "ui_ui_control",
+        "z": "6ee9fe15.1608c",
+        "name": "主页",
+        "x": 710,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4885723.6cec98",
+        "type": "function",
+        "z": "885a4151.f37e6",
+        "name": "addCellMe",
+        "func": "context.global.set(\"callme\",msg.topic);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 290,
+        "y": 1220,
+        "wires": [
+            [
+                "88faf88f.1e0ee8"
+            ]
+        ]
+    },
+    {
+        "id": "5d54a34a.d9332c",
+        "type": "function",
+        "z": "885a4151.f37e6",
+        "name": "",
+        "func": "\nreturn {payload:context.global.get(\"callme\")+msg.payload};\n//return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 1120,
+        "wires": [
+            [
+                "9b66ac3f.a3549",
+                "d392fe0.b7e19"
+            ]
+        ]
+    }
+]
