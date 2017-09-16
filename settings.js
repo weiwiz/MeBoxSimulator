@@ -162,18 +162,18 @@ module.exports = {
         // bonescript:require('bonescript'),
         // jfive:require("johnny-five"),
         // j5board:require("johnny-five").Board({repl:false})
-        Struct: require('struct'),
-        crc: require('crc'),
-	    _: require('lodash'),
+        //Struct: require('struct'),
+        //crc: require('crc'),
+	    //_: require('lodash'),
   	    //wpi: require('wiring-pi'),
-	    os: require('os'),
+	    //os: require('os'),
 	//Gpio: require('onoff').Gpio,
         //tts: require('baidu_yuyin'),
-	    uuid: require('uuid'),
-        dateFormat: require('dateformat'),
-	    mongo2xlsx: require('mongo-xlsx'),
-	    packet: require('packet'),
-	    address: require('address')
+	    //uuid: require('uuid'),
+        //dateFormat: require('dateformat'),
+	    //mongo2xlsx: require('mongo-xlsx'),
+	    //packet: require('packet'),
+	    //address: require('address')
     },
 
     // The following property can be used to order the categories in the editor
