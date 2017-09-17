@@ -2489,7 +2489,8 @@
         "y": 228,
         "wires": [
             [
-                "5de73225.cb10ec"
+                "5de73225.cb10ec",
+                "6a6e7fab.6f346"
             ]
         ]
     },
@@ -3606,7 +3607,7 @@
         "type": "function",
         "z": "5e18b5ee.e48c2c",
         "name": "handle_get_data",
-        "func": "var _ = context.global._;\n\nvar sendMsg = {\n    sync: 21062,\n    num:0,\n    ver: 1,\n    type:160,\n    src: msg.payload.db.serialNum,\n    dst: context.global.get(\"GRFSerialNum\"),\n    func:96,\n    len: 2,\n    code:0\n};\n\nreturn {type:\"forward\",payload:{send:sendMsg,pattern:\"b16=>code\"}};",
+        "func": "var _ = context.global._;\n\nvar sendMsg = {\n    sync: 21062,\n    num:0,\n    ver: 1,\n    type:0x00A0,\n    src: msg.payload.db.serialNum,\n    dst: context.global.get(\"GRFSerialNum\"),\n    func:96,\n    len: 2,\n    code:0\n};\n\nreturn {type:\"forward\",payload:{send:sendMsg,pattern:\"b16=>code\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 664,
@@ -6964,6 +6965,18 @@
         "complete": "false",
         "x": 1095,
         "y": 462,
+        "wires": []
+    },
+    {
+        "id": "6a6e7fab.6f346",
+        "type": "debug",
+        "z": "46021cec.0f7574",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 452.96022033691406,
+        "y": 232.491455078125,
         "wires": []
     }
 ]
