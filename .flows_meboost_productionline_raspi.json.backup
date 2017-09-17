@@ -1,0 +1,1678 @@
+[
+    {
+        "id": "1ffdb104.1b53bf",
+        "type": "tab",
+        "label": "Config",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3d69aeb2.27d282",
+        "type": "tab",
+        "label": "Core",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ea219a30.47aaf8",
+        "type": "tab",
+        "label": "Export",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "c9fbc73e.c915e8",
+        "type": "subflow",
+        "name": "findDBWithSerialNum",
+        "info": "",
+        "in": [
+            {
+                "x": 604,
+                "y": 314,
+                "wires": [
+                    {
+                        "id": "3b13a0d1.6d1d3"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 1091,
+                "y": 314,
+                "wires": [
+                    {
+                        "id": "a9191438.96db78",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "1a26147a.5abc4c",
+        "type": "serial-port",
+        "z": "",
+        "serialport": "/dev/ttyAMA0",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "newline": "500",
+        "bin": "bin",
+        "out": "time",
+        "addchar": false
+    },
+    {
+        "id": "45d002fc.5d7a5c",
+        "type": "mongodb",
+        "z": "",
+        "hostname": "127.0.0.1",
+        "port": "27017",
+        "db": "meboost_productionlie",
+        "name": ""
+    },
+    {
+        "id": "5d5872d7.8fa91c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#000000",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "ebef75a6.4b2838",
+        "type": "ui_tab",
+        "z": "",
+        "name": "配置",
+        "icon": "dashboard"
+    },
+    {
+        "id": "c9cb0a46.8caa08",
+        "type": "ui_group",
+        "z": "",
+        "name": "生产配置",
+        "tab": "b93a631b.591b5",
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "32e94aad.c25906",
+        "type": "ui_group",
+        "z": "",
+        "name": "导出产品文件",
+        "tab": "7a4c917a.13518",
+        "order": 2,
+        "disp": true,
+        "width": "7"
+    },
+    {
+        "id": "7a4c917a.13518",
+        "type": "ui_tab",
+        "z": "",
+        "name": "导出",
+        "icon": "dashboard"
+    },
+    {
+        "id": "b93a631b.591b5",
+        "type": "ui_tab",
+        "z": "",
+        "name": "产线",
+        "icon": "dashboard"
+    },
+    {
+        "id": "95a1e096.10685",
+        "type": "ui_group",
+        "z": "",
+        "name": "设备序号",
+        "tab": "ebef75a6.4b2838",
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "2fa4212d.a6010e",
+        "type": "serial in",
+        "z": "3d69aeb2.27d282",
+        "name": "GRF-IN",
+        "serial": "1a26147a.5abc4c",
+        "x": 60,
+        "y": 306,
+        "wires": [
+            [
+                "dfc939bd.572c08",
+                "e277f81c.91a8c8"
+            ]
+        ]
+    },
+    {
+        "id": "dfc939bd.572c08",
+        "type": "debug",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 233,
+        "y": 191,
+        "wires": []
+    },
+    {
+        "id": "a64edb8b.f84ad8",
+        "type": "rpi-gpio out",
+        "z": "3d69aeb2.27d282",
+        "name": "successLED",
+        "pin": "33",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1299,
+        "y": 522,
+        "wires": []
+    },
+    {
+        "id": "b7676d75.91a8f",
+        "type": "rpi-gpio out",
+        "z": "3d69aeb2.27d282",
+        "name": "recvLED",
+        "pin": "29",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 763,
+        "y": 614,
+        "wires": []
+    },
+    {
+        "id": "e277f81c.91a8c8",
+        "type": "function",
+        "z": "3d69aeb2.27d282",
+        "name": "parseSerialNum",
+        "func": "if(msg.payload.length == 31){\n    var CONST_FUNC_CODE = 26;\n    var funcCode = msg.payload[CONST_FUNC_CODE];\n    if(funcCode === 0xF1){\n        var CONST_SRC_INDEX = 6;\n        var CONST_DST_INDEX = 16;\n        var serialNum = msg.payload.slice(CONST_SRC_INDEX, CONST_SRC_INDEX + 10).toString('hex');\n        context.global.set(\"currentSerialNum\",serialNum);\n        return {payload:serialNum};\n    }\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 289,
+        "y": 306,
+        "wires": [
+            [
+                "e5585a7a.f37408",
+                "69a2a9a1.79a418",
+                "ef0c46f1.af7fb8",
+                "62589e93.3acee"
+            ]
+        ]
+    },
+    {
+        "id": "e5585a7a.f37408",
+        "type": "debug",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 410,
+        "y": 138,
+        "wires": []
+    },
+    {
+        "id": "190fad3c.6b1223",
+        "type": "mongodb out",
+        "z": "3d69aeb2.27d282",
+        "mongodb": "45d002fc.5d7a5c",
+        "name": "MeBoostIn",
+        "collection": "meboost_wwlb",
+        "payonly": false,
+        "upsert": true,
+        "multi": false,
+        "operation": "update",
+        "x": 833,
+        "y": 236,
+        "wires": []
+    },
+    {
+        "id": "c280a624.1a94e8",
+        "type": "delay",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 794,
+        "y": 355,
+        "wires": [
+            [
+                "a621164f.fda188"
+            ]
+        ]
+    },
+    {
+        "id": "a9191438.96db78",
+        "type": "mongodb in",
+        "z": "c9fbc73e.c915e8",
+        "mongodb": "45d002fc.5d7a5c",
+        "name": "MeBoostOUT",
+        "collection": "meboost_wwlb",
+        "operation": "find",
+        "x": 931,
+        "y": 314,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5d55ac0.e883b8",
+        "type": "function",
+        "z": "3d69aeb2.27d282",
+        "name": "checkInsertResult",
+        "func": "if(msg.payload.length === 1 && msg.payload[0].serialNum === context.global.get(\"currentSerialNum\")){\n    return {payload: 1};\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1232,
+        "y": 274,
+        "wires": [
+            [
+                "a64edb8b.f84ad8",
+                "55061f34.cb4bc",
+                "402fad2d.000354"
+            ]
+        ]
+    },
+    {
+        "id": "3b13a0d1.6d1d3",
+        "type": "function",
+        "z": "c9fbc73e.c915e8",
+        "name": "readDB",
+        "func": "var SN = context.global.get(\"currentSerialNum\");\nvar newMsg = {};\nnewMsg.payload    = { 'serialNum' : SN };\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 744,
+        "y": 314,
+        "wires": [
+            [
+                "a9191438.96db78"
+            ]
+        ]
+    },
+    {
+        "id": "55061f34.cb4bc",
+        "type": "delay",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 840,
+        "y": 460,
+        "wires": [
+            [
+                "ee46337f.5445a"
+            ]
+        ]
+    },
+    {
+        "id": "ee46337f.5445a",
+        "type": "change",
+        "z": "3d69aeb2.27d282",
+        "name": "down",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 990,
+        "y": 460,
+        "wires": [
+            [
+                "b7676d75.91a8f",
+                "a64edb8b.f84ad8",
+                "b7beae1.1d6f65",
+                "5d353986.6050d8"
+            ]
+        ]
+    },
+    {
+        "id": "69a2a9a1.79a418",
+        "type": "trigger",
+        "z": "3d69aeb2.27d282",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "num",
+        "op2type": "num",
+        "duration": "1",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "name": "",
+        "x": 540,
+        "y": 542,
+        "wires": [
+            [
+                "b7676d75.91a8f"
+            ]
+        ]
+    },
+    {
+        "id": "b7beae1.1d6f65",
+        "type": "rpi-gpio out",
+        "z": "3d69aeb2.27d282",
+        "name": "buzzer",
+        "pin": "37",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 1322,
+        "y": 453,
+        "wires": []
+    },
+    {
+        "id": "402fad2d.000354",
+        "type": "trigger",
+        "z": "3d69aeb2.27d282",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "num",
+        "op2type": "num",
+        "duration": "250",
+        "extend": false,
+        "units": "ms",
+        "reset": "",
+        "name": "",
+        "x": 1140,
+        "y": 414,
+        "wires": [
+            [
+                "b7beae1.1d6f65"
+            ]
+        ]
+    },
+    {
+        "id": "5d353986.6050d8",
+        "type": "mongodb in",
+        "z": "3d69aeb2.27d282",
+        "mongodb": "45d002fc.5d7a5c",
+        "name": "count",
+        "collection": "meboost_wwlb",
+        "operation": "count",
+        "x": 1011.5,
+        "y": 663,
+        "wires": [
+            [
+                "420c03cd.39db1c"
+            ]
+        ]
+    },
+    {
+        "id": "420c03cd.39db1c",
+        "type": "globalGetSet",
+        "z": "3d69aeb2.27d282",
+        "name": "count",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "count",
+        "x": 1150.5,
+        "y": 663,
+        "wires": [
+            [
+                "4f20b6b2.0e3e48",
+                "4cb1b9fc.f5f8f8"
+            ]
+        ]
+    },
+    {
+        "id": "faf2a980.afe808",
+        "type": "VoiceRSStts",
+        "z": "3d69aeb2.27d282",
+        "name": "SerialNumSpeaker",
+        "apiKey": "8e773d95f6a54b349118179245e2d0a6",
+        "language": "zh-cn",
+        "rate": "0",
+        "codec": "MP3",
+        "format": "8khz_8bit_mono",
+        "cacheLocation": "/tmp",
+        "x": 1292,
+        "y": 812,
+        "wires": [
+            [
+                "cc4e990c.2b3648"
+            ]
+        ]
+    },
+    {
+        "id": "4f20b6b2.0e3e48",
+        "type": "function",
+        "z": "3d69aeb2.27d282",
+        "name": "playAudio",
+        "func": "var No = context.global.get(\"No\");\nreturn {payload:\"烧录成功，设备编号：#\"+ No};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1296,
+        "y": 718,
+        "wires": [
+            [
+                "faf2a980.afe808"
+            ]
+        ]
+    },
+    {
+        "id": "cc4e990c.2b3648",
+        "type": "exec",
+        "z": "3d69aeb2.27d282",
+        "command": "mplayer",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "",
+        "x": 1388,
+        "y": 880.5,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "d2a1e01.ebd9b2",
+        "type": "exec",
+        "z": "3d69aeb2.27d282",
+        "command": "sudo python /home/pi/.node-red/lcd_i2c.py",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "LCDShowLogo",
+        "x": 1628,
+        "y": 704,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4cb1b9fc.f5f8f8",
+        "type": "function",
+        "z": "3d69aeb2.27d282",
+        "name": "showMeBoostNo",
+        "func": "\nreturn {payload:\"-f \\\"OTP Successful!\\\" -s \\\"MeBoost No:#\" + context.global.get(\"No\")+\"\\\"\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1347,
+        "y": 622.5,
+        "wires": [
+            [
+                "d2a1e01.ebd9b2",
+                "76cc932d.0aee24"
+            ]
+        ]
+    },
+    {
+        "id": "86323b36.45f228",
+        "type": "inject",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 1103,
+        "y": 578,
+        "wires": [
+            [
+                "4cb1b9fc.f5f8f8"
+            ]
+        ]
+    },
+    {
+        "id": "fb1c3225.de90e",
+        "type": "exec",
+        "z": "3d69aeb2.27d282",
+        "command": "sudo python /home/pi/.node-red/lcd_i2c.py",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "LCDShowLogo",
+        "x": 219,
+        "y": 513,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "ef0c46f1.af7fb8",
+        "type": "function",
+        "z": "3d69aeb2.27d282",
+        "name": "showRecvSerialNum",
+        "func": "\nreturn {payload:\"-f \\\"Recv MeBoost SN:\\\" -s \\\"\" + msg.payload + \"\\\"\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 164,
+        "y": 414.5,
+        "wires": [
+            [
+                "fb1c3225.de90e"
+            ]
+        ]
+    },
+    {
+        "id": "a621164f.fda188",
+        "type": "subflow:c9fbc73e.c915e8",
+        "z": "3d69aeb2.27d282",
+        "name": "findDBWithSerialNum",
+        "x": 967,
+        "y": 308.5,
+        "wires": [
+            [
+                "b5d55ac0.e883b8",
+                "77625db6.6e66e4"
+            ]
+        ]
+    },
+    {
+        "id": "62589e93.3acee",
+        "type": "subflow:c9fbc73e.c915e8",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "x": 495,
+        "y": 209,
+        "wires": [
+            [
+                "62d89507.e1211c",
+                "6ed5a10d.a515f"
+            ]
+        ]
+    },
+    {
+        "id": "62d89507.e1211c",
+        "type": "function",
+        "z": "3d69aeb2.27d282",
+        "name": "checkExistAndSaveToDB",
+        "func": "var dateFormat = context.global.dateFormat;\nvar count = context.global.get(\"count\") + 1;\n\nvar getBatchNo = function(no){\n    return (dateFormat(new Date(),\"yyyyW\") + context.global.get(\"customId\").toString(16)+ \"-\" + context.global.get(\"sum\").toString(16)+\"/\"+no.toString(16));\n};\n\nvar parseNoFromBatchNo = function(batchNo){\n  return parseInt(batchNo.split(\"/\")[1],16);\n};\n\nvar sendMsg = {\n    batchNo: null,\n    name:context.global.get(\"name\"),\n    typeId: context.global.get(\"typeId\"),\n    typeName: context.global.get(\"typeName\"),\n    mfg: context.global.get(\"mfg\"),\n    mfgDate: dateFormat(new Date(), \"dd-mmm-yyyy\"),\n    serialNum: context.global.get(\"currentSerialNum\")\n};\n\nif(msg.payload.length === 0){\n    sendMsg.batchNo = getBatchNo(count);\n    context.global.set(\"No\",count);\n}else{\n    sendMsg.batchNo = msg.payload[0].batchNo;\n    console.log(sendMsg.batchNo);\n    context.global.set(\"No\",parseNoFromBatchNo(sendMsg.batchNo));\n}\n\nreturn {query:{serialNum:context.global.get(\"currentSerialNum\")},payload:sendMsg};\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 605,
+        "y": 297,
+        "wires": [
+            [
+                "190fad3c.6b1223",
+                "c280a624.1a94e8"
+            ]
+        ]
+    },
+    {
+        "id": "6ed5a10d.a515f",
+        "type": "debug",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 755,
+        "y": 166,
+        "wires": []
+    },
+    {
+        "id": "77625db6.6e66e4",
+        "type": "debug",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 1180,
+        "y": 183,
+        "wires": []
+    },
+    {
+        "id": "7d978e97.fcc0b",
+        "type": "inject",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "topic": "",
+        "payload": "[{\"_id\":\"59985ab12b23854aedb47d56\",\"batchNo\":\"20173301-118/2\",\"name\":\"MeBoost\",\"typeName\":\"WWLB-3000EU-Master\",\"mfg\":\"WeiWiz\",\"mfgDate\":\"19-Aug-2017\",\"serialNum\":\"22223344556677889900\"}]",
+        "payloadType": "json",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 537,
+        "y": 409,
+        "wires": [
+            [
+                "62d89507.e1211c"
+            ]
+        ]
+    },
+    {
+        "id": "9bd96f9e.5d4a6",
+        "type": "rpi-gpio out",
+        "z": "1ffdb104.1b53bf",
+        "name": "",
+        "pin": "11",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "x": 382,
+        "y": 150,
+        "wires": []
+    },
+    {
+        "id": "445cf66a.4614d8",
+        "type": "inject",
+        "z": "1ffdb104.1b53bf",
+        "name": "Init",
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "9bd96f9e.5d4a6",
+                "27b45418.f4399c",
+                "5cc912c1.c8549c"
+            ]
+        ]
+    },
+    {
+        "id": "c8dec910.83af48",
+        "type": "ui_text_input",
+        "z": "1ffdb104.1b53bf",
+        "name": "",
+        "label": "产品数量:",
+        "group": "c9cb0a46.8caa08",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "",
+        "x": 715,
+        "y": 374,
+        "wires": [
+            [
+                "5be91670.e65ad8"
+            ]
+        ]
+    },
+    {
+        "id": "3734b972.55c036",
+        "type": "ui_button",
+        "z": "1ffdb104.1b53bf",
+        "name": "",
+        "group": "c9cb0a46.8caa08",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "确认",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "date",
+        "topic": "",
+        "x": 723,
+        "y": 609,
+        "wires": [
+            [
+                "29d59d90.744c82"
+            ]
+        ]
+    },
+    {
+        "id": "ff6d82d3.a8342",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "sum",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "sum",
+        "x": 1176.5,
+        "y": 371,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f7725595.db0888",
+        "type": "ui_dropdown",
+        "z": "1ffdb104.1b53bf",
+        "name": "产品名称",
+        "label": "产品名称:",
+        "place": "请选择产品名称",
+        "group": "c9cb0a46.8caa08",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "",
+                "value": "MeBoost",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 715,
+        "y": 321,
+        "wires": [
+            [
+                "967800ce.9506c"
+            ]
+        ]
+    },
+    {
+        "id": "7a48910c.2503d",
+        "type": "ui_dropdown",
+        "z": "1ffdb104.1b53bf",
+        "name": "客户代码",
+        "label": "客户代码:",
+        "place": "",
+        "group": "c9cb0a46.8caa08",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "Growatt",
+                "value": "01",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 721,
+        "y": 505,
+        "wires": [
+            [
+                "76d95470.18b8ec"
+            ]
+        ]
+    },
+    {
+        "id": "31054cb5.7406b4",
+        "type": "ui_dropdown",
+        "z": "1ffdb104.1b53bf",
+        "name": "型号名称",
+        "label": "型号名称:",
+        "place": "请选择产品型号名称",
+        "group": "c9cb0a46.8caa08",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "",
+                "value": "WWLB-3000EU-Master",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "typeName",
+        "x": 714,
+        "y": 417,
+        "wires": [
+            [
+                "3a8e75e9.93e2aa"
+            ]
+        ]
+    },
+    {
+        "id": "a1def662.734088",
+        "type": "ui_dropdown",
+        "z": "1ffdb104.1b53bf",
+        "name": "生成厂家",
+        "label": "生成厂家:",
+        "place": "",
+        "group": "c9cb0a46.8caa08",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "微智慧",
+                "value": "WeiWiz",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "",
+        "x": 725,
+        "y": 554,
+        "wires": [
+            [
+                "ace8136a.24047"
+            ]
+        ]
+    },
+    {
+        "id": "3a8e75e9.93e2aa",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "typeName",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "typeName",
+        "x": 985,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "76d95470.18b8ec",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "customId",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "customId",
+        "x": 984,
+        "y": 506,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ace8136a.24047",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "mfg",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "mfg",
+        "x": 983,
+        "y": 552,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "967800ce.9506c",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "name",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "name",
+        "x": 980,
+        "y": 316,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "29d59d90.744c82",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "saveToFile",
+        "func": "var dateFormat = context.global.dateFormat;\n\nvar config = {\n    name: context.global.get(\"name\"),\n    typeName: context.global.get(\"typeName\"),\n    mfg: context.global.get(\"mfg\"),\n    mfgDate: dateFormat(new Date(), \"dd-mmm-yyyy\"),\n    sum: context.global.get(\"sum\"),\n    customId: context.global.get(\"customId\")\n};\nreturn {payload:config};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 906,
+        "y": 608,
+        "wires": [
+            [
+                "31237f60.62c72"
+            ]
+        ]
+    },
+    {
+        "id": "5be91670.e65ad8",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "parseInt",
+        "func": "\nreturn {payload:parseInt(msg.payload)};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 979,
+        "y": 369,
+        "wires": [
+            [
+                "ff6d82d3.a8342"
+            ]
+        ]
+    },
+    {
+        "id": "25bbb385.dc1a4c",
+        "type": "exec",
+        "z": "1ffdb104.1b53bf",
+        "command": "sudo python /home/pi/.node-red/lcd_i2c.py",
+        "addpay": true,
+        "append": "",
+        "useSpawn": "true",
+        "timer": "",
+        "oldrc": false,
+        "name": "LCDShowLogo",
+        "x": 209,
+        "y": 466.5,
+        "wires": [
+            [],
+            [],
+            [
+                "d7fc65d3.679d38"
+            ]
+        ]
+    },
+    {
+        "id": "d51761de.52bec",
+        "type": "file",
+        "z": "1ffdb104.1b53bf",
+        "name": "configFile",
+        "filename": "/home/pi/.node-red/config.json",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "true",
+        "x": 1220.5,
+        "y": 609,
+        "wires": []
+    },
+    {
+        "id": "d7fc65d3.679d38",
+        "type": "file in",
+        "z": "1ffdb104.1b53bf",
+        "name": "configFile",
+        "filename": "/home/pi/.node-red/config.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 357.5,
+        "y": 313,
+        "wires": [
+            [
+                "bf681986.c71f38"
+            ]
+        ]
+    },
+    {
+        "id": "bf681986.c71f38",
+        "type": "json",
+        "z": "1ffdb104.1b53bf",
+        "name": "",
+        "pretty": false,
+        "x": 385.5,
+        "y": 428,
+        "wires": [
+            [
+                "c29f344b.1dc5e8",
+                "f5f954de.7ad458",
+                "dc57fe88.d9479",
+                "7ca5ff31.6f6f5",
+                "1ca9c2f4.f126ad",
+                "a1a4d28d.9df25",
+                "d85d20c8.6ddb6"
+            ]
+        ]
+    },
+    {
+        "id": "c29f344b.1dc5e8",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "name",
+        "func": "\nreturn {payload: msg.payload.name};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 558,
+        "y": 323,
+        "wires": [
+            [
+                "f7725595.db0888"
+            ]
+        ]
+    },
+    {
+        "id": "f5f954de.7ad458",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "sum",
+        "func": "\nreturn {payload:msg.payload.sum};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 548,
+        "y": 384,
+        "wires": [
+            [
+                "c8dec910.83af48"
+            ]
+        ]
+    },
+    {
+        "id": "dc57fe88.d9479",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "typeName",
+        "func": "\nreturn {payload:msg.payload.typeName};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 542,
+        "y": 431,
+        "wires": [
+            [
+                "31054cb5.7406b4"
+            ]
+        ]
+    },
+    {
+        "id": "7ca5ff31.6f6f5",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "customId",
+        "func": "\nreturn {payload: msg.payload.customId};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 537,
+        "y": 511,
+        "wires": [
+            [
+                "7a48910c.2503d"
+            ]
+        ]
+    },
+    {
+        "id": "1ca9c2f4.f126ad",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "mfg",
+        "func": "\nreturn {payload: msg.payload.mfg};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 529,
+        "y": 559,
+        "wires": [
+            [
+                "a1def662.734088"
+            ]
+        ]
+    },
+    {
+        "id": "31237f60.62c72",
+        "type": "json",
+        "z": "1ffdb104.1b53bf",
+        "name": "",
+        "pretty": false,
+        "x": 1083,
+        "y": 609,
+        "wires": [
+            [
+                "d51761de.52bec"
+            ]
+        ]
+    },
+    {
+        "id": "27b45418.f4399c",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "showLogo",
+        "func": "\nreturn {payload:\"-f \\\"WeiWiz Ltd., Co.\\\" -s \\\"MeBoost PL Tool\\\"\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 184,
+        "y": 376,
+        "wires": [
+            [
+                "25bbb385.dc1a4c"
+            ]
+        ]
+    },
+    {
+        "id": "5cc912c1.c8549c",
+        "type": "mongodb in",
+        "z": "1ffdb104.1b53bf",
+        "mongodb": "45d002fc.5d7a5c",
+        "name": "InitCount",
+        "collection": "meboost_wwlb",
+        "operation": "count",
+        "x": 485,
+        "y": 229,
+        "wires": [
+            [
+                "431b71a4.0c9c7",
+                "1c301025.af7af"
+            ]
+        ]
+    },
+    {
+        "id": "431b71a4.0c9c7",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "count",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "count",
+        "x": 644,
+        "y": 178,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a1a4d28d.9df25",
+        "type": "debug",
+        "z": "1ffdb104.1b53bf",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 482,
+        "y": 607,
+        "wires": []
+    },
+    {
+        "id": "9f168f7b.0f559",
+        "type": "ui_dropdown",
+        "z": "1ffdb104.1b53bf",
+        "name": "类型编码",
+        "label": "型号编码:",
+        "place": "",
+        "group": "c9cb0a46.8caa08",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "options": [
+            {
+                "label": "",
+                "value": "040B08040004",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "typeId",
+        "x": 715,
+        "y": 460,
+        "wires": [
+            [
+                "d7b31d3a.5964d"
+            ]
+        ]
+    },
+    {
+        "id": "d85d20c8.6ddb6",
+        "type": "function",
+        "z": "1ffdb104.1b53bf",
+        "name": "typeId",
+        "func": "\nreturn {payload: msg.payload.typeId};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 535,
+        "y": 471,
+        "wires": [
+            [
+                "9f168f7b.0f559"
+            ]
+        ]
+    },
+    {
+        "id": "d7b31d3a.5964d",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "typeId",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "typeId",
+        "x": 977,
+        "y": 457,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a287c864.d4e908",
+        "type": "ui_button",
+        "z": "ea219a30.47aaf8",
+        "name": "",
+        "group": "32e94aad.c25906",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "导出",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "\"正在导出，请稍后...\"",
+        "payloadType": "str",
+        "topic": "",
+        "x": 280,
+        "y": 269,
+        "wires": [
+            [
+                "a91208ab.c587c8",
+                "b65e8d1f.60107",
+                "7de9d7d0.f0fae8"
+            ]
+        ]
+    },
+    {
+        "id": "a738d88b.827418",
+        "type": "function",
+        "z": "ea219a30.47aaf8",
+        "name": "export2excel",
+        "func": "var dateFormat = context.global.dateFormat;\n\nvar mongoXlsx = context.global.mongo2xlsx;\nvar fileName = context.global.get(\"name\") + \"-\"+context.global.get(\"typeName\")+\"-PL\";\nvar path = \"/home/pi/.node-red/outexcel/\";\nvar sheetName = dateFormat(new Date(),\"yyyyW\").toString() + \"-\" + context.global.get(\"sum\").toString();\n/* Generate automatic model for processing (A static model should be used) */\n//var model = mongoXlsx.buildDynamicModel(data);\n\n/* Generate Excel */\nmongoXlsx.mongoData2Xlsx(msg.payload.data, msg.payload.modle,{\n    fileName: fileName + \".xlsx\",\n    path: path,\n    sheetName: sheetName\n}, function(err, data) {\n    if (err) return done(err);\n    node.log('File saved at:'+ path+fileName+\".xlsx\");\n});\nreturn {payload:path+fileName+\".xlsx\"};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1005,
+        "y": 431,
+        "wires": [
+            [
+                "7e81b2a3.ca222c",
+                "345299bb.455a46"
+            ]
+        ]
+    },
+    {
+        "id": "a91208ab.c587c8",
+        "type": "ui_text",
+        "z": "ea219a30.47aaf8",
+        "group": "32e94aad.c25906",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "showTips",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 525,
+        "y": 69,
+        "wires": []
+    },
+    {
+        "id": "b65e8d1f.60107",
+        "type": "mongodb in",
+        "z": "ea219a30.47aaf8",
+        "mongodb": "45d002fc.5d7a5c",
+        "name": "getAllFromDB",
+        "collection": "meboost_wwlb",
+        "operation": "find",
+        "x": 549.5,
+        "y": 217,
+        "wires": [
+            [
+                "6dcbf753.c5e018"
+            ]
+        ]
+    },
+    {
+        "id": "7de9d7d0.f0fae8",
+        "type": "file in",
+        "z": "ea219a30.47aaf8",
+        "name": "readModle",
+        "filename": "/home/pi/.node-red/modle.json",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "x": 518.5,
+        "y": 356,
+        "wires": [
+            [
+                "f5f450c8.0cd81"
+            ]
+        ]
+    },
+    {
+        "id": "f5f450c8.0cd81",
+        "type": "json",
+        "z": "ea219a30.47aaf8",
+        "name": "",
+        "pretty": false,
+        "x": 630.5,
+        "y": 462,
+        "wires": [
+            [
+                "27108277.2ddeee"
+            ]
+        ]
+    },
+    {
+        "id": "23213e29.f02542",
+        "type": "join",
+        "z": "ea219a30.47aaf8",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "x": 923.5,
+        "y": 327,
+        "wires": [
+            [
+                "a738d88b.827418"
+            ]
+        ]
+    },
+    {
+        "id": "7e81b2a3.ca222c",
+        "type": "debug",
+        "z": "ea219a30.47aaf8",
+        "name": "",
+        "active": false,
+        "console": "false",
+        "complete": "false",
+        "x": 1229,
+        "y": 407,
+        "wires": []
+    },
+    {
+        "id": "27108277.2ddeee",
+        "type": "change",
+        "z": "ea219a30.47aaf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "modle",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 724.5,
+        "y": 352,
+        "wires": [
+            [
+                "23213e29.f02542"
+            ]
+        ]
+    },
+    {
+        "id": "6dcbf753.c5e018",
+        "type": "change",
+        "z": "ea219a30.47aaf8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "data",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 728.5,
+        "y": 296,
+        "wires": [
+            [
+                "23213e29.f02542"
+            ]
+        ]
+    },
+    {
+        "id": "b1b43330.e2f14",
+        "type": "inject",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 246,
+        "y": 1060,
+        "wires": [
+            [
+                "fa167b87.ba95b8"
+            ]
+        ]
+    },
+    {
+        "id": "fa167b87.ba95b8",
+        "type": "globalGetSet",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "topic": "",
+        "context": "global",
+        "variable": "No",
+        "outContext": "msg",
+        "outVar": "payload",
+        "x": 505.5,
+        "y": 1060,
+        "wires": [
+            [
+                "f8f0d820.8ce488"
+            ]
+        ]
+    },
+    {
+        "id": "f8f0d820.8ce488",
+        "type": "debug",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 708,
+        "y": 1059,
+        "wires": []
+    },
+    {
+        "id": "345299bb.455a46",
+        "type": "change",
+        "z": "ea219a30.47aaf8",
+        "name": "changeTips",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "转换成功！请下载",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1111.5,
+        "y": 256,
+        "wires": [
+            [
+                "a91208ab.c587c8"
+            ]
+        ]
+    },
+    {
+        "id": "1c301025.af7af",
+        "type": "globalGetSet",
+        "z": "1ffdb104.1b53bf",
+        "name": "No.",
+        "topic": "",
+        "context": "msg",
+        "variable": "payload",
+        "outContext": "global",
+        "outVar": "No",
+        "x": 642.5,
+        "y": 251,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "274599fb.f9e066",
+        "type": "ui_text",
+        "z": "3d69aeb2.27d282",
+        "group": "95a1e096.10685",
+        "order": 0,
+        "width": "12",
+        "height": "6",
+        "name": "",
+        "label": "序号",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "x": 1650,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "76cc932d.0aee24",
+        "type": "function",
+        "z": "3d69aeb2.27d282",
+        "name": "",
+        "func": "\nreturn {payload:\"烧录成功! 设备序号 No:#\" + context.global.get(\"No\")};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1526,
+        "y": 551.5099792480469,
+        "wires": [
+            [
+                "274599fb.f9e066"
+            ]
+        ]
+    }
+]

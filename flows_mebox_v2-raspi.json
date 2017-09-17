@@ -2082,7 +2082,7 @@
                 "dfaa7b3a.da8ac8"
             ],
             [
-                "d4cb3107.0445b"
+                "3d0cbacd.723346"
             ]
         ]
     },
@@ -2327,15 +2327,13 @@
         "type": "function",
         "z": "3e2dfb4e.584874",
         "name": "handle_meboost_send_set_pair_ack",
-        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNum\"),'hex');\n\nvar sendMsg = {\n  sync: msg.payload.sync,\n  num: 0,\n  ver:1,\n  type: 0x00A0,\n  src: msg.payload.src,\n  dst: GRFSerialNo,\n  func:msg.payload.func,\n  len: msg.payload.data.length,\n  step: 0,\n  terminalType: 0x00A0,\n  mode:1,\n  channel:1,\n  gain:7\n};\n/*\nmsg.payload.dst = GRFSerialNo;\nmsg.payload.type = 128;\nmsg.payload.data[1] = 0x00;\nmsg.payload.data[2] = 0x80;\n*/\n\nreturn {payload:{send:sendMsg,pattern:\"b8=>step,b16=>terminalType,b8=>mode,b8=>channel,b8=>gain\"}};",
+        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNum\"),'hex');\n\nvar sendMsg = {\n  sync: msg.payload.sync,\n  num: msg.payload.num,\n  ver:1,\n  type: 0x00A0,\n  src: msg.payload.src,\n  dst: GRFSerialNo,\n  func:msg.payload.func,\n  len: msg.payload.data.length,\n  step: 0,\n  terminalType: 0x00A0,\n  mode:1,\n  channel:1,\n  gain:7\n};\n/*\nmsg.payload.dst = GRFSerialNo;\nmsg.payload.type = 128;\nmsg.payload.data[1] = 0x00;\nmsg.payload.data[2] = 0x80;\n*/\n\nreturn {payload:{send:sendMsg,pattern:\"b8=>step,b16=>terminalType,b8=>mode,b8=>channel,b8=>gain\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 1039,
         "y": 173,
         "wires": [
-            [
-                "45c30433.35145c"
-            ]
+            []
         ]
     },
     {
@@ -2343,7 +2341,7 @@
         "type": "function",
         "z": "3e2dfb4e.584874",
         "name": "handle_meboost_send_exit_pair_ack",
-        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNum\"),'hex');\n\nvar sendMsg = {\n  sync: msg.payload.sync,\n  num: 0,\n  ver:1,\n  type: 0x00A0,\n  src: msg.payload.src,\n  dst: GRFSerialNo,\n  func:msg.payload.func,\n  len: 1,\n  status:0x30\n};\n\n\nmsg.payload.data = 0x30;\nreturn {payload:{send:sendMsg,pattern:\"b8=>status\"}};",
+        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNum\"),'hex');\n\nvar sendMsg = {\n  sync: msg.payload.sync,\n  num: msg.payload.num,\n  ver:1,\n  type: 0x00A0,\n  src: msg.payload.src,\n  dst: GRFSerialNo,\n  func:msg.payload.func,\n  len: 1,\n  status:0x30\n};\n\n\nmsg.payload.data = 0x30;\nreturn {payload:{send:sendMsg,pattern:\"b8=>status\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 1047,
@@ -2373,7 +2371,7 @@
         "type": "function",
         "z": "b7a55779.94c118",
         "name": "set_num",
-        "func": "var counter = context.global.get(\"counter\") || 0;\nvar num = counter === 0xFF ? 1 : (++counter);\ncontext.global.set(\"counter\",num);\nvar src = new Buffer(msg.payload.send.src,'hex');\nvar dst = new Buffer(msg.payload.send.dst,'hex');\nmsg.payload.send.num = num;\nmsg.payload.send.src = src;\nmsg.payload.send.dst = dst;\nreturn msg;",
+        "func": "var counter = context.global.get(\"counter\") || 0;\nvar num = counter === 0xFF ? 1 : (++counter);\ncontext.global.set(\"counter\",num);\nvar src = new Buffer(msg.payload.send.src,'hex');\nvar dst = new Buffer(msg.payload.send.dst,'hex');\nif(msg.payload.send.num === 0){msg.payload.send.num = num;}\n\nmsg.payload.send.src = src;\nmsg.payload.send.dst = dst;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 340,
@@ -2413,7 +2411,7 @@
         "type": "function",
         "z": "3e2dfb4e.584874",
         "name": "handle_send_meboost_hb_ack",
-        "func": "\nreturn msg;",
+        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNum\"),'hex');\n\nvar sendMsg = {\n  sync: msg.payload.sync,\n  num: msg.payload.num,\n  ver:1,\n  type: 0x00A0,\n  src: msg.payload.src,\n  dst: GRFSerialNo,\n  func:msg.payload.func,\n  len: 1,\n  status:0x30\n};\n\n\nmsg.payload.data = 0x30;\nreturn {payload:{send:sendMsg,pattern:\"b8=>status\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 1041,
@@ -6662,7 +6660,7 @@
         "type": "function",
         "z": "3e2dfb4e.584874",
         "name": "check_pair_id",
-        "func": "var targetDeviceId = context.global.get(\"targetDeviceId\").toString(16);\nif(targetDeviceId !== null && targetDeviceId === msg.payload.src){\n    console.log(\"yes\");\n    return msg;\n}",
+        "func": "var targetDeviceId = new Buffer(context.global.get(\"targetDeviceId\"),'hex');\nconsole.log(targetDeviceId);\nconsole.log(msg.payload.src);\nif(targetDeviceId !== null && targetDeviceId.equals(msg.payload.src) ){\n    console.log(\"yes\");\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "x": 544,
@@ -6907,18 +6905,6 @@
                 "563d1328.8f347c"
             ]
         ]
-    },
-    {
-        "id": "45c30433.35145c",
-        "type": "debug",
-        "z": "3e2dfb4e.584874",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 1355,
-        "y": 91,
-        "wires": []
     },
     {
         "id": "2ef92f1.b1e66d",
