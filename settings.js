@@ -55,9 +55,9 @@ module.exports = {
    
   //  flowFile: 'flows_exhibition_scu_raspi.json',
   // flowFile: 'flows_merfct_raspi.json',
-  flowFile: 'flows_mebox_mock_raspi.json',
+  //flowFile: 'flows_mebox_mock_raspi.json',
   //flowFile: 'flows_shinelink_mock_raspi.json',
-   //flowFile: 'flows_mebox_v2-raspi.json',
+   flowFile: 'flows_mebox_v2-raspi.json',
   // flowFile: 'flows_nisary_home_raspi.json',
    //  flowFile: 'flows_meboost_productionline_raspi.json',
   // To enabled pretty-printing of the flow within the flow file, set the following
