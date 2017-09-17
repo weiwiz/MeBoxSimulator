@@ -945,7 +945,7 @@
         "databits": "8",
         "parity": "none",
         "stopbits": "1",
-        "newline": "100",
+        "newline": "500",
         "bin": "bin",
         "out": "time",
         "addchar": false
@@ -963,9 +963,11 @@
         "cleansession": true,
         "willTopic": "",
         "willQos": "0",
+        "willRetain": "false",
         "willPayload": "",
         "birthTopic": "",
         "birthQos": "0",
+        "birthRetain": "false",
         "birthPayload": ""
     },
     {
@@ -1157,7 +1159,7 @@
         "type": "mqtt in",
         "z": "81e9d88b.604eb8",
         "name": "MeBox-MQTT-Subcribe",
-        "topic": "69cef96e-963b-449f-be22-40342f75cf59",
+        "topic": "e0dad675-30f9-4e27-9851-6b616736d34c",
         "qos": "0",
         "broker": "2cb77103.580e4e",
         "x": 129,
@@ -1356,10 +1358,10 @@
                 "t": "else"
             }
         ],
-        "checkall": "true",
+        "checkall": "false",
         "outputs": 2,
-        "x": 510,
-        "y": 290,
+        "x": 380,
+        "y": 300,
         "wires": [
             [
                 "f202ebf6.434f18"
@@ -1381,7 +1383,6 @@
         "y": 120,
         "wires": [
             [
-                "a28b442a.bc63f8",
                 "3359a308.c7ad0c"
             ]
         ]
@@ -1407,7 +1408,7 @@
         "type": "switch",
         "z": "aeee4720.4dd808",
         "name": "MeReceiver-switchCmdType",
-        "property": "payload.cndType",
+        "property": "payload.cmdType",
         "propertyType": "msg",
         "rules": [
             {
@@ -1607,18 +1608,6 @@
                 "da34ca03.94f8b8"
             ]
         ]
-    },
-    {
-        "id": "a28b442a.bc63f8",
-        "type": "debug",
-        "z": "aeee4720.4dd808",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 1173,
-        "y": 20,
-        "wires": []
     },
     {
         "id": "3359a308.c7ad0c",
@@ -2153,7 +2142,8 @@
         "y": 962,
         "wires": [
             [
-                "f1d0d322.c9034"
+                "f1d0d322.c9034",
+                "b651e305.fc706"
             ]
         ]
     },
@@ -2337,13 +2327,15 @@
         "type": "function",
         "z": "3e2dfb4e.584874",
         "name": "handle_meboost_send_set_pair_ack",
-        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNo\"),'hex');\nmsg.payload.dst = GRFSerialNo;\n\nreturn {payload:{send:msg.payload,pattern:\"b8=>step,b16=>type,b8=>mode,b8=>channel,b8=>gain\"}};",
+        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNum\"),'hex');\n\nvar sendMsg = {\n  sync: msg.payload.sync,\n  num: 0,\n  ver:1,\n  type: 0x00A0,\n  src: msg.payload.src,\n  dst: GRFSerialNo,\n  func:msg.payload.func,\n  len: msg.payload.data.length,\n  step: 0,\n  terminalType: 0x00A0,\n  mode:1,\n  channel:1,\n  gain:7\n};\n/*\nmsg.payload.dst = GRFSerialNo;\nmsg.payload.type = 128;\nmsg.payload.data[1] = 0x00;\nmsg.payload.data[2] = 0x80;\n*/\n\nreturn {payload:{send:sendMsg,pattern:\"b8=>step,b16=>terminalType,b8=>mode,b8=>channel,b8=>gain\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 1039,
         "y": 173,
         "wires": [
-            []
+            [
+                "45c30433.35145c"
+            ]
         ]
     },
     {
@@ -2351,13 +2343,15 @@
         "type": "function",
         "z": "3e2dfb4e.584874",
         "name": "handle_meboost_send_exit_pair_ack",
-        "func": "msg.payload.data = 0x30;\nreturn {payload:{send:msg.payload,pattern:\"b8=>status\"}};",
+        "func": "var GRFSerialNo = new Buffer(context.global.get(\"GRFSerialNum\"),'hex');\n\nvar sendMsg = {\n  sync: msg.payload.sync,\n  num: 0,\n  ver:1,\n  type: 0x00A0,\n  src: msg.payload.src,\n  dst: GRFSerialNo,\n  func:msg.payload.func,\n  len: 1,\n  status:0x30\n};\n\n\nmsg.payload.data = 0x30;\nreturn {payload:{send:sendMsg,pattern:\"b8=>status\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 1047,
         "y": 211,
         "wires": [
-            []
+            [
+                "2ef92f1.b1e66d"
+            ]
         ]
     },
     {
@@ -2399,7 +2393,8 @@
         "y": 240,
         "wires": [
             [
-                "ee1bb73c.1ed4f8"
+                "ee1bb73c.1ed4f8",
+                "488945c6.c8831c"
             ]
         ]
     },
@@ -2522,7 +2517,7 @@
         "type": "function",
         "z": "46021cec.0f7574",
         "name": "get_linux_platform_info",
-        "func": "var address = context.global.address;\n\nvar ip = null;\nvar mac = null;\n\naddress('eth0', function(err,addrs){\n    if (err) {return;}\n    if (addrs.ip) {\n        ip = addrs.ip;\n        mac = addrs.mac;\n       // console.log(addrs.ip);\n       // console.log(addrs.mac);\n    }else{\n        address('wlan0',function(err,addrs){\n                ip = addrs.ip;\n                mac = addrs.mac;\n        });\n    }\n});\n\nconsole.log(ip);\nmsg.filename = \"/home/pi/.node-red/mebox.json\";\n\n\ncontext.global.set(\"ip\",ip);\ncontext.global.set(\"mac\",mac);\ncontext.global.set(\"meboxFileName\",msg.filename);\nreturn msg;",
+        "func": "var address = context.global.address;\n\nvar ip = null;\nvar mac = null;\n\naddress('eth0', function(err,addrs){\n    if (err) {return;}\n    if (addrs.ip) {\n        ip = addrs.ip;\n        mac = addrs.mac;\n       // console.log(addrs.ip);\n       // console.log(addrs.mac);\n    }else{\n        address('wlan0',function(err,addrs){\n                ip = addrs.ip;\n                mac = addrs.mac;\n        });\n    }\n});\n\nmsg.filename = \"/home/pi/.node-red/mebox.json\";\n\n\ncontext.global.set(\"ip\",ip);\ncontext.global.set(\"mac\",mac);\ncontext.global.set(\"meboxFileName\",msg.filename);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 604,
@@ -2554,7 +2549,7 @@
         "name": "",
         "active": true,
         "console": "false",
-        "complete": "false",
+        "complete": "payload",
         "x": 1206,
         "y": 387,
         "wires": []
@@ -2618,7 +2613,7 @@
         "type": "function",
         "z": "46021cec.0f7574",
         "name": "init_var",
-        "func": "msg.payload.uuid = context.global.get(\"mac\");\nmsg.payload.ipAddress = context.global.get(\"ip\");\n\ncontext.global.set(\"GRFSerialNum\",msg.payload.serialNum.grf);\ncontext.global.set(\"WRMSerialNum\",msg.payload.serialNum.wrm);\ncontext.global.set(\"fmVersion\",msg.payload.fmVersion);\nreturn msg;",
+        "func": "msg.payload.uuid = context.global.get(\"mac\");\nmsg.payload.ipAddress = context.global.get(\"ip\");\n\ncontext.global.set(\"GRFSerialNum\",msg.payload.serialNum.grf.toString(16));\ncontext.global.set(\"WRMSerialNum\",msg.payload.serialNum.wrm);\ncontext.global.set(\"fmVersion\",msg.payload.fmVersion);\ncontext.global.set(\"rpc\",[]);\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 1056,
@@ -3033,12 +3028,12 @@
             },
             {
                 "t": "cont",
-                "v": "040B090501",
+                "v": "040B09050",
                 "vt": "str"
             },
             {
                 "t": "cont",
-                "v": "040B090502",
+                "v": "040B09051",
                 "vt": "str"
             },
             {
@@ -3072,7 +3067,7 @@
         "type": "switch",
         "z": "b7cbf5cd.dbcad8",
         "name": "MeReceiver",
-        "property": "payload.parameters.cmd.cmdCode",
+        "property": "payload.msg.cmd.cmdCode",
         "propertyType": "msg",
         "rules": [
             {
@@ -3162,14 +3157,15 @@
         "type": "function",
         "z": "b7cbf5cd.dbcad8",
         "name": "0x0001-handle_set_action",
-        "func": "var sendMsg = {\n    sync: 85,\n    dataLen: 9,\n    optionLen:7,\n    type:1,\n    crc: 86,\n    rc: 95,\n    addr:msg.payload.db.serialNum,\n    deviceType:msg.payload.db.deviceType,\n    cmdType: 2,\n    cmdData: msg.payload.msg.cmd.parameters.cmdData\n};\nreturn {type:\"forward\",payload:{send:sendMsg,pattern:\"b8=>sync,b16=>dataLen,b8=>optionLen,b8=>type,b8=>crc,b8=>rc,b32=>addr,b8=>deviceType,b8=>cmdType,b16=>cmdData\"}};",
+        "func": "var sendMsg = {\n    sync: 85,\n    dataLen: 9,\n    optionLen:7,\n    type:1,\n    crc: 86,\n    rc: 95,\n    addr: new Buffer(msg.payload.db.serialNum,'hex'),\n    deviceType:msg.payload.db.deviceType,\n    cmdType: 2,\n    cmdData: msg.payload.msg.cmd.parameters.cmdData,\n    options: new Buffer(\"00000000000000\",'hex')\n};\nreturn {type:\"forward\",payload:{send:sendMsg,pattern:\"b8=>sync,b16=>dataLen,b8=>optionLen,b8=>type,b8=>crc,b8=>rc,b8[4]=>addr,b8=>deviceType,b8=>cmdType,b16=>cmdData,b8[7]=>options\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 600,
         "y": 160,
         "wires": [
             [
-                "553e0683.453308"
+                "553e0683.453308",
+                "814f04f3.c587e8"
             ]
         ]
     },
@@ -3178,7 +3174,7 @@
         "type": "function",
         "z": "b7cbf5cd.dbcad8",
         "name": "0x0002-handle_get_status",
-        "func": "var sendMsg = {\n    sync: 85,\n    dataLen: 7,\n    optionLen:7,\n    type:1,\n    crc: 122,\n    rc: 95,\n    addr:msg.payload.db.serialNum,\n    deviceType:msg.payload.db.deviceType,\n    cmdType: 1\n};\nreturn {type:\"forward\",payload:{send:sendMsg,pattern:\"b8=>sync,b16=>dataLen,b8=>optionLen,b8=>type,b8=>crc,b8=>rc,b32=>addr,b8=>deviceType,b8=>cmdType\"}};",
+        "func": "var sendMsg = {\n    sync: 85,\n    dataLen: 7,\n    optionLen:7,\n    type:1,\n    crc: 122,\n    rc: 95,\n    addr:new Buffer(msg.payload.db.serialNum,'hex'),\n    deviceType:msg.payload.db.deviceType,\n    cmdType: 1,\n    options: new Buffer(\"00000000000000\",'hex')\n};\nreturn {type:\"forward\",payload:{send:sendMsg,pattern:\"b8=>sync,b16=>dataLen,b8=>optionLen,b8=>type,b8=>crc,b8=>rc,b8[8]=>addr,b8=>deviceType,b8=>cmdType,b8[7]=>options\"}};",
         "outputs": 1,
         "noerr": 0,
         "x": 600,
@@ -4388,8 +4384,8 @@
         "active": true,
         "console": "false",
         "complete": "payload",
-        "x": 820,
-        "y": 360,
+        "x": 587,
+        "y": 365,
         "wires": []
     },
     {
@@ -4404,7 +4400,6 @@
         "y": 240,
         "wires": [
             [
-                "488945c6.c8831c",
                 "f07dc63e.ce1168"
             ]
         ]
@@ -4415,14 +4410,16 @@
         "z": "46021cec.0f7574",
         "name": "",
         "topic": "",
-        "context": "msg",
-        "variable": "payload",
-        "outContext": "global",
-        "outVar": "rpc",
+        "context": "global",
+        "variable": "targetDeviceId",
+        "outContext": "msg",
+        "outVar": "payload",
         "x": 333.5,
         "y": 622,
         "wires": [
-            []
+            [
+                "d988799.5ddab88"
+            ]
         ]
     },
     {
@@ -4440,7 +4437,7 @@
         "type": "function",
         "z": "34625b1b.bfb144",
         "name": "update_meboost_with_runtime",
-        "func": "var _ = context.global._;\n\n// add new\nif(_.isEmpty(msg.payload.db)){\n    var newMsg = {\n        \"serialNum\": msg.payload.msg.src,\n        \"deviceType\": 176,\n        \"modelText\": \"WWLB-3000EU\",\n        \"nominalPower\": 3000,\n        \"fwVersion\": \"3.0.0-b20171003\",\n        \"alarm\": {\n            \"temperature\": {\n                \"lower\": 20.2,\n                \"upper\": 120.6\n            },\n            \"volt\": {\n                \"lower\": 180,\n                \"upper\": 220\n            },\n            \"current\": {\n                \"lower\": -1,\n                \"upper\": 15\n            },\n            \"power\": {\n                \"lower\": -1,\n                \"upper\": 3200\n            }\n        },\n        \"loadType\": 32,\n        \"deviceTime\": \"2017-04-01 04:01:00\",\n        \"regulatorAlgo\": 0,\n        \"regulatorTimeout\": 30,\n        \"regulatorThreshold\": 200,\n        \"regulatorWindow\": 5,\n        \"sampleFrequency\": 30,\n        \"thresholdAlgo\": 0,\n        \"factor\": 0.1,\n        \"verifyThreshold\": 0,\n        \"temperature\": (msg.payload.msg.data.temperature/10).toFixed(2).toString(),\n        \"voltage\": (msg.payload.msg.data.voltage/10).toFixed(2).toString(),\n        \"current\": (msg.payload.msg.data.current/10).toFixed(2).toString(),\n        \"power\": (msg.payload.msg.data.power/10).toFixed(2).toString(),\n        \"energySaved\": (msg.payload.msg.data.energySaved/10).toFixed(2).toString(),\n        \"energyUsed\": (msg.payload.msg.data.energyUsed/10).toFixed(2).toString(),\n        \"mode\": msg.payload.msg.data.mode.toString()\n    };\n    return {query:{\"serialNum\":msg.payload.msg.src},payload:newMsg};\n}\n// update \nelse{\n    var updateMsg = msg.payload.db[0];\n\n    updateMsg.temperature = (msg.payload.msg.data.temperature/10).toFixed(2).toString();\n    updateMsg.voltage = (msg.payload.msg.data.voltage/10).toFixed(2).toString();\n    updateMsg.current = (msg.payload.msg.data.current/10).toFixed(2).toString();\n    updateMsg.power =  (msg.payload.msg.data.power/10).toFixed(2).toString();\n    updateMsg.energySaved = (msg.payload.msg.data.energySaved/10).toFixed(2).toString();\n    updateMsg.energyUsed = (msg.payload.msg.data.energyUsed/10).toFixed(2).toString();\n    updateMsg.mode = msg.payload.msg.data.mode.toString();\n\n    return {query:{\"serialNum\":msg.payload.msg.src},payload:updateMsg};\n}\n",
+        "func": "var _ = context.global._;\n\n// add new\nif(_.isEmpty(msg.payload.db)){\n    var newMsg = {\n        \"serialNum\": msg.payload.msg.src,\n        \"deviceType\": 176,\n        \"modelText\": \"WWLB-3000EU\",\n        \"nominalPower\": 3000,\n        \"fwVersion\": \"3.0.0-b20171003\",\n        \"alarm\": {\n            \"temperature\": {\n                \"lower\": 20.2,\n                \"upper\": 120.6\n            },\n            \"volt\": {\n                \"lower\": 180,\n                \"upper\": 220\n            },\n            \"current\": {\n                \"lower\": -1,\n                \"upper\": 15\n            },\n            \"power\": {\n                \"lower\": -1,\n                \"upper\": 3200\n            }\n        },\n        \"loadType\": 32,\n        \"deviceTime\": \"2017-04-01 04:01:00\",\n        \"regulatorAlgo\": 0,\n        \"regulatorTimeout\": 30,\n        \"regulatorThreshold\": 200,\n        \"regulatorWindow\": 5,\n        \"sampleFrequency\": 30,\n        \"thresholdAlgo\": 0,\n        \"factor\": 0.1,\n        \"verifyThreshold\": 0,\n        \"temperature\": (msg.payload.msg.data.temperature/10).toFixed(2).toString(),\n        \"voltage\": (msg.payload.msg.data.voltage/10).toFixed(2).toString(),\n        \"current\": (msg.payload.msg.data.current/10).toFixed(2).toString(),\n        \"power\": (msg.payload.msg.data.power/10).toFixed(2).toString(),\n        \"energySaved\": (msg.payload.msg.data.energySaved/10).toFixed(2).toString(),\n        \"energyUsed\": (msg.payload.msg.data.energyUsed/10).toFixed(2).toString(),\n        \"mode\": msg.payload.msg.data.mode.toString()\n    };\n    return {query:{\"serialNum\":msg.payload.msg.src},payload:newMsg};\n}\n// update \nelse{\n    var updateMsg = msg.payload.db[0];\n\n    delete updateMsg._id;\n    \n    updateMsg.temperature = (msg.payload.msg.data.temperature/10).toFixed(2).toString();\n    updateMsg.voltage = (msg.payload.msg.data.voltage/10).toFixed(2).toString();\n    updateMsg.current = (msg.payload.msg.data.current/10).toFixed(2).toString();\n    updateMsg.power =  (msg.payload.msg.data.power/10).toFixed(2).toString();\n    updateMsg.energySaved = (msg.payload.msg.data.energySaved/10).toFixed(2).toString();\n    updateMsg.energyUsed = (msg.payload.msg.data.energyUsed/10).toFixed(2).toString();\n    updateMsg.mode = msg.payload.msg.data.mode.toString();\n\n    return {query:{\"serialNum\":msg.payload.msg.src},payload:updateMsg};\n}\n",
         "outputs": 1,
         "noerr": 0,
         "x": 820,
@@ -4472,7 +4469,7 @@
         "type": "function",
         "z": "34625b1b.bfb144",
         "name": "query_meboost_from_db",
-        "func": "var newMsg = {};\nnewMsg.payload    = { 'uuid.sUuid' :  msg.payload.src };\nreturn newMsg;",
+        "func": "var newMsg = {};\nnewMsg.payload    = { 'serialNum' :  msg.payload.src };\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "x": 304,
@@ -4580,7 +4577,7 @@
         "type": "function",
         "z": "34625b1b.bfb144",
         "name": "update_meboost_with_mode",
-        "func": "if(msg.payload.msg.data.status === 0x00){\n    var updateMsg = msg.payload.db[0];\n\n    updateMsg.mode = context.global.get(\"setMeBoostMode\").toString();\n    return {query:{\"serialNum\":msg.payload.msg.src},payload:updateMsg};\n}",
+        "func": "if(msg.payload.msg.data.status === 0x00){\n    var updateMsg = msg.payload.db[0];\n    delete updateMsg._id;\n    \n    updateMsg.mode = context.global.get(\"setMeBoostMode\").toString();\n    return {query:{\"serialNum\":msg.payload.msg.src},payload:updateMsg};\n}",
         "outputs": 1,
         "noerr": 0,
         "x": 807,
@@ -4736,7 +4733,7 @@
         "type": "function",
         "z": "f1edfef8.3f434",
         "name": "update_merfct_with_runtime",
-        "func": "var _ = context.global._;\n\n// add new\nif(_.isEmpty(msg.payload.db)){\n    var newMsg = {\n        \"serialNum\": msg.payload.msg.dst,\n        \"deviceType\":128,\n        \"correctionFactor\": {\n            \"volt\": 1,\n            \"power30PCT\": 1,\n            \"power60PCT\": 1,\n            \"power80PCT\": 1\n        },\n        \"effectiveVolt\": (msg.paylaod.msg.data.voltage/10).toFixed(2).toString(),\n        \"effectiveCurrent\": (msg.paylaod.msg.data.current/10).toFixed(2).toString(),\n        \"frequency\": (msg.paylaod.msg.data.frequency/10).toFixed(2).toString(),\n        \"direct\": msg.paylaod.msg.data.direct.toString(),\n        \"activePower\": (msg.paylaod.msg.data.power/10).toFixed(2).toString(),\n        \"LN\": msg.paylaod.msg.data.ln.toString(),\n        \"toGrid\": (msg.paylaod.msg.data.toGrid/10).toFixed(2).toString(),\n        \"toUser\": (msg.paylaod.msg.data.toUser/10).toFixed(2).toString()\n    };\n    return {query:{\"serialNum\":msg.payload.msg.dst},payload:newMsg};\n}\n// update \nelse{\n    var updateMsg = msg.payload.db[0];\n\n    updateMsg.effectiveVolt = (msg.paylaod.msg.data.voltage/10).toFixed(2).toString();\n    updateMsg.effectiveCurrent = (msg.paylaod.msg.data.current/10).toFixed(2).toString();\n    updateMsg.frequency = (msg.paylaod.msg.data.frequency/10).toFixed(2).toString();\n    updateMsg.direct =  msg.paylaod.msg.data.direct.toString();\n    updateMsg.activePower = (msg.payload.msg.data.energySaved/10).toFixed(2).toString();\n    updateMsg.LN = (msg.paylaod.msg.data.power/10).toFixed(2).toString();\n    updateMsg.toGrid = (msg.paylaod.msg.data.toGrid/10).toFixed(2).toString();\n    updateMsg.toUser = (msg.paylaod.msg.data.toUser/10).toFixed(2).toString();\n\n    return {query:{\"serialNum\":msg.payload.msg.dst},payload:updateMsg};\n}\n",
+        "func": "var _ = context.global._;\n\n// add new\nif(_.isEmpty(msg.payload.db)){\n    var newMsg = {\n        \"serialNum\": msg.payload.msg.dst,\n        \"deviceType\":128,\n        \"correctionFactor\": {\n            \"volt\": 1,\n            \"power30PCT\": 1,\n            \"power60PCT\": 1,\n            \"power80PCT\": 1\n        },\n        \"effectiveVolt\": (msg.paylaod.msg.data.voltage/10).toFixed(2).toString(),\n        \"effectiveCurrent\": (msg.paylaod.msg.data.current/10).toFixed(2).toString(),\n        \"frequency\": (msg.paylaod.msg.data.frequency/10).toFixed(2).toString(),\n        \"direct\": msg.paylaod.msg.data.direct.toString(),\n        \"activePower\": (msg.paylaod.msg.data.power/10).toFixed(2).toString(),\n        \"LN\": msg.paylaod.msg.data.ln.toString(),\n        \"toGrid\": (msg.paylaod.msg.data.toGrid/10).toFixed(2).toString(),\n        \"toUser\": (msg.paylaod.msg.data.toUser/10).toFixed(2).toString()\n    };\n    return {query:{\"serialNum\":msg.payload.msg.dst},payload:newMsg};\n}\n// update \nelse{\n    var updateMsg = msg.payload.db[0];\n    delete updateMsg._id;\n    \n    updateMsg.effectiveVolt = (msg.paylaod.msg.data.voltage/10).toFixed(2).toString();\n    updateMsg.effectiveCurrent = (msg.paylaod.msg.data.current/10).toFixed(2).toString();\n    updateMsg.frequency = (msg.paylaod.msg.data.frequency/10).toFixed(2).toString();\n    updateMsg.direct =  msg.paylaod.msg.data.direct.toString();\n    updateMsg.activePower = (msg.payload.msg.data.energySaved/10).toFixed(2).toString();\n    updateMsg.LN = (msg.paylaod.msg.data.power/10).toFixed(2).toString();\n    updateMsg.toGrid = (msg.paylaod.msg.data.toGrid/10).toFixed(2).toString();\n    updateMsg.toUser = (msg.paylaod.msg.data.toUser/10).toFixed(2).toString();\n\n    return {query:{\"serialNum\":msg.payload.msg.dst},payload:updateMsg};\n}\n",
         "outputs": 1,
         "noerr": 0,
         "x": 700,
@@ -4768,7 +4765,7 @@
         "type": "function",
         "z": "f1edfef8.3f434",
         "name": "query_merfct_from_db",
-        "func": "var newMsg = {};\nnewMsg.payload    = { 'uuid.sUuid' :  msg.payload.dst };\nreturn newMsg;",
+        "func": "var newMsg = {};\nnewMsg.payload    = { 'serialNum' :  msg.payload.dst };\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "x": 224,
@@ -5008,6 +5005,7 @@
         "id": "a68b9c88.b2028",
         "type": "subflow:432a0099.a6cc",
         "z": "b7cbf5cd.dbcad8",
+        "name": "",
         "x": 180,
         "y": 180,
         "wires": [
@@ -5581,7 +5579,8 @@
         "y": 680,
         "wires": [
             [
-                "f592b332.05f15"
+                "f592b332.05f15",
+                "76468f18.572cd"
             ]
         ]
     },
@@ -5590,8 +5589,8 @@
         "type": "subflow:aeee4720.4dd808",
         "z": "c333072f.350338",
         "name": "",
-        "x": 310,
-        "y": 1840,
+        "x": 290,
+        "y": 1800,
         "wires": [
             [
                 "6a9ad66a.b2ad58"
@@ -5692,7 +5691,7 @@
         "type": "function",
         "z": "99c0b59c.367848",
         "name": "pad_crc8",
-        "func": "var crc = context.global.crc;\n\nvar crcData = new Buffer(crc.crc8(msg.payload).toString(16),'hex');\n\nvar data = Buffer.concat([msg.payload,crcData]);\n\nreturn {\n    payload: data\n};",
+        "func": "var crc = context.global.crc;\n\nvar CRC8 = context.global.Struct()\n    .word8Ube('crc8');\n    \nvar create = function(name) {\n    var buf = name.allocate().buffer();\n    for (var i = 0; i < buf.length; i++) {\n        buf[i] = 0;\n    }\n    return buf;\n};\n\nvar crcData = create(CRC8);\nvar dataBuf = msg.payload.slice(6);\nCRC8.set('crc8', crc.crc8(dataBuf));\n\n\n//var crcData = new Buffer(crc.crc8(dataBuf).toString(16),'hex');\n\nvar data = Buffer.concat([msg.payload,crcData]);\n\nreturn {\n    payload: data\n};",
         "outputs": 1,
         "noerr": 0,
         "x": 380,
@@ -5705,11 +5704,13 @@
         "id": "cd8aa762.45b118",
         "type": "subflow:99c0b59c.367848",
         "z": "b7a55779.94c118",
+        "name": "",
         "x": 750,
         "y": 100,
         "wires": [
             [
-                "5bf20563.20d4ac"
+                "5bf20563.20d4ac",
+                "8a750f92.83bbd"
             ]
         ]
     },
@@ -5734,7 +5735,7 @@
         "type": "function",
         "z": "71792cd4.5d4174",
         "name": "update_receiver",
-        "func": "var _ = context.global._;\n\nif(_.isEmpty(msg.payload.db) && msg.payload.msg.type === \"add\"){\n    var newMsg = {\n        \"serialNum\": msg.payload.msg.addr.toString(),\n        \"deviceType\": msg.payload.msg.deviceType,\n        \"fwVersion\": \"v3.11\",\n        \"modelText\": \"LVR900v2\",\n        \"status\": msg.payload.msg.data,\n        \"powerOn\": 256,\n        \"foward\": true,\n        \"heartbeat\": true\n    };\n    return {query:{\"serialNum\":msg.payload.msg.addr},payload:newMsg};\n}\n// update \nelse if(!_.isEmpty(msg.payload.db)){\n\n    var updateMsg = msg.payload.db[0];\n\n    updateMsg.status = msg.paylaod.msg.data;\n\n    return {query:{\"serialNum\":msg.payload.msg.addr},payload:updateMsg};\n}\n",
+        "func": "var _ = context.global._;\n\nif(_.isEmpty(msg.payload.db) && msg.payload.msg.type === \"add\"){\n    var newMsg = {\n        \"serialNum\": msg.payload.msg.addr.toString(),\n        \"deviceType\": msg.payload.msg.deviceType,\n        \"fwVersion\": \"v3.11\",\n        \"modelText\": \"LVR900v2\",\n        \"status\": msg.payload.msg.data,\n        \"powerOn\": 256,\n        \"foward\": true,\n        \"heartbeat\": true\n    };\n    return {topic:msg.payload.msg.rc,query:{\"serialNum\":msg.payload.msg.addr},payload:newMsg};\n}\n// update \nelse if(!_.isEmpty(msg.payload.db)){\n\n    var updateMsg = msg.payload.db[0];\n    delete updateMsg._id;\n\n    updateMsg.status = msg.payload.msg.data;\n    //console.log(msg.payload.msg.addr);\n    return {topic:msg.payload.msg.rc,query:{\"serialNum\":msg.payload.msg.addr.toString(16)},payload:updateMsg};\n}\n",
         "outputs": 1,
         "noerr": 0,
         "x": 680,
@@ -5757,7 +5758,8 @@
         "y": 121,
         "wires": [
             [
-                "8df0619d.998c8"
+                "8df0619d.998c8",
+                "88a47195.f0a02"
             ]
         ]
     },
@@ -5765,8 +5767,8 @@
         "id": "5438e29d.336e2c",
         "type": "function",
         "z": "71792cd4.5d4174",
-        "name": "query_receiver_from_db",
-        "func": "var newMsg = {};\nnewMsg.payload    = { 'uuid.sUuid' :  msg.payload.addr };\nreturn newMsg;",
+        "name": "query_receiver_from_db ",
+        "func": "var _ = context.global._;\n\nvar newMsg = {};\nnewMsg.payload = { 'serialNum' :  _.padStart(msg.payload.addr.toString(16),8,\"0\") };\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "x": 254,
@@ -5865,7 +5867,7 @@
         "upsert": true,
         "multi": false,
         "operation": "update",
-        "x": 1050,
+        "x": 1090,
         "y": 320,
         "wires": []
     },
@@ -5874,11 +5876,11 @@
         "type": "subflow:71792cd4.5d4174",
         "z": "c333072f.350338",
         "name": "",
-        "x": 600,
-        "y": 1800,
+        "x": 580,
+        "y": 1760,
         "wires": [
             [
-                "36fbc4de.43aa9c"
+                "c69e7dbc.b2485"
             ]
         ]
     },
@@ -5890,11 +5892,12 @@
         "func": "var sendMsg = {\n        retCode: 200,\n        description: \"SUCCESS\",\n        data: [msg.payload]\n    };\n    return {type:\"response\",payload:sendMsg};",
         "outputs": 1,
         "noerr": 0,
-        "x": 878,
-        "y": 1809,
+        "x": 1020,
+        "y": 1820,
         "wires": [
             [
-                "93299592.092c28"
+                "93299592.092c28",
+                "3059f9e4.13a716"
             ]
         ]
     },
@@ -5906,8 +5909,8 @@
         "links": [
             "b77416b3.c35528"
         ],
-        "x": 1105,
-        "y": 1947,
+        "x": 1195,
+        "y": 1960,
         "wires": []
     },
     {
@@ -5986,8 +5989,8 @@
         "links": [
             "48aa9cb3.5a8f94"
         ],
-        "x": 1103,
-        "y": 1859,
+        "x": 1175,
+        "y": 1860,
         "wires": []
     },
     {
@@ -5998,8 +6001,8 @@
         "func": "var sendMsg = {\n        retCode: 200,\n        description: \"SUCCESS\",\n        data: [msg.payload]\n    };\n    return {type:\"response\",payload:sendMsg};",
         "outputs": 1,
         "noerr": 0,
-        "x": 884,
-        "y": 1860,
+        "x": 1010,
+        "y": 1900,
         "wires": [
             [
                 "48f42589.f81f1c"
@@ -6011,7 +6014,7 @@
         "type": "switch",
         "z": "c333072f.350338",
         "name": "swithPackageType",
-        "property": "payload.msg.rc&31",
+        "property": "type",
         "propertyType": "msg",
         "rules": [
             {
@@ -6027,14 +6030,14 @@
         ],
         "checkall": "false",
         "outputs": 2,
-        "x": 708,
-        "y": 1860,
+        "x": 770,
+        "y": 1900,
         "wires": [
             [
                 "e8157120.05a85"
             ],
             [
-                "ca0c4055.b7943"
+                "e8157120.05a85"
             ]
         ],
         "outputLabels": [
@@ -6257,8 +6260,8 @@
         "name": "findSourthId",
         "collection": "forward",
         "operation": "find",
-        "x": 714,
-        "y": 75,
+        "x": 770,
+        "y": 40,
         "wires": [
             [
                 "ab7d0904.7e16a8"
@@ -6284,8 +6287,8 @@
         ],
         "checkall": "true",
         "outputs": 2,
-        "x": 485.5,
-        "y": 81,
+        "x": 470,
+        "y": 40,
         "wires": [
             [
                 "534030ae.cf111"
@@ -6303,8 +6306,8 @@
         "func": "var _ = context.global._;\nvar context = this.context();\n\nvar accoicatedList = context.get(\"accoicated\") || [];\nif(msg.topic === \"finish\"){\n    node.send({topic:\"device\",payload:accoicatedList});\n}else{\n    if(!_.isEmpty( msg.payload)){\n        accoicatedList.push({id:msg.payload[0].sUuid,type:msg.payload[0].sType});\n        context.get(\"accoicated\",accoicatedList);\n        node.send({topic:\"find\"});\n    }\n}",
         "outputs": 1,
         "noerr": 0,
-        "x": 732,
-        "y": 155,
+        "x": 730,
+        "y": 160,
         "wires": [
             [
                 "72981dc5.215e04"
@@ -6417,7 +6420,7 @@
         "type": "function",
         "z": "af5873dc.3000d",
         "name": "find_automation",
-        "func": "\nvar get_rocker_text = function(rockerId){\n    var rockerText = null;\n    switch(rockerId){\n        case 1:\n            rockerText = \"A\";\n            break;\n        case 2:\n            rockerText = \"B\";\n            break;\n        case 4:\n            rockerText = \"C\";\n            break;\n        case 8:\n            rockerText = \"D\";\n            break;\n        default:\n            break;\n    }\n    return rockerText;\n};\nvar rockerText = get_rocker_text(msg.payload.rocker);\n\nreturn {payload:{\"panel\":msg.payload.addr,\"rocker\":rockerText}};",
+        "func": "var _ = context.global._;\nvar get_rocker_text = function(rockerId){\n    var rockerText = null;\n    switch(rockerId){\n        case 1:\n            rockerText = \"A\";\n            break;\n        case 2:\n            rockerText = \"B\";\n            break;\n        case 4:\n            rockerText = \"C\";\n            break;\n        case 8:\n            rockerText = \"D\";\n            break;\n        default:\n            break;\n    }\n    return rockerText;\n};\nvar rockerText = get_rocker_text(msg.payload.rocker);\n\nvar hexAddr = _.padStart(msg.payload.addr.toString(16),8,'0');\nreturn {payload:{\"panel\":hexAddr,\"rocker\":rockerText}};",
         "outputs": 1,
         "noerr": 0,
         "x": 384,
@@ -6522,13 +6525,15 @@
         "type": "function",
         "z": "af5873dc.3000d",
         "name": "pack_cmd",
-        "func": "var _ = context.global._;\nvar devices = msg.payload.db.devices;\n\nvar sendMsg = {\n    sync: 85,\n    dataLen: 9,\n    optionLen:7,\n    type:1,\n    crc: 86,\n    rc: 95,\n    addr:null,\n    deviceType:null,\n    cmdType: 2,\n    cmdData: null\n};\nvar io = msg.payload.msg.io;\n_.forEach(devices, function(item) {\n    sendMsg.addr = item.id;\n    sendMsg.deviceType = item.type;\n    switch(item.type){\n        case 0x81:\n            sendMsg.cmdData = (io === 1) ? 257 : 256;\n            break;\n        case 0x91:\n        case 0x9D:\n            sendMsg.cmdData = (io === 1) ? 257 : 256;\n            break;\n        case 0x92:\n        case 0x9E:\n            sendMsg.cmdData = (io === 1) ? 771 : 768;\n            break;\n        case 0x93:\n        case 0x9F:\n            sendMsg.cmdData = (io === 1) ? 1799 : 700;\n            break;\n        default:\n            break;\n    }\n    node.send({type:\"forward\",payload:{send:sendMsg,pattern:\"b8=>sync,b16=>dataLen,b8=>optionLen,b8=>type,b8=>crc,b8=>rc,b32=>addr,b8=>deviceType,b8=>cmdType,b16=>cmdData\"}});\n});",
+        "func": "var _ = context.global._;\nvar devices = msg.payload.db.devices;\n\nvar sendMsg = {\n    sync: 85,\n    dataLen: 9,\n    optionLen:7,\n    type:1,\n    crc: 86,\n    rc: 95,\n    addr:null,\n    deviceType:null,\n    cmdType: 2,\n    cmdData: null,\n    options: new Buffer(\"00000000000000\",'hex')\n};\nvar io = msg.payload.msg.io;\n_.forEach(devices, function(item) {\n    sendMsg.addr = new Buffer(item.id,'hex');\n    sendMsg.deviceType = item.type;\n    switch(item.type){\n        case 0x81:\n            sendMsg.cmdData = (io === 1) ? 257 : 256;\n            break;\n        case 0x91:\n        case 0x9D:\n            sendMsg.cmdData = (io === 1) ? 257 : 256;\n            break;\n        case 0x92:\n        case 0x9E:\n            sendMsg.cmdData = (io === 1) ? 771 : 768;\n            break;\n        case 0x93:\n        case 0x9F:\n            sendMsg.cmdData = (io === 1) ? 1799 : 1792;\n            break;\n        default:\n            break;\n    }\n    node.send({type:\"forward\",payload:{send:sendMsg,pattern:\"b8=>sync,b16=>dataLen,b8=>optionLen,b8=>type,b8=>crc,b8=>rc,b8[4]=>addr,b8=>deviceType,b8=>cmdType,b16=>cmdData,b8[7]=>options\"}});\n});",
         "outputs": 1,
         "noerr": 0,
         "x": 1040,
         "y": 449,
         "wires": [
-            []
+            [
+                "ff43f8b8.d1dbe8"
+            ]
         ]
     },
     {
@@ -6657,7 +6662,7 @@
         "type": "function",
         "z": "3e2dfb4e.584874",
         "name": "check_pair_id",
-        "func": "var targetdeviceId = context.get(\"targetDeviceId\");\nif(targetDeviceId !== null && targetDeviceId === msg.payload.dst){\n    return msg;\n}",
+        "func": "var targetDeviceId = context.global.get(\"targetDeviceId\").toString(16);\nif(targetDeviceId !== null && targetDeviceId === msg.payload.src){\n    console.log(\"yes\");\n    return msg;\n}",
         "outputs": 1,
         "noerr": 0,
         "x": 544,
@@ -6737,6 +6742,242 @@
         ],
         "x": 1259,
         "y": 759,
+        "wires": []
+    },
+    {
+        "id": "8a750f92.83bbd",
+        "type": "debug",
+        "z": "b7a55779.94c118",
+        "name": "[Debug]SendWithWRM",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 910,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "76468f18.572cd",
+        "type": "debug",
+        "z": "b7a55779.94c118",
+        "name": "[Debug]RecvFromWRM",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 823,
+        "y": 776,
+        "wires": []
+    },
+    {
+        "id": "c69e7dbc.b2485",
+        "type": "function",
+        "z": "c333072f.350338",
+        "name": "get_package_type",
+        "func": "var type = msg.topic & 31;\nreturn {type:type,payload:msg.payload};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 810,
+        "y": 1800,
+        "wires": [
+            [
+                "36fbc4de.43aa9c"
+            ]
+        ]
+    },
+    {
+        "id": "814f04f3.c587e8",
+        "type": "debug",
+        "z": "b7cbf5cd.dbcad8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 917,
+        "y": 101,
+        "wires": []
+    },
+    {
+        "id": "3059f9e4.13a716",
+        "type": "debug",
+        "z": "c333072f.350338",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1194,
+        "y": 1764,
+        "wires": []
+    },
+    {
+        "id": "88a47195.f0a02",
+        "type": "debug",
+        "z": "71792cd4.5d4174",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 913,
+        "y": 98,
+        "wires": []
+    },
+    {
+        "id": "ff43f8b8.d1dbe8",
+        "type": "debug",
+        "z": "af5873dc.3000d",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1234,
+        "y": 558,
+        "wires": []
+    },
+    {
+        "id": "b651e305.fc706",
+        "type": "debug",
+        "z": "b7a55779.94c118",
+        "name": "[Debug]RecvFromGRF",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 835,
+        "y": 1048,
+        "wires": []
+    },
+    {
+        "id": "61b818f4.b1f798",
+        "type": "inject",
+        "z": "46021cec.0f7574",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "x": 263,
+        "y": 901,
+        "wires": [
+            [
+                "9e6b2589.cdc748"
+            ]
+        ]
+    },
+    {
+        "id": "9e6b2589.cdc748",
+        "type": "function",
+        "z": "46021cec.0f7574",
+        "name": "",
+        "func": "context.global.set(\"pair\",true);\ncontext.global.set(\"targetDeviceId\",\"45123734414d066eff33\");\ncontext.global.set(\"targetDeviceType\",\"040B08040004\");\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 434,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d988799.5ddab88",
+        "type": "debug",
+        "z": "46021cec.0f7574",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 437,
+        "y": 702,
+        "wires": []
+    },
+    {
+        "id": "c3ec646c.9ef798",
+        "type": "inject",
+        "z": "46021cec.0f7574",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 158,
+        "y": 736,
+        "wires": [
+            [
+                "563d1328.8f347c"
+            ]
+        ]
+    },
+    {
+        "id": "45c30433.35145c",
+        "type": "debug",
+        "z": "3e2dfb4e.584874",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1355,
+        "y": 91,
+        "wires": []
+    },
+    {
+        "id": "2ef92f1.b1e66d",
+        "type": "debug",
+        "z": "3e2dfb4e.584874",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1430,
+        "y": 170,
+        "wires": []
+    },
+    {
+        "id": "3b17de1c.be0a42",
+        "type": "inject",
+        "z": "b7a55779.94c118",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 809,
+        "y": 490,
+        "wires": [
+            [
+                "dc67a52d.992e18"
+            ]
+        ]
+    },
+    {
+        "id": "dc67a52d.992e18",
+        "type": "function",
+        "z": "b7a55779.94c118",
+        "name": "",
+        "func": "msg.payload = new Buffer(\"1122\",'hex');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 923,
+        "y": 409,
+        "wires": [
+            [
+                "ee1bb73c.1ed4f8",
+                "6f638f72.bd4b7"
+            ]
+        ]
+    },
+    {
+        "id": "6f638f72.bd4b7",
+        "type": "debug",
+        "z": "b7a55779.94c118",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 1095,
+        "y": 462,
         "wires": []
     }
 ]
