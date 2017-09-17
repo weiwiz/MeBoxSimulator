@@ -2489,8 +2489,7 @@
         "y": 228,
         "wires": [
             [
-                "5de73225.cb10ec",
-                "6a6e7fab.6f346"
+                "5de73225.cb10ec"
             ]
         ]
     },
@@ -6965,18 +6964,6 @@
         "complete": "false",
         "x": 1095,
         "y": 462,
-        "wires": []
-    },
-    {
-        "id": "6a6e7fab.6f346",
-        "type": "debug",
-        "z": "46021cec.0f7574",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 430,
-        "y": 180,
         "wires": []
     }
 ]
