@@ -1031,7 +1031,8 @@
         "y": 960,
         "wires": [
             [
-                "dfd9702a.a07fd"
+                "dfd9702a.a07fd",
+                "76468f18.572cd"
             ]
         ]
     },
@@ -2476,8 +2477,7 @@
         "y": 624,
         "wires": [
             [
-                "b31e5df3.86e31",
-                "563d1328.8f347c"
+                "b31e5df3.86e31"
             ]
         ]
     },
@@ -4404,24 +4404,6 @@
         "wires": [
             [
                 "f07dc63e.ce1168"
-            ]
-        ]
-    },
-    {
-        "id": "563d1328.8f347c",
-        "type": "globalGetSet",
-        "z": "46021cec.0f7574",
-        "name": "",
-        "topic": "",
-        "context": "global",
-        "variable": "targetDeviceId",
-        "outContext": "msg",
-        "outVar": "payload",
-        "x": 333.5,
-        "y": 622,
-        "wires": [
-            [
-                "d988799.5ddab88"
             ]
         ]
     },
@@ -6878,37 +6860,6 @@
         "y": 900,
         "wires": [
             []
-        ]
-    },
-    {
-        "id": "d988799.5ddab88",
-        "type": "debug",
-        "z": "46021cec.0f7574",
-        "name": "",
-        "active": true,
-        "console": "false",
-        "complete": "false",
-        "x": 437,
-        "y": 702,
-        "wires": []
-    },
-    {
-        "id": "c3ec646c.9ef798",
-        "type": "inject",
-        "z": "46021cec.0f7574",
-        "name": "",
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "x": 158,
-        "y": 736,
-        "wires": [
-            [
-                "563d1328.8f347c"
-            ]
         ]
     },
     {
