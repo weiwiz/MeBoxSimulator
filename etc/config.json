@@ -1,0 +1,6 @@
+{
+  "threshold": 200,
+  "networkTimeout": 5,
+  "networkRetry": 3,
+  "heatbeatFREQ": 180
+}

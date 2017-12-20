@@ -427,7 +427,7 @@
         "id": "e2804ad0.1d7fb8",
         "type": "serial-port",
         "z": "c3fa3eae.3c05c",
-        "serialport": "COM4",
+        "serialport": "/dev/ttyAMA0",
         "serialbaud": "9600",
         "databits": "8",
         "parity": "none",
@@ -459,7 +459,7 @@
         "type": "ui_group",
         "z": "",
         "name": "MeBoostSN",
-        "tab": null,
+        "tab": "2d7fd0cb.832bf",
         "order": 1,
         "disp": true,
         "width": "6"
@@ -479,8 +479,8 @@
             "darkTheme": {
                 "default": "#097479",
                 "baseColor": "#097479",
-                "baseFont": "Helvetica Neue",
-                "edited": false,
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
                 "reset": false
             },
             "customTheme": {
@@ -508,7 +508,7 @@
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#10cfd8",
+                    "value": "#0eb8c0",
                     "edited": false
                 },
                 "group-borderColor": {
@@ -530,6 +530,9 @@
                 "widget-borderColor": {
                     "value": "#333333",
                     "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
                 }
             }
         },
@@ -564,6 +567,7 @@
         "z": "",
         "name": "Default",
         "tab": "608388ba.758188",
+        "order": 1,
         "disp": true,
         "width": "6"
     },
@@ -597,7 +601,8 @@
         "y": 262,
         "wires": [
             [
-                "d957e3c6.3b682"
+                "d957e3c6.3b682",
+                "ddcb6990.100598"
             ]
         ]
     },
@@ -749,29 +754,6 @@
         ]
     },
     {
-        "id": "55e93a87.aa16c4",
-        "type": "ui_button",
-        "z": "c3fa3eae.3c05c",
-        "name": "TestRF",
-        "group": "fd3f4246.02c0c",
-        "order": 10,
-        "width": "0",
-        "height": "0",
-        "label": "testRF",
-        "color": "red",
-        "icon": "fa-terminal",
-        "payload": "",
-        "payloadType": "str",
-        "topic": "",
-        "x": 1340,
-        "y": 40,
-        "wires": [
-            [
-                "be2345f0.41dcb8"
-            ]
-        ]
-    },
-    {
         "id": "be2345f0.41dcb8",
         "type": "function",
         "z": "c3fa3eae.3c05c",
@@ -793,7 +775,7 @@
         "z": "c3fa3eae.3c05c",
         "name": "Off",
         "group": "fd3f4246.02c0c",
-        "order": 8,
+        "order": 7,
         "width": "4",
         "height": "1",
         "label": "Off",
@@ -815,7 +797,7 @@
         "type": "ui_text",
         "z": "c3fa3eae.3c05c",
         "group": "fd3f4246.02c0c",
-        "order": 3,
+        "order": 2,
         "width": "20",
         "height": "2",
         "name": "STATUS:  ",
@@ -832,7 +814,7 @@
         "z": "c3fa3eae.3c05c",
         "name": "Pair",
         "group": "fd3f4246.02c0c",
-        "order": 9,
+        "order": 8,
         "width": "4",
         "height": "1",
         "label": "Pair",
@@ -855,7 +837,7 @@
         "z": "c3fa3eae.3c05c",
         "name": "init",
         "topic": "",
-        "payload": "{\"network\":\"checking...\",\"status\":\"init please wait...\",\"display\":null,\"SN\":\"53504354313132323230\"}",
+        "payload": "{\"network\":\"checking...\",\"status\":\"init please wait...\",\"display\":null,\"SN\":\"45123734414d066eff33\"}",
         "payloadType": "json",
         "repeat": "",
         "crontab": "",
@@ -877,7 +859,7 @@
         "type": "ui_text",
         "z": "c3fa3eae.3c05c",
         "group": "fd3f4246.02c0c",
-        "order": 2,
+        "order": 1,
         "width": "0",
         "height": "0",
         "name": "NETWORK:",
@@ -893,7 +875,7 @@
         "type": "ui_text",
         "z": "c3fa3eae.3c05c",
         "group": "fd3f4246.02c0c",
-        "order": 4,
+        "order": 3,
         "width": "0",
         "height": "0",
         "name": "Display:",
@@ -910,7 +892,7 @@
         "z": "c3fa3eae.3c05c",
         "name": "Auto",
         "group": "fd3f4246.02c0c",
-        "order": 6,
+        "order": 5,
         "width": "4",
         "height": "1",
         "label": "Auto",
@@ -933,7 +915,7 @@
         "z": "c3fa3eae.3c05c",
         "name": "Manual",
         "group": "fd3f4246.02c0c",
-        "order": 7,
+        "order": 6,
         "width": "4",
         "height": "1",
         "label": "Manual",
@@ -956,7 +938,7 @@
         "z": "c3fa3eae.3c05c",
         "name": "Display",
         "group": "fd3f4246.02c0c",
-        "order": 5,
+        "order": 4,
         "width": "4",
         "height": "1",
         "label": "Display",
@@ -1168,11 +1150,11 @@
         "type": "file",
         "z": "dff92ade.2006d8",
         "name": "",
-        "filename": "./etc/route.json",
+        "filename": "/home/pi/.node-red/etc/route.json",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
-        "x": 572,
+        "x": 632,
         "y": 162,
         "wires": []
     },
@@ -1483,11 +1465,11 @@
         "type": "file",
         "z": "b57bffd1.4a84",
         "name": "",
-        "filename": "./etc/route.json",
+        "filename": "/home/pi/.node-red/etc/route.json",
         "appendNewline": false,
         "createDir": false,
         "overwriteFile": "true",
-        "x": 1722,
+        "x": 1782,
         "y": 504,
         "wires": []
     },
@@ -1846,10 +1828,10 @@
         "type": "file in",
         "z": "d884c6d0.277b38",
         "name": "",
-        "filename": "./etc/route.json",
+        "filename": "/home/pi/.node-red/etc/route.json",
         "format": "utf8",
         "sendError": true,
-        "x": 332,
+        "x": 392,
         "y": 231,
         "wires": [
             [
@@ -1908,10 +1890,11 @@
         "type": "file in",
         "z": "482099d2.b7df68",
         "name": "",
-        "filename": "./etc/config.json",
+        "filename": "/home/pi/.node-red/etc/config.json",
         "format": "utf8",
-        "x": 279,
-        "y": 31,
+        "sendError": true,
+        "x": 300,
+        "y": 60,
         "wires": [
             [
                 "8fff6d3c.70009"
@@ -1923,8 +1906,8 @@
         "type": "json",
         "z": "482099d2.b7df68",
         "name": "",
-        "x": 489,
-        "y": 157,
+        "x": 470,
+        "y": 160,
         "wires": [
             []
         ]
@@ -2453,15 +2436,23 @@
                 "t": "eq",
                 "v": "0000",
                 "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "000a",
+                "vt": "str"
             }
         ],
         "checkall": "true",
-        "outputs": 1,
+        "outputs": 2,
         "x": 584,
         "y": 152.3199920654297,
         "wires": [
             [
                 "81474fb9.abbde"
+            ],
+            [
+                "923a3ff6.6265a"
             ]
         ]
     },
@@ -2487,8 +2478,8 @@
         "func": "var cmds = msg.payload.parameters.cmds;\nvar cmdsString = \"\";\ncmds.forEach(function(item,index){\n    cmdsString += \"&&\"+item;\n});\n\nreturn {payload:cmdsString};",
         "outputs": 1,
         "noerr": 0,
-        "x": 773,
-        "y": 152,
+        "x": 770,
+        "y": 120,
         "wires": [
             [
                 "4ca5ae43.2e7bc",
@@ -2640,6 +2631,85 @@
         "complete": "true",
         "x": 1684,
         "y": 236.72998046875,
+        "wires": []
+    },
+    {
+        "id": "ddcb6990.100598",
+        "type": "debug",
+        "z": "c3fa3eae.3c05c",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 100,
+        "y": 167,
+        "wires": []
+    },
+    {
+        "id": "10b6a509.cb9a2b",
+        "type": "file",
+        "z": "5a6aac3a.109e78",
+        "name": "",
+        "filename": "/home/pi/.node-red/etc/route.json",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "true",
+        "x": 940,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "923a3ff6.6265a",
+        "type": "function",
+        "z": "5a6aac3a.109e78",
+        "name": "updatePairInfo",
+        "func": "global.set(\"src\",null);\n//global.set(\"dst\",msg.payload.dst);\nreturn {payload:{src:null,dst:global.get(\"dst\")}};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 840,
+        "y": 340,
+        "wires": [
+            [
+                "10b6a509.cb9a2b",
+                "689d7ff6.1b6f78"
+            ]
+        ]
+    },
+    {
+        "id": "e2614a79.488a68",
+        "type": "ui_button",
+        "z": "5a6aac3a.109e78",
+        "name": "Reset",
+        "group": "a0c4e15a.3e8dd",
+        "order": 9,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Reset",
+        "color": "red",
+        "bgcolor": "",
+        "icon": "fa-terminal",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "",
+        "x": 550,
+        "y": 560,
+        "wires": [
+            [
+                "923a3ff6.6265a"
+            ]
+        ]
+    },
+    {
+        "id": "689d7ff6.1b6f78",
+        "type": "debug",
+        "z": "5a6aac3a.109e78",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "true",
+        "x": 1070,
+        "y": 340,
         "wires": []
     }
 ]
